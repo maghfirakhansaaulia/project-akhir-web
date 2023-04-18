@@ -1,3 +1,15 @@
+<?php
+$role = $_GET['role'];
+
+if ($role === "petani"){
+  $ikon = "ikon fa-sharp fa-solid fa-seedling fa-5x";
+}elseif($role === "toko"){
+  $ikon = "ikon fa-solid fa-shop fa-5x";
+}elseif($role === "user"){
+  $ikon = "ikon fa-solid fa-user-large fa-5x";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,7 +47,7 @@
     <div class="main container">
       <div class="login-wrapper container">
         <div class="text-center">
-          <i class="ikon fa-sharp fa-solid fa-seedling fa-5x"></i>
+          <i class="<?php echo $ikon ?>"></i>
           <p class="fs-3 fw-semibold text-capitalize">
             Login
             <?php echo $_GET['role'] ?>
