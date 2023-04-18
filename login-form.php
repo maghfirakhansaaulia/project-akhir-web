@@ -15,7 +15,7 @@ if ($role === "petani"){
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Login | <?php echo $role; ?></title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -50,7 +50,7 @@ if ($role === "petani"){
           <i class="<?php echo $ikon ?>"></i>
           <p class="fs-3 fw-semibold text-capitalize">
             Login
-            <?php echo $_GET['role'] ?>
+            <?php echo $role ?>
           </p>
         </div>
         <div class="col-md-6 mx-auto">
