@@ -1,0 +1,34 @@
+body {
+  background: #f9fbfe;
+}
+.main {
+  margin-top: 4.5rem;
+}
+.login-wrapper {
+  padding: 3.125rem 0 6.25rem 0;
+}
+.register-wrapper {
+  padding: 1.5rem 0 6rem 0;
+}
+.card-text {
+  margin: 2rem 0;
+}
+.btn-costom {
+  background-color: #c1d7c1;
+}
+.btn-costom:hover {
+  background-color: #92ba92;
+}
+.hover-effect {
+  transition: all 0.5s;
+}
+.hover-effect:hover {
+  box-shadow: 0 2px 4px 0 rgba(151, 198, 41, 0.579),
+    0 3px 10px 0 rgba(109, 168, 125, 0.463);
+}
+.navbar {
+  background-color: #a9eca2;
+}
+.ikon {
+  color: #525e75;
+}
