@@ -25,8 +25,8 @@
       <a class="atas" href="">Petani</a>
       <a class="atas" href="">informasi</a>
       <a class="atas" href="">Contact</a>
-      <a class="atas" href="">Login</a>
-      <a class="atas" href="">Daftar</a>
+      <a class="atas" href="login.php">Login</a>
+      <a class="atas" href="register.php">Daftar</a>
       <!-- <a href="" class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"><i class="fa-solid fa-angles-left"></i> Kembali</a> -->
     </nav>
   </div>
