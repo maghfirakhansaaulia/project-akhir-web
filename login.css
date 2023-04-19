@@ -27,8 +27,120 @@ body {
     0 3px 10px 0 rgba(109, 168, 125, 0.463);
 }
 .navbar {
-  background-color: #a9eca2;
+  background-color: #b0e6aa;
 }
 .ikon {
   color: #525e75;
 }
+
+/* ===================================================================================================== */
+/* index.php */
+/* ===================================================================================================== */
+.atas {
+  color: #394f36;
+  display: flex;
+  /* color: #393939; */
+  font-family: "Gill Sans";
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.atas:hover {
+  text-decoration: underline;
+  text-decoration-color: #92ba92;
+}
+
+.icon {
+  width: 15%;
+}
+
+.navbar-index {
+  display: block;
+  width: 100%;
+  height: 15vh;
+}
+
+.sayur {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  /* height: 100%; */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    url(/gambar/WhatsApp\ Image\ 2023-04-19\ at\ 17.49.24.jpeg);
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sayur h1{
+  color: #394f36;
+  font-size: 80px;
+}
+
+.sayur h2{
+  margin-top: 10px;
+  margin-top: 10px;
+  color: #94d28e;
+  font-family: 'lucida sans';
+  letter-spacing: -1px;
+}
+
+.sayur p{
+  color: #898888;
+}
+
+.konten{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 4%;
+  margin: 5% 5% 2% 5%;
+}
+
+.konten-sayur, .konten-buah, .konten-sembako{
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.konten-sayur{
+  background-image: linear-gradient(rgba(122, 122, 122, 0.586), rgba(129, 129, 129, 0.564))
+    , url(/gambar/sayur-mayur-Cropped-1.jpg);
+    background-position: contain;
+    color: white;
+  }
+
+  .konten-buah{
+  background-image: linear-gradient(rgba(122, 122, 122, 0.586), rgba(129, 129, 129, 0.564))
+    , url(/gambar/2342554562.jpg);
+    background-position: contain;
+    color: white;
+  }
+
+  .konten-sembako{
+  background-image: linear-gradient(rgba(122, 122, 122, 0.586), rgba(129, 129, 129, 0.564))
+    , url(/gambar/nico-smit-MrQs5dCGyno-unsplash-768x432.jpg);
+    background-position: contain;
+    color: white;
+  }
+
+  .konten-sayur p, .konten-buah p, .konten-sembako p{
+    padding-top: 30px;
+    font-size: 20px;
+  }
+
+  .konten-sayur h1, .konten-buah h1, .konten-sembako h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
