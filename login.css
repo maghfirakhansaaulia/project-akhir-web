@@ -71,7 +71,7 @@ body {
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0)
     ),
-    url(/gambar/WhatsApp\ Image\ 2023-04-19\ at\ 17.49.24.jpeg);
+    url(gambar/WhatsApp\ Image\ 2023-04-19\ at\ 17.49.24.jpeg);
   background-size: cover;
   background-position: center;
   flex-direction: column;
@@ -115,21 +115,21 @@ body {
 
 .konten-sayur{
   background-image: linear-gradient(rgba(122, 122, 122, 0.586), rgba(129, 129, 129, 0.564))
-    , url(/gambar/sayur-mayur-Cropped-1.jpg);
+    , url(gambar/sayur-mayur-Cropped-1.jpg);
     background-position: contain;
     color: white;
   }
 
   .konten-buah{
   background-image: linear-gradient(rgba(122, 122, 122, 0.586), rgba(129, 129, 129, 0.564))
-    , url(/gambar/2342554562.jpg);
+    , url(gambar/2342554562.jpg);
     background-position: contain;
     color: white;
   }
 
   .konten-sembako{
   background-image: linear-gradient(rgba(122, 122, 122, 0.586), rgba(129, 129, 129, 0.564))
-    , url(/gambar/nico-smit-MrQs5dCGyno-unsplash-768x432.jpg);
+    , url(gambar/nico-smit-MrQs5dCGyno-unsplash-768x432.jpg);
     background-position: contain;
     color: white;
   }
