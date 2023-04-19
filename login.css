@@ -1,23 +1,36 @@
+/* ===================================================================================================== */
+/* login.php, login register.php */
+/* ===================================================================================================== */
 body {
   background: #f9fbfe;
 }
 .main {
   margin-top: 4.5rem;
 }
-.login-wrapper {
+.first-wrapper {
   padding: 3.125rem 0 6.25rem 0;
 }
-.register-wrapper {
-  padding: 1.5rem 0 6rem 0;
+.second-wrapper {
+  padding: 1.1rem 0 6rem 0;
 }
 .card-text {
   margin: 2rem 0;
+  text-align: justify;
 }
 .btn-costom {
   background-color: #c1d7c1;
 }
 .btn-costom:hover {
   background-color: #92ba92;
+}
+.scrollspyBTN {
+  background-color: #ff6687;
+  color: white;
+  transition: all 0.5s;
+}
+.scrollspyBTN:hover {
+  background-color: #ff335f;
+  color: whitesmoke;
 }
 .hover-effect {
   transition: all 0.5s;
@@ -79,31 +92,33 @@ body {
   justify-content: center;
 }
 
-.sayur h1{
+.sayur h1 {
   color: #394f36;
   font-size: 80px;
 }
 
-.sayur h2{
+.sayur h2 {
   margin-top: 10px;
   margin-top: 10px;
   color: #94d28e;
-  font-family: 'lucida sans';
+  font-family: "lucida sans";
   letter-spacing: -1px;
 }
 
-.sayur p{
+.sayur p {
   color: #898888;
 }
 
-.konten{
+.konten {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 4%;
   margin: 5% 5% 2% 5%;
 }
 
-.konten-sayur, .konten-buah, .konten-sembako{
+.konten-sayur,
+.konten-buah,
+.konten-sembako {
   background-color: #f1f1f1;
   border-radius: 10px;
   padding: 10px 10px 10px 10px;
@@ -113,34 +128,47 @@ body {
   width: 100%;
 }
 
-.konten-sayur{
-  background-image: linear-gradient(rgba(122, 122, 122, 0.586), rgba(129, 129, 129, 0.564))
-    , url(gambar/sayur-mayur-Cropped-1.jpg);
-    background-position: contain;
-    color: white;
-  }
+.konten-sayur {
+  background-image: linear-gradient(
+      rgba(122, 122, 122, 0.586),
+      rgba(129, 129, 129, 0.564)
+    ),
+    url(gambar/sayur-mayur-Cropped-1.jpg);
+  background-position: contain;
+  color: white;
+}
 
-  .konten-buah{
-  background-image: linear-gradient(rgba(122, 122, 122, 0.586), rgba(129, 129, 129, 0.564))
-    , url(gambar/2342554562.jpg);
-    background-position: contain;
-    color: white;
-  }
+.konten-buah {
+  background-image: linear-gradient(
+      rgba(122, 122, 122, 0.586),
+      rgba(129, 129, 129, 0.564)
+    ),
+    url(gambar/2342554562.jpg);
+  background-position: contain;
+  color: white;
+}
 
-  .konten-sembako{
-  background-image: linear-gradient(rgba(122, 122, 122, 0.586), rgba(129, 129, 129, 0.564))
-    , url(gambar/nico-smit-MrQs5dCGyno-unsplash-768x432.jpg);
-    background-position: contain;
-    color: white;
-  }
+.konten-sembako {
+  background-image: linear-gradient(
+      rgba(122, 122, 122, 0.586),
+      rgba(129, 129, 129, 0.564)
+    ),
+    url(gambar/nico-smit-MrQs5dCGyno-unsplash-768x432.jpg);
+  background-position: contain;
+  color: white;
+}
 
-  .konten-sayur p, .konten-buah p, .konten-sembako p{
-    padding-top: 30px;
-    font-size: 20px;
-  }
+.konten-sayur p,
+.konten-buah p,
+.konten-sembako p {
+  padding-top: 30px;
+  font-size: 20px;
+}
 
-  .konten-sayur h1, .konten-buah h1, .konten-sembako h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.konten-sayur h1,
+.konten-buah h1,
+.konten-sembako h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

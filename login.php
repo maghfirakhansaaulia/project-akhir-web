@@ -1,4 +1,4 @@
-
+s
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,19 +22,15 @@
     <nav class="navbar fixed-top border-bottom border-warning-subtle border-3">
       <div class="container">
         <div>
-          <a class="navbar-brand fw-light fs-4" href="#">PasarSegari</a>
+          <a class="navbar-brand fw-light fs-4" href="index.php">PasarSegari</a>
         </div>
         <div class="ml-auto">
-          <a
-            href=""
-            class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"
-            ><i class="fa-solid fa-angles-left"></i> Kembali</a
-          >
+          <a href="index.php"class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"><i class="fa-solid fa-angles-left"></i>Kembali</a>
         </div>
       </div>
     </nav>
     <div class="main container">
-      <div class="login-wrapper container text-center">
+      <div class="first-wrapper container text-center">
         <p class="fs-3 fw-semibold">Pilih satu</p>
         <form action="login-form.php" method="get">
           <div class="row justify-content-center g-2">
@@ -44,7 +40,7 @@
                   <div class="card-body">
                     <i class="ikon fa-sharp fa-solid fa-seedling fa-5x"></i>
                     <h5 class="card-title mt-3 fs-3">Petani</h5>
-                    <p class="card-text">
+                    <p class="card-text text-center">
                       Masuk sebagai
                       <span class="fw-semibold">Petani</span> untuk kelola sayur
                       lebih mudah, tingkatkan produktivitas dan keuntungan Anda!
@@ -67,7 +63,7 @@
                   <div class="card-body">
                     <i class="ikon fa-solid fa-shop fa-5x"></i>
                     <h5 class="card-title mt-3 fs-3">Toko</h5>
-                    <p class="card-text">
+                    <p class="card-text text-center">
                       Kelola toko sayur dengan lebih efisien, tawarkan
                       pengalaman belanja yang lebih baik, dan tingkatkan
                       kesuksesan bisnis Anda!
@@ -90,7 +86,7 @@
                   <div class="card-body">
                     <i class="ikon fa-solid fa-user-large fa-5x"></i>
                     <h5 class="card-title mt-3 fs-3">User</h5>
-                    <p class="card-text">
+                    <p class="card-text text-center">
                       Belanja sayur segar semakin mudah dan menyenangkan dengan
                       aplikasi online terpercaya yang lengkap dan aman!
                     </p>
@@ -109,26 +105,26 @@
           </div>
         </form>
       </div>
-      <div class="register-wrapper container text-center">
+      <div class="second-wrapper container text-center">
         <p class="fs-3 fw-semibold mb-4">Daftar akun PasarSegari</p>
         <div class="d-flex justify-content-center g-5">
           <div class="p-1">
-            <a href="#" class="btn btn-lg btn-costom rounded-1"
+            <a href="register-form.php?role=petani" class="btn btn-lg btn-costom rounded-1"
               >Petani <i class="fa-solid fa-up-right-from-square fa-2xs"></i
             ></a>
           </div>
 
           <div class="p-1">
-            <a href="#" class="btn btn-lg btn-costom rounded-1"
+            <a href="register-form.php?role=toko" class="btn btn-lg btn-costom rounded-1"
               >Toko <i class="fa-solid fa-up-right-from-square fa-2xs"></i
             ></a>
           </div>
 
           <div class="p-1">
-            <a href="#" class="btn btn-lg btn-costom rounded-1"
+            <a href="register-form.php?role=user" class="btn btn-lg btn-costom rounded-1"
               >User <i class="fa-solid fa-up-right-from-square fa-2xs"></i
             ></a>
-          </div>
+          </div>          
         </div>
       </div>
     </div>

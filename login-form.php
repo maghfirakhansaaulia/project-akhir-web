@@ -33,14 +33,12 @@ if ($role === "petani"){
     <nav class="navbar fixed-top border-bottom border-warning-subtle border-3">
       <div class="container">
         <div>
-          <a class="navbar-brand fw-light fs-4" href="#">PasarSegari</a>
+          <a class="navbar-brand fw-light fs-4" href="index.php">PasarSegari</a>
         </div>
         <div class="ml-auto">
-          <a
-            href="login.php"
-            class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"
-            ><i class="fa-solid fa-angles-left"></i> Kembali</a
-          >
+          <script>
+            document.write('<a href="' + document.referrer + '" class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"><i class="fa-solid fa-angles-left"></i>Kembali</a>');
+          </script>
         </div>
       </div>
     </nav>
