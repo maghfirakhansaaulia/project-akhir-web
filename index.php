@@ -19,7 +19,7 @@
     <h1>ini navbar</h1>
     <h1>ini navbar</h1> -->
     <nav style="display: flex; justify-content: space-around; align-items: center; padding-left:20%; padding-right: 20%; height: 15%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
-      <img class="icon" src="/gambar/Untitled75_20230419165549.png" alt="">
+      <img class="icon" src="gambar/Untitled75_20230419165549.png" alt="">
       <a class="atas" href="">Home</a>
       <a class="atas" href="">Toko</a>
       <a class="atas" href="">Petani</a>
@@ -38,7 +38,7 @@
   </div>
   <div class="konten">
     <div class="konten-sayur">
-      <h1>Sayur<h1>
+      <h1>Sayur</h1>
       <p>Kami menyediakan sayur segar yang dapat memenuhi kebutuhan nutrisi anda tiap hari</p>
     </div>
     <div class="konten-buah">
