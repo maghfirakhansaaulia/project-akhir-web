@@ -22,10 +22,7 @@ if ($role === "petani"){
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <script
-      src="https://kit.fontawesome.com/bd49e73b8b.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/bd49e73b8b.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="login.css" />
   </head>
@@ -37,7 +34,11 @@ if ($role === "petani"){
         </div>
         <div class="ml-auto">
           <script>
-            document.write('<a href="' + document.referrer + '" class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"><i class="fa-solid fa-angles-left"></i>Kembali</a>');
+            document.write(
+              '<a href="' +
+                document.referrer +
+                '" class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"><i class="fa-solid fa-angles-left"></i>Kembali</a>'
+            );
           </script>
         </div>
       </div>
@@ -56,51 +57,26 @@ if ($role === "petani"){
             <div class="card-body">
               <form>
                 <div class="row mb-3">
-                  <label for="emailLogin" class="col-sm-2 col-form-label"
-                    >Email</label
-                  >
+                  <label for="emailLogin" class="col-sm-2 col-form-label">Email</label>
                   <div class="col-sm-10">
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="emailLogin"
-                      name="emailLogin"
-                    />
+                    <input type="email" class="form-control" id="emailLogin" name="emailLogin" />
                   </div>
                 </div>
                 <div class="row mb-3">
-                  <label for="passwordLogin" class="col-sm-2 col-form-label"
-                    >Password</label
-                  >
+                  <label for="passwordLogin" class="col-sm-2 col-form-label">Password</label>
                   <div class="col-sm-10">
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="passwordLogin"
-                      name="passwordLogin"
-                    />
+                    <input type="password" class="form-control" id="passwordLogin" name="passwordLogin" />
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label class="col-sm-2 col-form-label"></label>
                   <div class="col-sm-10">
-                    <input
-                      type="checkbox"
-                      class="form-check-input"
-                      id="exampleCheck1"
-                    />
-                    <label class="form-check-label" for="exampleCheck1"
-                      >Ingat saya</label
-                    >
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                    <label class="form-check-label" for="exampleCheck1">Ingat saya</label>
                   </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-                  <input
-                    type="submit"
-                    class="btn btn-success"
-                    name="login"
-                    value="Login"
-                  />
+                  <input type="submit" class="btn btn-success" name="login" value="Login" />
                 </div>
               </form>
             </div>

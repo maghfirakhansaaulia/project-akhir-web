@@ -1,4 +1,3 @@
-s
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,10 +10,7 @@ s
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <script
-      src="https://kit.fontawesome.com/bd49e73b8b.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/bd49e73b8b.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="login.css" />
   </head>
@@ -25,7 +21,11 @@ s
           <a class="navbar-brand fw-light fs-4" href="index.php">PasarSegari</a>
         </div>
         <div class="ml-auto">
-          <a href="index.php"class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"><i class="fa-solid fa-angles-left"></i>Kembali</a>
+          <a
+            href="index.php"
+            class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"
+            ><i class="fa-solid fa-angles-left"></i>Kembali</a
+          >
         </div>
       </div>
     </nav>
@@ -42,15 +42,10 @@ s
                     <h5 class="card-title mt-3 fs-3">Petani</h5>
                     <p class="card-text text-center">
                       Masuk sebagai
-                      <span class="fw-semibold">Petani</span> untuk kelola sayur
-                      lebih mudah, tingkatkan produktivitas dan keuntungan Anda!
+                      <span class="fw-semibold">Petani</span> untuk kelola sayur lebih mudah, tingkatkan produktivitas
+                      dan keuntungan Anda!
                     </p>
-                    <button
-                      href="#"
-                      class="btn btn-costom stretched-link fw-medium w-25"
-                      name="role"
-                      value="petani"
-                    >
+                    <button href="#" class="btn btn-costom stretched-link fw-medium w-25" name="role" value="petani">
                       Masuk
                     </button>
                   </div>
@@ -64,16 +59,10 @@ s
                     <i class="ikon fa-solid fa-shop fa-5x"></i>
                     <h5 class="card-title mt-3 fs-3">Toko</h5>
                     <p class="card-text text-center">
-                      Kelola toko sayur dengan lebih efisien, tawarkan
-                      pengalaman belanja yang lebih baik, dan tingkatkan
-                      kesuksesan bisnis Anda!
+                      Kelola toko sayur dengan lebih efisien, tawarkan pengalaman belanja yang lebih baik, dan
+                      tingkatkan kesuksesan bisnis Anda!
                     </p>
-                    <button
-                      href="#"
-                      class="btn btn-costom stretched-link fw-medium w-25"
-                      name="role"
-                      value="toko"
-                    >
+                    <button href="#" class="btn btn-costom stretched-link fw-medium w-25" name="role" value="toko">
                       Masuk
                     </button>
                   </div>
@@ -87,15 +76,10 @@ s
                     <i class="ikon fa-solid fa-user-large fa-5x"></i>
                     <h5 class="card-title mt-3 fs-3">User</h5>
                     <p class="card-text text-center">
-                      Belanja sayur segar semakin mudah dan menyenangkan dengan
-                      aplikasi online terpercaya yang lengkap dan aman!
+                      Belanja sayur segar semakin mudah dan menyenangkan dengan aplikasi online terpercaya yang lengkap
+                      dan aman!
                     </p>
-                    <button
-                      href="#"
-                      class="btn btn-costom stretched-link fw-medium w-25"
-                      name="role"
-                      value="user"
-                    >
+                    <button href="#" class="btn btn-costom stretched-link fw-medium w-25" name="role" value="user">
                       Masuk
                     </button>
                   </div>
@@ -124,7 +108,7 @@ s
             <a href="register-form.php?role=user" class="btn btn-lg btn-costom rounded-1"
               >User <i class="fa-solid fa-up-right-from-square fa-2xs"></i
             ></a>
-          </div>          
+          </div>
         </div>
       </div>
     </div>

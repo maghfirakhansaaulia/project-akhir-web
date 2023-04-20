@@ -10,10 +10,7 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <script
-      src="https://kit.fontawesome.com/bd49e73b8b.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/bd49e73b8b.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="login.css" />
   </head>
@@ -24,7 +21,11 @@
           <a class="navbar-brand fw-light fs-4" href="index.php">PasarSegari</a>
         </div>
         <div class="ml-auto">
-        <a href="index.php"class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"><i class="fa-solid fa-angles-left"></i>Kembali</a>
+          <a
+            href="index.php"
+            class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"
+            ><i class="fa-solid fa-angles-left"></i>Kembali</a
+          >
         </div>
       </div>
     </nav>
@@ -39,21 +40,13 @@
                   <i class="ikon fa-sharp fa-solid fa-seedling fa-5x"></i>
                   <h5 class="card-title mt-3 fs-3">Petani</h5>
                   <p class="card-text">
-                    Cocok untuk petani yang ingin memulai bisnis dan memperluas
-                    pasarnya, dengan keuntungan menjual produk segar dan
-                    berkualitas tinggi serta memberikan dampak positif pada
-                    ekonomi lokal dan masyarakat.
+                    Cocok untuk petani yang ingin memulai bisnis dan memperluas pasarnya, dengan keuntungan menjual
+                    produk segar dan berkualitas tinggi serta memberikan dampak positif pada ekonomi lokal dan
+                    masyarakat.
                   </p>
                 </div>
-                <div class="card-footer bg-white text-center mt-4  ">
-                  <button
-                    href="#"
-                    class="btn btn-costom fw-medium w-25"
-                    name="role"
-                    value="petani"
-                  >
-                    Daftar
-                  </button>
+                <div class="card-footer bg-white text-center mt-4">
+                  <button href="#" class="btn btn-costom fw-medium w-25" name="role" value="petani">Daftar</button>
                 </div>
               </div>
             </div>
@@ -64,22 +57,13 @@
 
                   <h5 class="card-title mt-3 fs-3">Toko</h5>
                   <p class="card-text">
-                    Ideal untuk pemilik toko yang ingin menjual produknya dari
-                    petani langsung ke konsumen. Keuntungannya adalah mereka
-                    menerima produk yang segar dan berkualitas tinggi, sekaligus
-                    memberikan dampak positif bagi masyarakat lokal dan
-                    perekonomian daerah.
+                    Ideal untuk pemilik toko yang ingin menjual produknya dari petani langsung ke konsumen.
+                    Keuntungannya adalah mereka menerima produk yang segar dan berkualitas tinggi, sekaligus memberikan
+                    dampak positif bagi masyarakat lokal dan perekonomian daerah.
                   </p>
                 </div>
-                <div class="card-footer bg-white text-center mt-4  ">
-                  <button
-                    href="#"
-                    class="btn btn-costom fw-medium w-25"
-                    name="role"
-                    value="toko"
-                  >
-                    Daftar
-                  </button>
+                <div class="card-footer bg-white text-center mt-4">
+                  <button href="#" class="btn btn-costom fw-medium w-25" name="role" value="toko">Daftar</button>
                 </div>
               </div>
             </div>
@@ -90,33 +74,25 @@
 
                   <h5 class="card-title mt-3 fs-3">User</h5>
                   <p class="card-text fw-normal">
-                    Bagi pembelanja yang ingin membeli sayuran segar dan
-                    berkualitas langsung dari toko terpercaya yang menyediakan
-                    produk langsung dari petani untuk kebutuhan sehari-hari
+                    Bagi pembelanja yang ingin membeli sayuran segar dan berkualitas langsung dari toko terpercaya yang
+                    menyediakan produk langsung dari petani untuk kebutuhan sehari-hari
                   </p>
                 </div>
-                <div class="card-footer bg-white text-center mt-4  ">
-                  <button
-                    href="#"
-                    class="btn btn-costom fw-medium w-25"
-                    name="role"
-                    value="user"
-                  >
-                    Daftar
-                  </button>
+                <div class="card-footer bg-white text-center mt-4">
+                  <button href="#" class="btn btn-costom fw-medium w-25" name="role" value="user">Daftar</button>
                 </div>
               </div>
             </div>
           </div>
-        </form> 
-        <div class="text-center" id="scrollspy">     
-          <a class="btn scrollspyBTN my-4 " href="#scrollspyLogin">Sudah punya akun</a>      
-        </div>  
-      </div> 
+        </form>
+        <div class="text-center" id="scrollspy">
+          <a class="btn scrollspyBTN my-4" href="#scrollspyLogin">Sudah punya akun</a>
+        </div>
+      </div>
       <div data-bs-spy="scroll" data-bs-target="#scrollspy" class="second-wrapper container text-center">
         <p class="fs-3 fw-semibold mb-4" id="scrollspyLogin">Masuk Akun PasarSegari</p>
         <a class="btn btn-lg btn-costom rounded-1" href="login.php">Masuk Akun</a>
-      </div>     
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
