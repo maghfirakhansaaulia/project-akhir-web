@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2023 at 08:37 AM
+-- Generation Time: Apr 20, 2023 at 11:57 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -55,8 +55,8 @@ CREATE TABLE `toko` (
   `toko_id` int(11) NOT NULL,
   `toko_name` varchar(255) NOT NULL,
   `toko_phone` char(255) NOT NULL,
-  `toko_email` varchar(255) NOT NULL,
   `toko_shopname` varchar(255) NOT NULL,
+  `toko_email` varchar(255) NOT NULL,
   `toko_address` varchar(255) NOT NULL,
   `toko_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -65,8 +65,9 @@ CREATE TABLE `toko` (
 -- Dumping data for table `toko`
 --
 
-INSERT INTO `toko` (`toko_id`, `toko_name`, `toko_phone`, `toko_email`, `toko_shopname`, `toko_address`, `toko_password`) VALUES
-(1, 'salasah', '082356987451', ' toko sulasah selalu', 'sulasah@gmail.com', 'jl. meranti', '$2y$10$q18Txc/szq1Pqp7eo044TORTJbC3nCPF2UfN4gy9N/cYQRFCcFWx.');
+INSERT INTO `toko` (`toko_id`, `toko_name`, `toko_phone`, `toko_shopname`, `toko_email`, `toko_address`, `toko_password`) VALUES
+(1, 'salasah', '082356987451', ' toko sulasah selalu', 'sulasah@gmail.com', 'jl. meranti', '$2y$10$q18Txc/szq1Pqp7eo044TORTJbC3nCPF2UfN4gy9N/cYQRFCcFWx.'),
+(2, 'gradias', '085648953214', ' bahtera dias', 'dias@gmail.com', 'jl. ulin', '$2y$10$AJ9uGpjju/gqBOCWu9UR0ekTwAsJYBxqbD7yotBBMB8zRN6yN60PC');
 
 -- --------------------------------------------------------
 
@@ -129,7 +130,7 @@ ALTER TABLE `petani`
 -- AUTO_INCREMENT for table `toko`
 --
 ALTER TABLE `toko`
-  MODIFY `toko_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `toko_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
