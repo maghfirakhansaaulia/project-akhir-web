@@ -1,12 +1,46 @@
 <?php
+session_start();
+
 $role = $_GET['role'];
 
-if ($role === "petani"){
+if ($role === "petani") {
   $ikon = "ikon fa-sharp fa-solid fa-seedling fa-5x";
-}elseif($role === "toko"){
+} elseif ($role === "toko") {
   $ikon = "ikon fa-solid fa-shop fa-5x";
-}elseif($role === "user"){
+} elseif ($role === "user") {
   $ikon = "ikon fa-solid fa-user-large fa-5x";
+
+}
+
+require 'functions.php';
+
+if (isset($_POST["login"])) {
+  $email = $_POST["emailLogin"];
+  $password = $_POST["passwordLogin"];
+  $res = mysqli_query($conn, "SELECT * FROM $role WHERE {$role}_email = '$email'");
+
+  //cek email
+  if (mysqli_num_rows($res) === 1) {
+    //cek password
+    $row = mysqli_fetch_assoc($res);
+    if (password_verify($password, $row["{$role}_password"])) {
+      //session
+      $_SESSION["login"] = true;
+
+      //cek ingat aku
+      if (isset($_POST["rememberme"])) {
+        //buat cookie
+        $salt = "1ni92r7%4$" . $email;
+        setcookie('id_usr', $row["{$role}_id"], time() + 604800);
+        setcookie('email_usr', hash('sha256', $salt), time() + 604800);
+      }
+      header("Location: $role/index.php");
+      exit;
+
+    }
+  }
+
+  $error = true;
 }
 ?>
 
@@ -55,7 +89,10 @@ if ($role === "petani"){
         <div class="col-md-6 mx-auto">
           <div class="card shadow">
             <div class="card-body">
-              <form>
+              <form action="" method="post">
+              <?php if (isset($msg)): ?>                                         
+                              <div class="alert alert-danger py-3" id="err"role="alert"><?php echo $msg; ?></div>
+              <?php endif; ?> 
                 <div class="row mb-3">
                   <label for="emailLogin" class="col-sm-2 col-form-label">Email</label>
                   <div class="col-sm-10">
@@ -71,8 +108,8 @@ if ($role === "petani"){
                 <div class="row mb-3">
                   <label class="col-sm-2 col-form-label"></label>
                   <div class="col-sm-10">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                    <label class="form-check-label" for="exampleCheck1">Ingat saya</label>
+                    <input type="checkbox" class="form-check-input" name="rememberme" id="rememberme" />
+                    <label class="form-check-label" for="rememberme">Ingat saya</label>
                   </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">

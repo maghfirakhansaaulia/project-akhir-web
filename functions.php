@@ -8,11 +8,11 @@ function registrasi($data, $role)
 
     $name = strtolower(stripcslashes($data["namaRegis"]));
     $name = mysqli_real_escape_string($conn, $name);
+    $phone = mysqli_real_escape_string($conn, $data["noHpRegis"]);
+    $email = mysqli_real_escape_string($conn, $data["emailRegis"]);
+    $address = mysqli_real_escape_string($conn, $data["alamatRegis"]);
     $password = mysqli_real_escape_string($conn, $data["passwordRegis"]);
     $password2 = mysqli_real_escape_string($conn, $data["passwordRegis2"]);
-    $email = mysqli_real_escape_string($conn, $data["emailRegis"]);
-    $phone = mysqli_real_escape_string($conn, $data["noHpRegis"]);
-    $address = mysqli_real_escape_string($conn, $data["alamatRegis"]);
 
     if ($role === "toko") {
         $shop_name = mysqli_real_escape_string($conn, $data["tokoRegis"]);
@@ -23,15 +23,7 @@ function registrasi($data, $role)
 
 
     //cek email    
-    if ($role === "toko") {
-        $colEmail = "toko_email";
-    } elseif ($role === "petani") {
-        $colEmail = "petani_email";
-    } else {
-        $colEmail = "user_email";
-    }
-
-    $res = mysqli_query($conn, "SELECT $colEmail FROM $role WHERE $colEmail = '$email'");
+    $res = mysqli_query($conn, "SELECT {$role}_email FROM $role WHERE {$role}_email = '$email'");
     if (mysqli_fetch_assoc($res)) {
         $msg = "email";
         return $msg;
