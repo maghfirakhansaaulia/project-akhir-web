@@ -91,7 +91,7 @@ if (isset($_POST["register"])) {
           <?php echo $role ?>
         </p>
       </div>
-      <div class="col-md-6 mx-auto">
+      <div class="col-7 mx-auto">
         <div class="card shadow">
           <div class="card-body">
             <form method="post"> 

@@ -65,7 +65,7 @@ if (isset($_SESSION['login'])) {
           <div class="row justify-content-center g-2">
             <div class="col-lg-4 d-flex">
               <div class="p-3">
-                <div class="card hover-effect">
+                <div class="card hover-effect h-100">
                   <div class="card-body">
                     <i class="ikon fa-sharp fa-solid fa-seedling fa-5x"></i>
                     <h5 class="card-title mt-3 fs-3">Petani</h5>
@@ -83,7 +83,7 @@ if (isset($_SESSION['login'])) {
             </div>
             <div class="col-lg-4 d-flex">
               <div class="p-3">
-                <div class="card hover-effect">
+                <div class="card hover-effect h-100">
                   <div class="card-body">
                     <i class="ikon fa-solid fa-shop fa-5x"></i>
                     <h5 class="card-title mt-3 fs-3">Toko</h5>
@@ -100,7 +100,7 @@ if (isset($_SESSION['login'])) {
             </div>
             <div class="col-lg-4 d-flex">
               <div class="p-3">
-                <div class="card hover-effect">
+                <div class="card hover-effect h-100">
                   <div class="card-body">
                     <i class="ikon fa-solid fa-user-large fa-5x"></i>
                     <h5 class="card-title mt-3 fs-3">User</h5>
