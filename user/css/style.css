@@ -3,7 +3,13 @@
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
+    letter-spacing: 2px;
+    
 }
-.h2-top{
+.top-nav h1 {
+    padding: 3rem;
+    font-size: 80px;    
+}
+.top-nav h2 {
     opacity: 0.8;
 }

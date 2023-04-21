@@ -24,19 +24,20 @@ if (!isset($_SESSION["login"])) {
 </head>
 
 <body class="bg-light">
-  <div class="top-nav container-fluid p-5 text-center">
-    <h1 class="p-5 text-success">PasarSegari</h1>
-    <h2 class="h2-top text-success">Kami menjual yang terbaik untuk Anda</h2>
-
-
+  <div class="top-nav container-fluid p-5 text-center text-success">
+    <h1>PasarSegari</h1>
+    <h2>Kami menjual yang terbaik untuk Anda</h2>
   </div>
   <nav class="navbar sticky-top bg-white ">
     <div class="container-fluid">
-      <a class="navbar-brand">Navbar</a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="p-2"><a class="navbar-brand">Navbar</a></div>
+      <div class="p-2 me-auto">
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Aku mau belanja...">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+
     </div>
   </nav>
   <div class="container-fluid">
