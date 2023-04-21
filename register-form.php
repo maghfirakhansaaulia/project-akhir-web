@@ -1,6 +1,32 @@
 <?php
 session_start();
 require 'functions.php';
+
+
+if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['email_usr'])) {
+  $role = $_COOKIE['role_usr'];
+  $id_cookie = $_COOKIE['id_usr'];
+  $email_cookie = $_COOKIE['email_usr'];
+
+  $result = mysqli_query($conn, "SELECT {$role}_email FROM {$role} WHERE {$role}_id = {$id_cookie}");
+  $row = mysqli_fetch_assoc($result);
+
+  $salt = "1ni92r7%4$" . $row["{$role}_email"];
+  if ($email_cookie === hash('sha384', $salt)) {
+    $_SESSION['login'] = true;
+    $_SESSION["role"] = $role;
+
+  }
+
+}
+
+if (isset($_SESSION['login'])) {
+  header("Location: $role/index.php");
+  exit;
+}
+
+
+
 $role = $_GET['role'];
 
 if ($role === "petani") {
@@ -70,7 +96,7 @@ if (isset($_POST["register"])) {
           <div class="card-body">
             <form method="post"> 
               <?php if (isset($msg)): ?>                                         
-                  <div class="alert alert-danger py-3" id="err"role="alert"><?php echo $msg; ?></div>
+                      <div class="alert alert-danger py-3" id="err"role="alert"><?php echo $msg; ?></div>
               <?php endif; ?>                       
               <div class="row mb-3">
                 <label for="namaRegis" class="col-sm-2 col-form-label">Nama</label>

@@ -2,15 +2,28 @@
 session_start();
 require 'functions.php';
 
-if (isset($_COOKIE['id_usr']) && isset($_COOKIE['email_usr'])) {
+$role = '';
+
+if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['email_usr'])) {
+  $role = $_COOKIE['role_usr'];
   $id_cookie = $_COOKIE['id_usr'];
-  $role_cookie = $_COOKIE['role_usr'];
   $email_cookie = $_COOKIE['email_usr'];
 
-  $result = mysqli_query($conn, "SELECT {$role_cookie}_");
+  $result = mysqli_query($conn, "SELECT {$role}_email FROM {$role} WHERE {$role}_id = {$id_cookie}");
+  $row = mysqli_fetch_assoc($result);
+
+  $salt = "1ni92r7%4$" . $row["{$role}_email"];
+  if ($email_cookie === hash('sha384', $salt)) {
+    $_SESSION['login'] = true;
+    $_SESSION["role"] = $role;
+  }
+
 }
 
-
+if (isset($_SESSION['login'])) {
+  header("Location: $role/index.php");
+  exit;
+}
 
 $role = $_GET['role'];
 
@@ -36,13 +49,13 @@ if (isset($_POST["login"])) {
     if (password_verify($password, $row["{$role}_password"])) {
       //session
       $_SESSION["login"] = true;
-
+      $_SESSION["role"] = $role;
       //cek ingat aku
       if (isset($_POST["rememberme"])) {
         //buat cookie
         $salt = "1ni92r7%4$" . $email;
-        setcookie('id_usr', $row["{$role}_id"], time() + 604800);
         setcookie('role_usr', $role, time() + 604800);
+        setcookie('id_usr', $row["{$role}_id"], time() + 604800);
         setcookie('email_usr', hash('sha256', $salt), time() + 604800);
       }
       header("Location: $role/index.php");
@@ -102,9 +115,9 @@ if (isset($_POST["login"])) {
           <div class="card-body">
             <form action="" method="post">
               <?php if (isset($msg)): ?>
-                <div class="alert alert-danger py-3" id="err" role="alert">
-                  <?php echo $msg; ?>
-                </div>
+                              <div class="alert alert-danger py-3" id="err" role="alert">
+                                <?php echo $msg; ?>
+                              </div>
               <?php endif; ?>
               <div class="row mb-3">
                 <label for="emailLogin" class="col-sm-2 col-form-label">Email</label>
