@@ -73,7 +73,8 @@ if (isset($_POST["register"])) {
   <nav class="navbar fixed-top border-bottom border-warning-subtle border-3">
     <div class="container">
       <div>
-        <a class="navbar-brand fw-light fs-4" href="index.php">PasarSegari</a>
+        <a class="navbar-brand fw-light fs-4" href="index.php"><i class="fa-solid fa-leaf fa-xl"
+            style="color: #116530"></i> PasarSegari</a>
       </div>
       <div class="ml-auto">
         <script>
@@ -94,10 +95,12 @@ if (isset($_POST["register"])) {
       <div class="col-7 mx-auto">
         <div class="card shadow">
           <div class="card-body">
-            <form method="post"> 
-              <?php if (isset($msg)): ?>                                         
-                      <div class="alert alert-danger py-3" id="err"role="alert"><?php echo $msg; ?></div>
-              <?php endif; ?>                       
+            <form method="post">
+              <?php if (isset($msg)): ?>
+                <div class="alert alert-danger py-3" id="err" role="alert">
+                  <?php echo $msg; ?>
+                </div>
+              <?php endif; ?>
               <div class="row mb-3">
                 <label for="namaRegis" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-10">
