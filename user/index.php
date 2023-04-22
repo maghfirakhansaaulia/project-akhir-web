@@ -78,7 +78,7 @@ if (!isset($_SESSION["login"])) {
     </div>
   </nav>
   <div class="container-fluid">
-    <div class="row p-2 bg-white">
+    <div class="row p-2 bg-white my-3">
       <div class="col-3 row align-items-center text-center ">
         <h2>Sayur Segar</h2>
       </div>
@@ -89,74 +89,93 @@ if (!isset($_SESSION["login"])) {
               <tr>
                 <td>
                   <div class="p-2">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 15rem; height: 29.6rem;">
                       <img src="https://th.bing.com/th/id/OIP._jagsHOh56ZtG57Kn95-4QHaHa?pid=ImgDet&rs=1"
-                        class="card-img-top" alt="...">
+                        class="card-img-top" height="180" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                           the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                       </div>
+                      <div class="card-footer bg-white border border-0">
+                        tes
+                      </div>
                     </div>
                   </div>
                 </td>
                 <td>
                   <div class="p-2">
-                    <div class="card" style="width: 18rem; height: 29.6rem;">
+                    <div class="card" style="width: 15rem; height: 29.6rem;">
                       <img
                         src="https://diplomartbrussels.com/wp-content/uploads/2020/09/food-background-images-94-images-in-co-381169-png-images-pngio-food-background-png-1440_619.png"
-                        class="card-img-top" alt="...">
+                        class="card-img-top" height="180" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                           the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                       </div>
+                      <div class="card-footer bg-white border border-0">
+                        tes
+                      </div>
                     </div>
                   </div>
                 </td>
                 <td>
                   <div class="p-2">
-                    <div class="card" style="width: 18rem; height: 29.6rem;">
+                    <div class="card" style="width: 15rem; height: 29.6rem;">
                       <img
                         src="https://thumbs.dreamstime.com/b/angono-rizal-philippines-july-young-filipino-children-play-ride-bicycle-along-street-young-filipino-children-play-ride-185281829.jpg"
-                        class="card-img-top" alt="...">
+                        class="card-img-top" height="180" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                           the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                       </div>
+                      <div class="card-footer bg-white border border-0">
+                        tes
+                      </div>
                     </div>
                   </div>
                 </td>
                 <td>
                   <div class="p-2">
-                    <div class="card" style="width: 18rem; height: 29.6rem;">
+                    <div class="card" style="width: 15rem; height: 29.6rem;">
                       <img
                         src="https://th.bing.com/th/id/R.5302b534d77170e588c41216c5b31a61?rik=8ddLAITkHCX%2btw&riu=http%3a%2f%2fbehindthethrills.com%2fwp-content%2fuploads%2f2016%2f04%2favatar-header-newnew-800x500_c.jpg&ehk=Rk5aj1e%2fvPAsIqCtwTgvlGeivcLHHbqw5PpIWF9Es%2fA%3d&risl=&pid=ImgRaw&r=0"
-                        class="card-img-top" height="" alt="...">
+                        class="card-img-top" height="180" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                           the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                       </div>
+                      <div class="card-footer bg-white border border-0">
+                        tes
+                      </div>
                     </div>
                   </div>
                 </td>
                 <td>
                   <div class="p-2">
-                    <div class="card" style="width: 18rem; height: 29.6rem;">
+                    <div class="card" style="width: 15rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" alt="...">
+                        class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        <p class="card-text text-truncate">Some quick example text to build on the card title and make
+                          up
+                          the bulk of
                           the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                      <div class="card-footer bg-white border border-0">
+                        <h5>Rp100.000</h5>
+                      </div>
+                      <div class="card-footer bg-white border border-0">
+                        tes2
                       </div>
                     </div>
                   </div>
@@ -179,7 +198,7 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </div>
-    <div class="row p-2 bg-white">
+    <div class="row p-2 bg-white my-3">
       <div class="col-3 row align-items-center text-center ">
         <h2>Sayur Segar</h2>
       </div>
