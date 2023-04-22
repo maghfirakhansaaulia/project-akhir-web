@@ -33,7 +33,7 @@ if (!isset($_SESSION["login"])) {
   </div>
   <nav class="navbar navbar-expand-lg sticky-top bg-white ">
     <div class="container-fluid">
-      <div class="py-2"><a class="navbar-brand fw-light fs-4" href="index.php"><i class="fa-solid fa-leaf fa-xl"
+      <div class="py-2 "><a class="navbar-brand fw-light fs-4" href="index.php"><i class="fa-solid fa-leaf fa-xl"
             style="color: #116530"></i>
           PasarSegari</a></div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -41,7 +41,7 @@ if (!isset($_SESSION["login"])) {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="py-2 w-50">
+        <div class="py-2 px-3 w-75">
           <form class="d-flex">
             <div class="input-group">
               <input type="text" class="form-control bg-light border border-success" placeholder="Aku mau belanja..."
@@ -67,67 +67,19 @@ if (!isset($_SESSION["login"])) {
             </ul>
           </li>
         </ul>
-        <div class="p-2 ms-auto"><a href="" class=""><i class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i></a></div>
-        <div class="p-2"><a href="" class=""><i class="fa-solid fa-envelope fa-lg"></i></a></div>
+        <div class="py-2 px-3 ms-auto"><a href="" class="link-dark"><i
+              class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i></a>
+        </div>
+        <div class="py-2 px-3"><a href="" class="link-dark"><i class="fa-solid fa-envelope fa-lg"></i></a></div>
         <div class="vr"></div>
-        <div class="p-2">Third item</div>
+        <div class="py-2 px-3"><a href="" class="link-dark"><i class="fa-solid fa-circle-user fa-xl"></i></a></div>
       </div>
 
     </div>
   </nav>
   <div class="container-fluid">
     <div class="px-2">
-      <p>test<i class="fa-solid fa-apple-whole"></i></p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
+
     </div>
   </div>
 
