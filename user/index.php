@@ -41,7 +41,7 @@ if (!isset($_SESSION["login"])) {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="py-2 w-25">
+        <div class="py-2 w-50">
           <form class="d-flex">
             <div class="input-group">
               <input type="text" class="form-control bg-light border border-success" placeholder="Aku mau belanja..."
@@ -53,7 +53,8 @@ if (!isset($_SESSION["login"])) {
         </div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               Kategori
             </a>
             <ul class="dropdown-menu">
@@ -65,8 +66,11 @@ if (!isset($_SESSION["login"])) {
               </li>
             </ul>
           </li>
-          <div class="py-2"></div>
         </ul>
+        <div class="p-2 ms-auto"><a href="" class=""><i class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i></a></div>
+        <div class="p-2"><a href="" class=""><i class="fa-solid fa-envelope fa-lg"></i></a></div>
+        <div class="vr"></div>
+        <div class="p-2">Third item</div>
       </div>
 
     </div>
