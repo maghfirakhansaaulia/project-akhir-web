@@ -1,23 +1,24 @@
-body {
-    background: #f9fbfe;
-  }
+
 .top-nav{
     background-image: url(https://diplomartbrussels.com/wp-content/uploads/2020/09/food-background-images-94-images-in-co-381169-png-images-pngio-food-background-png-1440_619.png);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     
 }
 .top-nav h1 {
     padding: 3rem;
-    font-size: 80px;    
+    font-size: 5rem;    
 }
 .top-nav h2 {
     opacity: 0.8;
 }
 .scrollspy-wrap{
-    background-image: url(http://eattomorrow.com/blog/wp-content/uploads/2015/09/vegetables-1024x680.jpg);
+    background-image: linear-gradient(
+        #7a7a7a95,
+        #81818190
+      ),url(http://eattomorrow.com/blog/wp-content/uploads/2015/09/vegetables-1024x680.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;   
@@ -39,6 +40,40 @@ body {
     transform: scale(1.01);
 }
 
+.sayur-row{
+    background-image: linear-gradient(
+        #7a7a7a95,
+        #81818190
+      ),url(http://eattomorrow.com/blog/wp-content/uploads/2015/09/vegetables-1024x680.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;   
+
+}
+.buah-row{
+    background-image: linear-gradient(
+        #7a7a7a95,
+        #81818190
+      ),url(https://th.bing.com/th/id/R.875aad71ac2efaedb954461c4a123ff2?rik=7VMy5mmuGIPNgw&riu=http%3a%2f%2fwww.hdwallpaperspulse.com%2fwp-content%2fuploads%2f2017%2f03%2f30%2fawesome-hd-fruit-image.jpg&ehk=5Pz%2bKgNqV7Ki%2fouCP4mZfVAZtuhYmFC%2bt6JXjQmQgbY%3d&risl=&pid=ImgRaw&r=0);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;   
+
+}
+.sembako-row{
+    background-image: linear-gradient(
+        #7a7a7a95,
+        #81818190
+      ),url(https://i0.wp.com/afro.com/wp-content/uploads/2023/03/nico-smit-MrQs5dCGyno-unsplash-scaled.jpg?fit=2560%2C1440&ssl=1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;   
+
+}
+
+.row h2{
+    font-size: 4rem;
+}
 .card-text{    
     text-align: justify;
 }

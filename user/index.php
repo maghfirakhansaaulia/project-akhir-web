@@ -26,7 +26,7 @@ if (!isset($_SESSION["login"])) {
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="bg-white">
   <div class="top-nav container-fluid p-5 text-center text-success">
     <h1>PasarSegari</h1>
     <h2>Kami menjual yang terbaik untuk Anda</h2>
@@ -67,7 +67,7 @@ if (!isset($_SESSION["login"])) {
             </ul>
           </li>
         </ul>
-        <div class="py-2 px-3 ms-auto"><a href="" class="link-dark"><i
+        <div class="py-2 px-3 ms-auto"><a href="" class="link-dark "><i
               class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i></a>
         </div>
         <div class="py-2 px-3"><a href="" class="link-dark"><i class="fa-solid fa-envelope fa-lg"></i></a></div>
@@ -89,8 +89,8 @@ if (!isset($_SESSION["login"])) {
   </div>
   <div class="container-fluid" data-bs-spy="scroll" data-bs-target="#scrollspy">
     <div id="scrollspySayur" class="text-white">Sayur</div>
-    <div class="row p-2 bg-light my-5">
-      <div class="col-3 row align-items-center text-center ">
+    <div class="row p-2 bg-light my-5 gx-3 ">
+      <div class="sayur-row col-3 row align-items-center text-center text-light">
         <h2>Sayur Segar</h2>
       </div>
       <div class="col-9 bg-light">
@@ -105,18 +105,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -129,18 +134,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -153,18 +163,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -177,18 +192,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -198,7 +218,7 @@ if (!isset($_SESSION["login"])) {
                   <div class="p-2">
                     <div class="card hover-effect text-center" style="width: 13rem; height: 29.6rem;">
                       <div class="card-body d-flex align-content-center flex-wrap ">
-                        <a href="" class="btn border border-0  stretched-link ">
+                        <a href="" class="btn border border-0 stretched-link ">
                           <h3>Lihat semua</h3>
                           <i class="fa-solid fa-angles-right"></i>
                         </a>
@@ -212,11 +232,9 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </div>
+    <hr>
     <div id="scrollspyBuah" class="text-white">Buah</div>
-    <div class="row p-2 bg-light my-5">
-      <div class="col-3 row align-items-center text-center ">
-        <h2>Buah Segar</h2>
-      </div>
+    <div class="row p-2 bg-light my-5 gx-5">
       <div class="col-9 bg-light">
         <div class="table-responsive">
           <table class="table-borderless">
@@ -229,18 +247,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -253,18 +276,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -277,18 +305,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -301,18 +334,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -322,7 +360,7 @@ if (!isset($_SESSION["login"])) {
                   <div class="p-2">
                     <div class="card hover-effect text-center" style="width: 13rem; height: 29.6rem;">
                       <div class="card-body d-flex align-content-center flex-wrap ">
-                        <a href="" class="btn stretched-link ">
+                        <a href="" class="btn border border-0 stretched-link ">
                           <h3>Lihat semua</h3>
                           <i class="fa-solid fa-angles-right"></i>
                         </a>
@@ -335,10 +373,14 @@ if (!isset($_SESSION["login"])) {
           </table>
         </div>
       </div>
+      <div class="buah-row col-3 row align-items-center text-center text-light">
+        <h2>Buah Segar</h2>
+      </div>
     </div>
+    <hr>
     <div id="scrollspySembako" class="text-white">Sembako</div>
-    <div class="row p-2 bg-light my-5">
-      <div class="col-3 row align-items-center text-center ">
+    <div class="row p-2 bg-light my-5 gx-3">
+      <div class="sembako-row col-3 row align-items-center text-center text-light ">
         <h2>Sembako</h2>
       </div>
       <div class="col-9 bg-light">
@@ -353,18 +395,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -377,18 +424,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -401,18 +453,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -425,18 +482,23 @@ if (!isset($_SESSION["login"])) {
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
                         class="card-img-top" height="180" alt="...">
                       <div class="card-body">
-                        <p class="card-text">
-                          <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                        </p>
+                        <a href=""
+                          class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
+                          <p class="card-text">
+                            <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                          </p>
+                        </a>
                         <p class="card-text text-secondary">
                           <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
                         </p>
                       </div>
                       <div class="card-footer bg-white border border-0">
-                        <p class="fw-semibold fs-4">Rp100.000</p>
+                        <p class="fw-semibold fs-4">
+                          <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                        </p>
                       </div>
                       <div class="card-footer bg-white border text-center border-0">
-                        <a href="#" class="btn btn-light fw-semibold w-100 rounded-1">Tambah ke <i
+                        <a href="#" class="btn btn-success fw-semibold w-100 rounded-1">Tambah ke <i
                             class=" fa-sharp fa-solid fa-cart-shopping "></i></a>
                       </div>
                     </div>
@@ -446,7 +508,7 @@ if (!isset($_SESSION["login"])) {
                   <div class="p-2">
                     <div class="card hover-effect text-center" style="width: 13rem; height: 29.6rem;">
                       <div class="card-body d-flex align-content-center flex-wrap ">
-                        <a href="" class="btn stretched-link ">
+                        <a href="" class="btn border border-0 stretched-link ">
                           <h3>Lihat semua</h3>
                           <i class="fa-solid fa-angles-right"></i>
                         </a>
@@ -460,6 +522,7 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </div>
+
 
   </div>
 
