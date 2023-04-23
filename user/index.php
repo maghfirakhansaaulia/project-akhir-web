@@ -26,7 +26,7 @@ if (!isset($_SESSION["login"])) {
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="bg-white">
   <div class="top-nav container-fluid p-5 text-center text-success">
     <h1>PasarSegari</h1>
     <h2>Kami menjual yang terbaik untuk Anda</h2>
@@ -89,8 +89,8 @@ if (!isset($_SESSION["login"])) {
   </div>
   <div class="container-fluid" data-bs-spy="scroll" data-bs-target="#scrollspy">
     <div id="scrollspySayur" class="text-white">Sayur</div>
-    <div class="row p-2 bg-light my-5">
-      <div class="col-3 row align-items-center text-center ">
+    <div class="row p-2 bg-light my-5 gx-3 ">
+      <div class="sayur-row col-3 row align-items-center text-center text-light">
         <h2>Sayur Segar</h2>
       </div>
       <div class="col-9 bg-light">
@@ -212,11 +212,9 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </div>
+    <hr>
     <div id="scrollspyBuah" class="text-white">Buah</div>
-    <div class="row p-2 bg-light my-5">
-      <div class="col-3 row align-items-center text-center ">
-        <h2>Buah Segar</h2>
-      </div>
+    <div class="row p-2 bg-light my-5 gx-5">
       <div class="col-9 bg-light">
         <div class="table-responsive">
           <table class="table-borderless">
@@ -335,10 +333,14 @@ if (!isset($_SESSION["login"])) {
           </table>
         </div>
       </div>
+      <div class="buah-row col-3 row align-items-center text-center text-light">
+        <h2>Buah Segar</h2>
+      </div>
     </div>
+    <hr>
     <div id="scrollspySembako" class="text-white">Sembako</div>
-    <div class="row p-2 bg-light my-5">
-      <div class="col-3 row align-items-center text-center ">
+    <div class="row p-2 bg-light my-5 gx-3">
+      <div class="sembako-row col-3 row align-items-center text-center text-light ">
         <h2>Sembako</h2>
       </div>
       <div class="col-9 bg-light">
@@ -460,6 +462,7 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </div>
+    <hr>
 
   </div>
 
