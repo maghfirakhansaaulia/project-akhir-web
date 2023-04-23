@@ -115,10 +115,8 @@ if (isset($_POST["login"])) {
         <div class="card shadow">
           <div class="card-body">
             <form action="" method="post">
-              <?php if (isset($msg)): ?>
-                <div class="alert alert-danger py-3" id="err" role="alert">
-                  <?php echo $msg; ?>
-                </div>
+              <?php if (isset($error)): ?>
+                  <div class="alert alert-danger py-3" id="err" role="alert">Email atau Password salah!!</div>
               <?php endif; ?>
               <div class="row mb-3">
                 <label for="emailLogin" class="col-sm-2 col-form-label">Email</label>
