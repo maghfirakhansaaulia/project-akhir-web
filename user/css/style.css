@@ -16,6 +16,20 @@ body {
 .top-nav h2 {
     opacity: 0.8;
 }
+.scrollspy-wrap{
+    background-image: url(http://eattomorrow.com/blog/wp-content/uploads/2015/09/vegetables-1024x680.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;   
+}
+
+.scrollspyBTN{
+    opacity: 0.8;
+}
+
+.scrollspyBTN:hover{
+    opacity: 1;
+}
 
 .hover-effect {
     transition: all 0.5s;
