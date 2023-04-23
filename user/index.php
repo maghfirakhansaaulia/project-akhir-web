@@ -77,7 +77,18 @@ if (!isset($_SESSION["login"])) {
 
     </div>
   </nav>
-  <div class="container-fluid">
+  <div class="scrollspy-wrap d-flex justify-content-center py-5 bg-dark" id="scrollspy">
+    <div class="p-2"><a class="scrollspyBTN btn btn-success btn-lg fw-semibold rounded-1" href="#scrollspySayur">Sayur
+        Segar</a>
+    </div>
+    <div class="p-2"><a class="scrollspyBTN btn btn-danger btn-lg fw-semibold rounded-1" href="#scrollspyBuah">Buah
+        Segar</a>
+    </div>
+    <div class="p-2"><a class="scrollspyBTN btn btn-warning text-white btn-lg fw-semibold rounded-1"
+        href="#scrollspySembako">Sembako</a></div>
+  </div>
+  <div class="container-fluid" data-bs-spy="scroll" data-bs-target="#scrollspy">
+    <div id="scrollspySayur" class="text-white">Sayur</div>
     <div class="row p-2 bg-light my-5">
       <div class="col-3 row align-items-center text-center ">
         <h2>Sayur Segar</h2>
@@ -201,9 +212,10 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </div>
+    <div id="scrollspyBuah" class="text-white">Buah</div>
     <div class="row p-2 bg-light my-5">
       <div class="col-3 row align-items-center text-center ">
-        <h2>Sayur Segar</h2>
+        <h2>Buah Segar</h2>
       </div>
       <div class="col-9 bg-light">
         <div class="table-responsive">
@@ -324,9 +336,10 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </div>
+    <div id="scrollspySembako" class="text-white">Sembako</div>
     <div class="row p-2 bg-light my-5">
       <div class="col-3 row align-items-center text-center ">
-        <h2>Sayur Segar</h2>
+        <h2>Sembako</h2>
       </div>
       <div class="col-9 bg-light">
         <div class="table-responsive">
