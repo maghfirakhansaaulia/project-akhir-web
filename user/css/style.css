@@ -1,3 +1,6 @@
+body {
+    background: #f9fbfe;
+  }
 .top-nav{
     background-image: url(https://diplomartbrussels.com/wp-content/uploads/2020/09/food-background-images-94-images-in-co-381169-png-images-pngio-food-background-png-1440_619.png);
     background-position: center top;
@@ -12,6 +15,14 @@
 }
 .top-nav h2 {
     opacity: 0.8;
+}
+
+.hover-effect {
+    transition: all 0.5s;
+}
+.hover-effect:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.01);
 }
 
 .card-text{    
