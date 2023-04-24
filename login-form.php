@@ -54,9 +54,9 @@ if (isset($_POST["login"])) {
       if (isset($_POST["rememberme"])) {
         //buat cookie
         $salt = "1ni92r7%4$" . $email;
-        setcookie('role_usr', $role, time() + 604800);
-        setcookie('id_usr', $row["{$role}_id"], time() + 604800);
-        setcookie('email_usr', hash('sha256', $salt), time() + 604800);
+        setcookie('role_usr', $role, time() + 3600, '/');
+        setcookie('id_usr', $row["{$role}_id"], time() + 3600, '/');
+        setcookie('email_usr', hash('sha256', $salt), time() + 3600, '/');
       }
       header("Location: $role/index.php");
       exit;
@@ -116,7 +116,7 @@ if (isset($_POST["login"])) {
           <div class="card-body">
             <form action="" method="post">
               <?php if (isset($error)): ?>
-                        <div class="alert alert-danger py-3" id="err" role="alert">Email atau Password salah!!</div>
+                                              <div class="alert alert-danger py-3" id="err" role="alert">Email atau Password salah!!</div>
               <?php endif; ?>
               <div class="row mb-3">
                 <label for="emailLogin" class="col-sm-2 col-form-label">Email</label>

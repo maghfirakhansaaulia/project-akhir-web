@@ -20,7 +20,6 @@ if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['
   }
 
 }
-
 if (isset($_SESSION['login'])) {
   header("Location: $role/index.php");
   exit;
