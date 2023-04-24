@@ -22,7 +22,7 @@ if (!isset($_SESSION["login"])) {
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
   <script src="https://kit.fontawesome.com/bd49e73b8b.js" crossorigin="anonymous"></script>
-
+  
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -52,12 +52,12 @@ if (!isset($_SESSION["login"])) {
           </form>
         </div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown me-1 ">
             <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+              aria-expanded="false" >
               Kategori
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-danger">
               <li><a class="dropdown-item" href="#"><i class="fa-solid fa-carrot" style="color: #Ed9121"></i> Sayur
                   Segar</a></li>
               <li><a class="dropdown-item" href="#"><i class="fa-solid fa-apple-whole" style="color: #8DB600"></i> Buah
@@ -72,7 +72,16 @@ if (!isset($_SESSION["login"])) {
         </div>
         <div class="py-2 px-3"><a href="" class="link-dark"><i class="fa-solid fa-envelope fa-lg"></i></a></div>
         <div class="vr"></div>
-        <div class="py-2 px-3"><a href="" class="link-dark"><i class="fa-solid fa-circle-user fa-xl"></i></a></div>
+        <div class="py-2 px-3 d-flex">
+          <div class="dropstart">
+            <a href="" class="link-dark dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+              <i class="fa-solid fa-circle-user fa-xl"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="logout.php"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -526,7 +535,7 @@ if (!isset($_SESSION["login"])) {
 
   </div>
 
-  <a href="logout.php">logout</a>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
