@@ -4,7 +4,7 @@ require 'functions.php';
 
 $role = '';
 
-if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['email_usr'])) {
+if (isset($_COOKIE['id_usr']) && isset($_COOKIE['email_usr'])) {
   $role = $_COOKIE['role_usr'];
   $id_cookie = $_COOKIE['id_usr'];
   $email_cookie = $_COOKIE['email_usr'];
@@ -13,7 +13,7 @@ if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['
   $row = mysqli_fetch_assoc($result);
 
   $salt = "1ni92r7%4$" . $row["{$role}_email"];
-  if ($email_cookie === hash('sha384', $salt)) {
+  if ($email_cookie == hash('sha256', $salt)) {
     $_SESSION['login'] = true;
     $_SESSION["role"] = $role;
   }
@@ -116,7 +116,7 @@ if (isset($_POST["login"])) {
           <div class="card-body">
             <form action="" method="post">
               <?php if (isset($error)): ?>
-                  <div class="alert alert-danger py-3" id="err" role="alert">Email atau Password salah!!</div>
+                        <div class="alert alert-danger py-3" id="err" role="alert">Email atau Password salah!!</div>
               <?php endif; ?>
               <div class="row mb-3">
                 <label for="emailLogin" class="col-sm-2 col-form-label">Email</label>
