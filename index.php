@@ -13,7 +13,7 @@ if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['
   $row = mysqli_fetch_assoc($result);
 
   $salt = "1ni92r7%4$" . $row["{$role}_email"];
-  if ($email_cookie === hash('sha384', $salt)) {
+  if ($email_cookie === hash('sha256', $salt)) {
     $_SESSION['login'] = true;
     $_SESSION["role"] = $role;
 
