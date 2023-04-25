@@ -28,7 +28,7 @@ if (!isset($_SESSION["login"])) {
 
 <body class="bg-white">
   <div class="top-nav container-fluid p-5 text-center text-success">
-    <h1>PasarSegari</h1>
+    <h1 style="font-family: pacifico;">PasarSegari</h1>
     <h2>Kami menjual yang terbaik untuk Anda</h2>
   </div>
   <nav class="navbar navbar-expand-lg sticky-top bg-white ">
