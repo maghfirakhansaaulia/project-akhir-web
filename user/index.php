@@ -34,10 +34,10 @@ if (!isset($_SESSION["login"])) {
   <nav class="navbar navbar-expand-lg sticky-top bg-white ">
     <div class="container-fluid">
       <div class="py-2 "><a class="navbar-brand fw-light fs-4" href="index.php"><i class="fa-solid fa-leaf fa-xl"
-            style="color: #116530"></i>
-          PasarSegari</a></div>
+      style="color: #116530"></i>
+      PasarSegari</a></div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -45,35 +45,35 @@ if (!isset($_SESSION["login"])) {
           <form class="d-flex">
             <div class="input-group">
               <input type="text" class="form-control bg-light border border-success" placeholder="Aku mau belanja..."
-                aria-label="Recipient's username" aria-describedby="button-addon2">
+              aria-label="Recipient's username" aria-describedby="button-addon2">
               <button class="btn btn-outline-success " type="button" id="button-addon2"><i
-                  class="bi bi-search"></i></button>
+              class="bi bi-search"></i></button>
             </div>
           </form>
         </div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown me-1 ">
             <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false" >
-              Kategori
-            </a>
-            <ul class="dropdown-menu dropdown-menu-danger">
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-carrot" style="color: #Ed9121"></i> Sayur
-                  Segar</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-apple-whole" style="color: #8DB600"></i> Buah
-                  Segar</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-egg" style="color: #F4BB29"></i> Sembako</a>
-              </li>
-            </ul>
+            aria-expanded="false" >
+            Kategori
+          </a>
+          <ul class="dropdown-menu dropdown-menu-danger">
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-carrot" style="color: #Ed9121"></i> Sayur
+            Segar</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-apple-whole" style="color: #8DB600"></i> Buah
+            Segar</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-egg" style="color: #F4BB29"></i> Sembako</a>
           </li>
         </ul>
-        <div class="py-2 px-3 ms-auto"><a href="" class="link-dark "><i
-              class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i></a>
-        </div>
-        <div class="py-2 px-3"><a href="" class="link-dark"><i class="fa-solid fa-envelope fa-lg"></i></a></div>
-        <div class="vr"></div>
-        <div class="py-2 px-3 d-flex">
-          <div class="dropstart">
+      </li>
+    </ul>
+    <div class="py-2 px-3 ms-auto"><a href="" class="link-dark "><i
+    class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i></a>
+  </div>
+  <div class="py-2 px-3"><a href="" class="link-dark"><i class="fa-solid fa-envelope fa-lg"></i></a></div>
+  <div class="vr"></div>
+  <div class="py-2 px-3 d-flex">
+    <div class="dropstart">
             <a href="" class="link-dark dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
               <i class="fa-solid fa-circle-user fa-xl"></i>
             </a>
@@ -82,19 +82,27 @@ if (!isset($_SESSION["login"])) {
             </ul>
           </div>
         </div>
-      </div>
-
+      </div>      
     </div>
   </nav>
-  <div class="scrollspy-wrap d-flex justify-content-center py-5 bg-dark" id="scrollspy">
-    <div class="p-2"><a class="scrollspyBTN btn btn-success btn-lg fw-semibold rounded-1" href="#scrollspySayur">Sayur
+  <div class="scrollspy-wrap">
+    <div class="d-flex justify-content-center py-5" id="scrollspy">      
+      <div class="px-2  mt-5 " ><a class="scrollspyBTN btn btn-success btn-lg fw-semibold rounded-1"  href="#scrollspySayur">Sayur
         Segar</a>
-    </div>
-    <div class="p-2"><a class="scrollspyBTN btn btn-danger btn-lg fw-semibold rounded-1" href="#scrollspyBuah">Buah
+      </div>
+      <div class="px-2  mt-5"><a class="scrollspyBTN btn btn-danger btn-lg fw-semibold rounded-1" href="#scrollspyBuah">Buah
         Segar</a>
+      </div>
+      <div class="px-2  mt-5"><a class="scrollspyBTN btn btn-warning btn-lg text-white fw-semibold rounded-1"
+      href="#scrollspySembako">Sembako</a></div>
     </div>
-    <div class="p-2"><a class="scrollspyBTN btn btn-warning text-white btn-lg fw-semibold rounded-1"
-        href="#scrollspySembako">Sembako</a></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ffffff" fill-opacity="1" d="M0,64L40,80C80,96,160,128,240,149.3C320,171,400,181,480,192C560,203,640,213,720
+        ,197.3C800,181,880,139,960,122.7C1040,107,1120,117,1200,128C1280,139,1360,149,1400,154.7L1440,160L1440,320L1400,320C1360
+        ,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160
+        ,320,80,320,40,320L0,320Z">
+      </path>
+    </svg>
   </div>
   <div class="container-fluid" data-bs-spy="scroll" data-bs-target="#scrollspy">
     <div id="scrollspySayur" class="text-white">Sayur</div>
