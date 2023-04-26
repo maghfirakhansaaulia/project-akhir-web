@@ -123,7 +123,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -152,7 +152,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -181,7 +181,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -210,7 +210,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -268,7 +268,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -297,7 +297,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -326,7 +326,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -355,7 +355,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -413,7 +413,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -442,7 +442,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -471,7 +471,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -500,7 +500,7 @@ if (!isset($_SESSION["login"])) {
                     <div class="card hover-effect" style="width: 13rem; height: 29.6rem;">
                       <img
                         src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top" height="180" alt="...">
+                        class="card-img-top object-fit-cover" height="180" alt="...">
                       <div class="card-body">
                         <a href=""
                           class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover">
