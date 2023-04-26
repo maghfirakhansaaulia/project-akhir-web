@@ -9,7 +9,9 @@
 }
 .top-nav h1 {
     padding: 3rem;
-    font-size: 5.8rem;   
+    font-size: 5.8rem;
+    font-family: 'Pacifico',cursive;
+      
 }
 .top-nav h2 {
     opacity: 0.8;

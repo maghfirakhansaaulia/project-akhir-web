@@ -54,9 +54,9 @@ if (isset($_POST["login"])) {
       if (isset($_POST["rememberme"])) {
         //buat cookie
         $salt = "1ni92r7%4$" . $email;
-        setcookie('role_usr', $role, time() + 3600, '/');
-        setcookie('id_usr', $row["{$role}_id"], time() + 3600, '/');
-        setcookie('email_usr', hash('sha256', $salt), time() + 3600, '/');
+        setcookie('roleusr', $role, time() + 3600, '/');
+        setcookie('idusr', $row["{$role}_id"], time() + 3600, '/');
+        setcookie('emailusr', hash('sha256', $salt), time() + 3600, '/');
       }
       header("Location: $role/index.php");
       exit;

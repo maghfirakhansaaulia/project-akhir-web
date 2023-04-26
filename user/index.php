@@ -21,6 +21,9 @@ if (!isset($_SESSION["login"])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/bd49e73b8b.js" crossorigin="anonymous"></script>
   
   <link rel="stylesheet" href="css/style.css">
@@ -28,7 +31,7 @@ if (!isset($_SESSION["login"])) {
 
 <body class="bg-white">
   <div class="top-nav container-fluid p-5 text-center text-success">
-    <h1 style="font-family: pacifico;">PasarSegari</h1>
+    <h1>PasarSegari</h1>
     <h2>Kami menjual yang terbaik untuk Anda</h2>
   </div>
   <nav class="navbar navbar-expand-lg sticky-top bg-white ">
@@ -251,7 +254,10 @@ if (!isset($_SESSION["login"])) {
     </div>
     <hr>
     <div id="scrollspyBuah" class="text-white">Buah</div>
-    <div class="row p-2 bg-light my-5 gx-5">
+    <div class="row p-2 bg-light my-5 gx-3">
+      <div class="buah-row col-3 row align-items-center text-center text-light">
+        <h2>Buah Segar</h2>
+      </div>
       <div class="col-9 bg-light">
         <div class="table-responsive">
           <table class="table-borderless">
@@ -389,9 +395,6 @@ if (!isset($_SESSION["login"])) {
             </tbody>
           </table>
         </div>
-      </div>
-      <div class="buah-row col-3 row align-items-center text-center text-light">
-        <h2>Buah Segar</h2>
       </div>
     </div>
     <hr>
