@@ -3,10 +3,10 @@ session_start();
 require 'functions.php';
 
 
-if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['email_usr'])) {
-  $role = $_COOKIE['role_usr'];
-  $id_cookie = $_COOKIE['id_usr'];
-  $email_cookie = $_COOKIE['email_usr'];
+if (isset($_COOKIE['idusr']) && isset($_COOKIE['roleusr']) && isset($_COOKIE['emailusr'])) {
+  $role = $_COOKIE['roleusr'];
+  $id_cookie = $_COOKIE['idusr'];
+  $email_cookie = $_COOKIE['emailusr'];
 
   $result = mysqli_query($conn, "SELECT {$role}_email FROM {$role} WHERE {$role}_id = {$id_cookie}");
   $row = mysqli_fetch_assoc($result);
