@@ -92,7 +92,7 @@ if (!isset($_SESSION["login"])) {
               >
                 Kategori
               </a>
-              <ul class="dropdown-menu dropdown-menu-danger">
+              <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                   <a class="dropdown-item" href="#"
                     ><i class="fa-solid fa-carrot" style="color: #ed9121"></i> Sayur
@@ -123,7 +123,7 @@ if (!isset($_SESSION["login"])) {
           </div>
           <div class="vr"></div>
           <div class="py-2 px-3 d-flex">
-            <div class="dropstart">
+            <div class="dropdown-center">
               <a
                 href=""
                 class="link-dark dropdown-toggle"
@@ -133,7 +133,7 @@ if (!isset($_SESSION["login"])) {
               >
                 <i class="fa-solid fa-circle-user fa-xl"></i>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                   <a class="dropdown-item" href="logout.php"
                     ><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a
