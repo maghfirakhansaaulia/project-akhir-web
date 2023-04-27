@@ -20,6 +20,13 @@ if (!isset($_SESSION["login"])) {
   </head>
   <body>
     <h1>Hello, Petani!</h1>
+    <p>Silahkan pilih menu yang ingin Anda akses:</p>
+    <ul>
+      <li><a href="produk.php">Produk</a></li>
+      <li><a href="pesanan.php">Pesanan</a></li>
+      <li><a href="pengiriman.php">Pengiriman</a></li>
+      <li><a href="laporanroduk.php">Produk</a></li>
+    </ul>
     <a href="logout.php">logout</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
