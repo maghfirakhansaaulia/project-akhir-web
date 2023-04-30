@@ -94,39 +94,28 @@ if (!isset($_SESSION["login"])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="fa-solid fa-carrot" style="color: #ed9121"></i> Sayur
+                  <a class="dropdown-item btn btn-light " href="#"
+                    ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="fa-solid fa-apple-whole" style="color: #8db600"></i> Buah
+                  <a class="dropdown-item btn btn-light " href="#"
+                    ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i> Buah
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="fa-solid fa-egg" style="color: #f4bb29"></i> Sembako</a
+                  <a class="dropdown-item btn btn-light " href="#"
+                    ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i> Sembako</a
                   >
                 </li>
               </ul>
             </li>
           </ul>
-          <div class="py-2 px-3 ms-auto">
+          <div class="py-2 px-4 ms-auto">
             <a href="" class="link-dark position-relative">
               <i class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i>
-              <span
-                class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-circle fw-light"
-              >
-                15
-                <span class="visually-hidden">unread messages</span>
-              </span>
-            </a>
-          </div>
-          <div class="py-2 px-3">
-            <a href="" class="link-dark position-relative">
-              <i class="fa-solid fa-envelope fa-lg"></i>
               <span
                 class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
               >
@@ -135,21 +124,27 @@ if (!isset($_SESSION["login"])) {
             </a>
           </div>
           <div class="vr"></div>
-          <div class="py-2 px-3 d-flex">
-            <div class="dropdown-center">
+          <div class="py-2 px-3 d-flex ">
+            <div class="dropdown">
               <a
                 href=""
-                class="link-dark dropdown-toggle"
+                class="link-dark dropdown-toggle btn btn-outline-light rounded-0"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                
               >
-                <i class="fa-solid fa-circle-user fa-2xl"></i>
+                <i class="fa-solid fa-circle-user fa-xl"></i>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item" href="logout.php"
-                    ><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a
+                  <a class="dropdown-item py-2 btn btn-light" href="logout.php"
+                    ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori Transaksi</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item py-2 btn btn-light" href="logout.php"
+                    ><i class="fa-sharp fa-solid fa-right-from-bracket fa-lg"></i> Logout</a
                   >
                 </li>
               </ul>
