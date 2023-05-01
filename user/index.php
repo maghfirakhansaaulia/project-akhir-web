@@ -128,7 +128,7 @@ if (!isset($_SESSION["login"])) {
             <div class="dropdown">
               <a
                 href=""
-                class="link-dark dropdown-toggle btn btn-outline-light rounded-0"
+                class="link-dark dropdown-toggle btn btn-outline-light rounded-1 border-0"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
