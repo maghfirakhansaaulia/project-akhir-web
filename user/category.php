@@ -36,7 +36,7 @@ if (!isset($_SESSION["login"])) {
   </head>
 
   <body class="bg-white">
-    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm z-3">
       <div class="container">
         <div class="py-2">
           <a class="navbar-brand fw-light fs-4" href="index.php"
@@ -151,17 +151,17 @@ if (!isset($_SESSION["login"])) {
       </div>
       <div class="row gx-4 py-2 px-5 bg-light">
         <div class="col-lg-2 col-md-3">
-          <div class="bg-white rounded-2 shadow-sm">
+          <div class="bg-white rounded-2 shadow-sm h-25">
             <div class="p-3">
               <p class="fs-4 fw-semibold">Filter</p>
               <hr class="border border-secondary border-1" />
               <p class="fs-5 fw-semibold">Harga</p>
 
               <form action="" method="get">
-                <select class="form-select border-success" aria-label="Default select example">
-                  <option value="1">Paling Sesuai</option>
-                  <option value="2">Terendah</option>
-                  <option value="3">Tertinggi</option>
+                <select class="form-select border-success">
+                  <option value="suitable">Paling Sesuai</option>
+                  <option value="lowest">Terendah</option>
+                  <option value="highest">Tertinggi</option>
                 </select>
               </form>
             </div>
@@ -169,7 +169,7 @@ if (!isset($_SESSION["login"])) {
         </div>
         <div class="col-lg-10 col-md-9">
           <div class="bg-white shadow-sm rounded-2">
-            <div class="p-3">
+            <div class="p-2">
               <div class="row row-cols-md-5 g-4 mb-3">
                 <div class="col">
                   <div class="card hover-effect h-100 w-100">
