@@ -46,7 +46,7 @@ if (!isset($_SESSION["login"])) {
       <h1>PasarSegari</h1>
       <h2>Kami menjual yang terbaik untuk Anda</h2>
     </div>
-    <nav class="navbar navbar-expand-lg sticky-top bg-white">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
       <div class="container">
         <div class="py-2">
           <a class="navbar-brand fw-light fs-4" href="index.php"

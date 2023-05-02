@@ -149,11 +149,11 @@ if(!in_array($category,$arrCat)){
         </div>
       </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <div class="row g-1 px-5">
         <div class="col-lg-4 col-md-6">
           <div class="col">
-            <div class="p-3 fs-4 fw-semibold text-capitalize">Kategori <?php echo $category; ?></div>
+            <div id="scrollspyAtas" class="p-3 fs-4 fw-semibold text-capitalize">Kategori <?php echo $category; ?></div>
           </div>
         </div>
       </div>
@@ -617,6 +617,9 @@ if(!in_array($category,$arrCat)){
             </div>
           </div>
         </div>
+      </div>
+      <div class="fixed-bottom d-md-flex justify-content-md-end py-2 px-1">
+        <a class="btn btn-outline-success border-2 scrollspyBTN me-md-2" href="#scrollspyAtas"><i class="fa-solid fa-angles-up"></i></a>
       </div>
     </div>
     <script
