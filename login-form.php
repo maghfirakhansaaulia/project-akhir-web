@@ -33,7 +33,8 @@ if ($role === "petani") {
   $ikon = "ikon fa-solid fa-shop fa-5x";
 } elseif ($role === "user") {
   $ikon = "ikon fa-solid fa-user-large fa-5x";
-
+} else{
+  header("Location: index.php");
 }
 
 
