@@ -9,6 +9,7 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
+$psa = "saf";
 
 ?>
 <!DOCTYPE html>
@@ -151,17 +152,37 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </nav>
-    <div class="container">
-      <div class="row gx-4 py-2 px-5 bg-light mt-5">
-        <div class="col-lg-4 bg-danger">
-          <img
-            src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-            class="card-img-top object-fit-cover"
-            height="300"
-            alt="..."
-          />
+    <div class="container-floid bg-light">
+      <div class="container">
+        <div class="row gx-4 py-2 px-5 mt-5">
+          <div class="col-lg-9">
+            <div class="bg-white p-2 rounded-2 shadow">
+              <div class="row">
+                <div class="col-lg-6">
+                  <img
+                    src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
+                    class="card-img-top object-fit-cover rounded-2"
+                    height="350"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-lg-6">
+                  <p class="fs-4 lh-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                 
+                    <p class="fs-4 text-danger fw-bold">Rp.100.000</p>                  
+                  
+                  <hr class="border opacity-50">
+                  <p class="fw-semibold">Pilih varian</p>
+                  <!-- <form action="" method="post"> -->
+                    <button type="button"  class="btn btn-sm btn-outline-secondary" role="button" name="cra" >ubah</button>
+                    <!-- <button type="button"  class="btn btn-sm btn-outline-secondary" role="button" name="submit">ubah</button> -->
+                  <!-- </form> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 bg-primary p-2"></div>
         </div>
-        <div class="col-lg-8 bg-black">sadads</div>
       </div>
     </div>
     <script
