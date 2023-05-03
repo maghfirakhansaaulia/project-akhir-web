@@ -183,11 +183,11 @@ if (!isset($_SESSION["login"])) {
             </div>
             <div class="bg-white p-2 rounded-2 shadow mt-3">
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <p  class="sticky-top z-2 text-nowrap border-3 border-bottom fs-4 fw-semibold" style="width: 4.5rem; top:12%">Informasi Barang</p>
                 </div>
                 
-                <div class="border-start col-lg-6">   
+                <div class="border-start col-lg-8">   
                   <p class="fs-5 fw-semibold pb-2">Kategori - <a class="link-dark" href="">Sayur</a></p>               
                   <p class="fs-5 fw-semibold">Deskripsi</p>
                   <p class="lh-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit et mi vel faucibus. Praesent interdum pretium felis nec eleifend. Vestibulum tristique magna eget placerat tincidunt. Nam commodo ex non lacus pharetra dictum. Integer lacinia blandit mi vel posuere. In elementum massa eu nulla consectetur suscipit. Nullam quis iaculis mauris. Vestibulum commodo nulla et elit volutpat, ut commodo augue placerat.</p>
