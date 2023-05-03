@@ -92,18 +92,18 @@ if(!in_array($category,$arrCat)){
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item btn btn-light" href="category.php?c=sayur"
+                  <a class="dropdown-item btn btn-light" href="products.php?c=sayur"
                     ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="category.php?c=buah"
+                  <a class="dropdown-item btn btn-light" href="products.php?c=buah"
                     ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i> Buah
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="category.php?c=sembako"
+                  <a class="dropdown-item btn btn-light" href="products.php?c=sembako"
                     ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i> Sembako</a
                   >
                 </li>
