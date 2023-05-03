@@ -9,7 +9,6 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
-$psa = "saf";
 
 ?>
 <!DOCTYPE html>
@@ -32,7 +31,7 @@ $psa = "saf";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
+      rel="stylesheet"d
     />
     <script
       src="https://kit.fontawesome.com/bd49e73b8b.js"
@@ -174,14 +173,39 @@ $psa = "saf";
                   <hr class="border opacity-50">
                   <p class="fw-semibold">Pilih varian</p>
                   <!-- <form action="" method="post"> -->
-                    <button type="button"  class="btn btn-sm btn-outline-secondary" role="button" name="cra" >ubah</button>
+                    <button type="button"  class="btn btn-sm btn-outline-secondary active" role="button" >1kg</button>
                     <!-- <button type="button"  class="btn btn-sm btn-outline-secondary" role="button" name="submit">ubah</button> -->
                   <!-- </form> -->
+                  <hr class="border opacity-50">
+                  <div class="py-4"><a class="link-success" href=""><i class="fa-sharp fa-solid fa-shop fa-2xl"></i></a><a class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover fw-semibold px-1 " href="">Nama Toko</a> </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-2 rounded-2 shadow mt-3">
+              <div class="row">
+                <div class="col-lg-6">
+                  <p  class="sticky-top z-2 text-nowrap border-3 border-bottom fs-4 fw-semibold" style="width: 4.5rem; top:12%">Informasi Barang</p>
+                </div>
+                
+                <div class="border-start col-lg-6">   
+                  <p class="fs-5 fw-semibold pb-2">Kategori - <a class="link-dark" href="">Sayur</a></p>               
+                  <p class="fs-5 fw-semibold">Deskripsi</p>
+                  <p class="lh-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit et mi vel faucibus. Praesent interdum pretium felis nec eleifend. Vestibulum tristique magna eget placerat tincidunt. Nam commodo ex non lacus pharetra dictum. Integer lacinia blandit mi vel posuere. In elementum massa eu nulla consectetur suscipit. Nullam quis iaculis mauris. Vestibulum commodo nulla et elit volutpat, ut commodo augue placerat.</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 bg-primary p-2"></div>
+          <div class="col-lg-3 p-2">
+            <div class="sticky-top z-2" style="top:12%">
+              <div class="bg-white rounded-2 shadow-sm">
+                <div class="p-3 d-grid gap-2">
+                  <a class="btn py-2 fw-semibold btn-outline-success" href=""><i class="fa-solid fa-cart-plus fa-xl"></i> Masukkan Keranjang</a>
+                  <a class="btn py-2 fw-semibold btn-success" href="">Beli Sekarang</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
