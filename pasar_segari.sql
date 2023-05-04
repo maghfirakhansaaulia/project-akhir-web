@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2023 at 11:57 AM
+-- Generation Time: May 04, 2023 at 05:17 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -24,26 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `petani`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `petani` (
-  `petani_id` int(11) NOT NULL,
-  `petani_name` varchar(255) NOT NULL,
-  `petani_phone` char(255) NOT NULL,
-  `petani_email` varchar(255) NOT NULL,
-  `petani_group` varchar(255) NOT NULL,
-  `petani_address` varchar(255) NOT NULL,
-  `petani_password` varchar(255) NOT NULL
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `admin_name` varchar(255) NOT NULL,
+  `admin_phone` char(255) NOT NULL,
+  `admin_email` varchar(255) NOT NULL,
+  `admin_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `petani`
+-- Dumping data for table `admin`
 --
 
-INSERT INTO `petani` (`petani_id`, `petani_name`, `petani_phone`, `petani_email`, `petani_group`, `petani_address`, `petani_password`) VALUES
-(1, 'yuniyah', '085250647889', 'yuniku@gmail.com', 'yuniyu sayuryu', 'jl. banggries', '$2y$10$0DDoTOgD6hVsoiE.t91/QeO/nCY17CY0i7EqzJyK.ovkGO.48Lw.y'),
-(2, 'erpan', '084256978556', 'erpangg@gmail.com', 'erpan adagus', 'jl. antasari', '$2y$10$OI3fOclTkhimT7CvDH/CPu7hMtXbN8U3McbSPYl5xVxidO7rnrsOW');
+INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_phone`, `admin_email`, `admin_password`) VALUES
+(3, 'admin', '085252636369', 'segariku@gmail.com', '$2y$10$uFWeDtofuj24kBkKIp5/Vu9Yc2J8GTLTyGVZI7tTZBNHUPQZOySka');
 
 -- --------------------------------------------------------
 
@@ -99,10 +96,10 @@ INSERT INTO `user` (`user_id`, `user_name`, `user_phone`, `user_email`, `user_ad
 --
 
 --
--- Indexes for table `petani`
+-- Indexes for table `admin`
 --
-ALTER TABLE `petani`
-  ADD PRIMARY KEY (`petani_id`);
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `toko`
@@ -121,10 +118,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `petani`
+-- AUTO_INCREMENT for table `admin`
 --
-ALTER TABLE `petani`
-  MODIFY `petani_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `toko`

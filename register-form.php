@@ -29,9 +29,7 @@ if (isset($_SESSION['login'])) {
 
 $role = $_GET['role'];
 
-if ($role === "petani") {
-  $ikon = "ikon fa-sharp fa-solid fa-seedling fa-5x";
-} elseif ($role === "toko") {
+if ($role === "toko") {
   $ikon = "ikon fa-solid fa-shop fa-5x";
 } elseif ($role === "user") {
   $ikon = "ikon fa-solid fa-user-large fa-5x";
@@ -128,17 +126,7 @@ if (isset($_POST["register"])) {
                     <input type='text' class='form-control' id='tokoRegis' name='tokoRegis' required/>                    
                     ";
                 } ?>
-              </div>
-              <div class="mb-3">
-                <?php if ($role === "petani") {
-                  echo
-                    "
-                  <label for='kelompokRegis' class='form-label'>Nama Kelompok Tani</label>                  
-                  <input type='text' class='form-control' id='kelompokRegis' name='kelompokRegis' required/>                                     
-                  "
-                  ;
-                } ?>
-              </div>
+              </div>              
               <div class="mb-3">
                 <label for="alamatRegis" class="form-label">Alamat</label>
                 <textarea class="form-control" rows="3" id="alamatRegis" name="alamatRegis" required></textarea>

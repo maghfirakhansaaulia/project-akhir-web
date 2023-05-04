@@ -16,10 +16,7 @@ function registrasi($data, $role)
 
     if ($role === "toko") {
         $shop_name = mysqli_real_escape_string($conn, $data["tokoRegis"]);
-    } elseif ($role === "petani") {
-        $farmer_group = mysqli_real_escape_string($conn, $data["kelompokRegis"]);
-    }
-
+    } 
 
 
     //cek email    
@@ -40,8 +37,6 @@ function registrasi($data, $role)
 
     if ($role === "toko") {
         mysqli_query($conn, "INSERT INTO $role VALUES('', '$name', '$phone', ' $shop_name', '$email', '$address', '$password')");
-    } elseif ($role === "petani") {
-        mysqli_query($conn, "INSERT INTO $role VALUES('', '$name', '$phone', '$email', '$farmer_group', '$address', '$password')");
     } else {
         mysqli_query($conn, "INSERT INTO $role VALUES('', '$name', '$phone', '$email', '$address', '$password')");
     }

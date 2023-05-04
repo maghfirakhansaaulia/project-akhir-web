@@ -59,25 +59,9 @@ if (isset($_SESSION['login'])) {
     <div class="first-wrapper container">
       <p class="fs-1 fw-semibold text-center">Daftar Akun</p>
       <form action="register-form.php" method="get">
-        <div class="row row-cols-1 row-cols-md-3 g-5">
-          <div class="col">
-            <div class="card h-100 hover-effect">
-              <div class="card-body text-center">
-                <i class="ikon fa-sharp fa-solid fa-seedling fa-5x"></i>
-                <h5 class="card-title mt-3 fs-3">Petani</h5>
-                <p class="card-text">
-                  Cocok untuk petani yang ingin memulai bisnis dan memperluas pasarnya, dengan keuntungan menjual
-                  produk segar dan berkualitas tinggi serta memberikan dampak positif pada ekonomi lokal dan
-                  masyarakat.
-                </p>
-              </div>
-              <div class="card-footer bg-white text-center mt-4">
-                <button href="#" class="btn btn-costom fw-medium w-25" name="role" value="petani">Daftar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 hover-effect">
+        <div class="d-flex justify-content-center">          
+          <div class="p-2">
+            <div class="card h-100 hover-effect" style="width: 20rem;">
               <div class="card-body text-center">
                 <i class="ikon fa-solid fa-shop fa-5x"></i>
 
@@ -93,8 +77,8 @@ if (isset($_SESSION['login'])) {
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card h-100 hover-effect">
+          <div class="p-2">
+            <div class="card h-100 hover-effect" style="width: 20rem;">
               <div class="card-body text-center">
                 <i class="ikon fa-solid fa-user-large fa-5x"></i>
 

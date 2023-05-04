@@ -64,14 +64,13 @@ if (isset($_SESSION['login'])) {
             <div class="p-3">
               <div class="card hover-effect h-100">
                 <div class="card-body">
-                  <i class="ikon fa-sharp fa-solid fa-seedling fa-5x"></i>
-                  <h5 class="card-title mt-3 fs-3">Petani</h5>
+                  <i class="ikon fa-solid fa-user-gear fa-5x"></i>
+                  <h5 class="card-title mt-3 fs-3">Admin</h5>
                   <p class="card-text text-center">
                     Masuk sebagai
-                    <span class="fw-semibold">Petani</span> untuk kelola sayur lebih mudah, tingkatkan produktivitas
-                    dan keuntungan Anda!
+                    <span class="fw-semibold">Admin</span> untuk kelola Artikel dan blog untuk memberikan informasi terpecaya kepada Toko dan User!
                   </p>
-                  <button href="#" class="btn btn-costom stretched-link fw-medium w-25" name="role" value="petani">
+                  <button href="#" class="btn btn-costom stretched-link fw-medium w-25" name="role" value="admin">
                     Masuk
                   </button>
                 </div>
@@ -117,12 +116,7 @@ if (isset($_SESSION['login'])) {
     </div>
     <div class="second-wrapper container text-center">
       <p class="fs-3 fw-semibold mb-4">Daftar akun PasarSegari</p>
-      <div class="d-flex justify-content-center g-5">
-        <div class="p-1">
-          <a href="register-form.php?role=petani" class="btn btn-lg btn-costom rounded-1">Petani <i
-              class="fa-solid fa-up-right-from-square fa-2xs"></i></a>
-        </div>
-
+      <div class="d-flex justify-content-center g-5">        
         <div class="p-1">
           <a href="register-form.php?role=toko" class="btn btn-lg btn-costom rounded-1">Toko <i
               class="fa-solid fa-up-right-from-square fa-2xs"></i></a>
