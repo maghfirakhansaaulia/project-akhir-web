@@ -36,7 +36,7 @@ if (!isset($_SESSION["login"])) {
   </head>
 
   <body class="bg-white">
-    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm z-3">
       <div class="container">
         <div class="py-2">
           <a class="navbar-brand fw-light fs-4" href="index.php"
@@ -84,18 +84,18 @@ if (!isset($_SESSION["login"])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item btn btn-light" href="#"
+                  <a class="dropdown-item btn btn-light" href="products.php?c=sayur"
                     ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="#"
+                  <a class="dropdown-item btn btn-light" href="products.php?c=buah"
                     ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i> Buah
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="#"
+                  <a class="dropdown-item btn btn-light" href="products.php?c=sembako"
                     ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i> Sembako</a
                   >
                 </li>
@@ -141,45 +141,74 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </nav>
-    <div class="container-fluid">
-      <div class="container">        
+    <div class="container-floid bg-light">
+      <div class="container">
         <div class="row gx-4 py-2 mt-5">
-          <div class="col-lg-8">
-            <div class="bg-white p-2 rounded-2 shadow"> 
-             <div class="row justify-content-start">   
-              <div class="col-1 py-2">
-                <i class="fa-sharp fa-solid fa-shop fa-2xl" style="color: #666;"></i>
-              </div> 
-              <div class="col-5">
-                <a class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover fw-semibold px-1 " href="">Nama Toko</a>
-                <p class="text-body-secondary"><i class="fa-sharp fa-solid fa-location-dot"></i> nama jalan</p>
-              </div>
-             </div>
+          <div class="col-lg-9">
+            <div class="bg-white p-3 rounded-2 shadow">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Pilih Semua
+                    </label>
+                </div>
             </div>
-            <div class="bg-white p-3 rounded-2 shadow mt-3">
-              <div class="row">
-                <div class="col-lg-2">
-                  <img
-                    src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                    class="card-img-top object-fit-cover rounded-2"
-                    height="120"
-                    alt="..."
-                  />
-                </div>
-                <div class="col-lg-6">
-                  <p class="fs-4 lh-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-floating">
-                      <input type="number" id="typeNumber" class="form-control form-control-sm" min="1" max="10" />
-                      <label class="form-label" for="typeNumber">Jumlah</label>
-                  </div>
-                    <p class="fs-4 text-danger fw-bold text-end">Rp.100.000</p>                  
-                </div>                  
-              </div>
-            </div>            
+            <div class="bg-white p-3 rounded-2 shadow mt-3"> 
+                <div class="row">
+                    <div class="col-lg-1 d-flex align-content-center flex-wrap">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">                            
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                    <img
+                        src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
+                        class="card-img-top object-fit-cover rounded-2"
+                        height="100"                        
+                        alt="..."
+                    />
+                    </div>
+                    <div class="col-lg-5">
+                    <p class="fs-4 lh-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div class="col-lg-4">
+                    <div class="form-floating">
+                        <input type="number" id="typeNumber" class="form-control form-control-sm" min="1" max="10" />
+                        <label class="form-label" for="typeNumber">Jumlah</label>
+                    </div>
+                        <p class="fs-4 text-danger fw-bold text-end">Rp.100.000</p>                  
+                    </div>                  
+                </div>    
+            </div>
+            <div class="bg-white p-3 rounded-2 shadow mt-3"> 
+                <div class="row">
+                    <div class="col-lg-1 d-flex align-content-center flex-wrap">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">                            
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                    <img
+                        src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
+                        class="card-img-top object-fit-cover rounded-2"
+                        height="100"                        
+                        alt="..."
+                    />
+                    </div>
+                    <div class="col-lg-5">
+                    <p class="fs-4 lh-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div class="col-lg-4">
+                    <div class="form-floating">
+                        <input type="number" id="typeNumber" class="form-control form-control-sm" min="1" max="10" />
+                        <label class="form-label" for="typeNumber">Jumlah</label>
+                    </div>
+                        <p class="fs-4 text-danger fw-bold text-end">Rp.100.000</p>                  
+                    </div>                  
+                </div>    
+            </div>
           </div>
-          <div class="col-lg-4 p-2">
+          <div class="col-lg-3 p-2">
             <div class="sticky-top z-2" style="top:12%">
               <div class="bg-white rounded-2 shadow">
                 <div class="p-3 d-grid gap-1">                                  
@@ -193,10 +222,5 @@ if (!isset($_SESSION["login"])) {
         </div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
