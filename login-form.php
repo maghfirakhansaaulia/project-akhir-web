@@ -27,8 +27,8 @@ if (isset($_SESSION['login'])) {
 
 $role = $_GET['role'];
 
-if ($role === "petani") {
-  $ikon = "ikon fa-sharp fa-solid fa-seedling fa-5x";
+if ($role === "admin") {
+  $ikon = "ikon fa-solid fa-user-gear fa-5x";
 } elseif ($role === "toko") {
   $ikon = "ikon fa-solid fa-shop fa-5x";
 } elseif ($role === "user") {
