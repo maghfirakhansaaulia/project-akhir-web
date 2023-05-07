@@ -1,31 +1,29 @@
 <?php
 // phpinfo();
 // echo 'ini= "', get_cfg_var('cfg_file_path'), '"';
-// session_start();
-// require 'functions.php';
+session_start();
+require 'functions.php';
 
-// $role = '';
+$role = '';
 
-// if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['email_usr'])) {
-//   $role = $_COOKIE['role_usr'];
-//   $id_cookie = $_COOKIE['id_usr'];
-//   $email_cookie = $_COOKIE['email_usr'];
+if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['email_usr'])) {
+  $role = $_COOKIE['role_usr'];
+  $id_cookie = $_COOKIE['id_usr'];
+  $email_cookie = $_COOKIE['email_usr'];
 
-//   $result = mysqli_query($conn, "SELECT {$role}_email FROM {$role} WHERE {$role}_id = {$id_cookie}");
-//   $row = mysqli_fetch_assoc($result);
+  $result = mysqli_query($conn, "SELECT {$role}_email FROM {$role} WHERE {$role}_id = {$id_cookie}");
+  $row = mysqli_fetch_assoc($result);
 
-//   $salt = "1ni92r7%4$" . $row["{$role}_email"];
-//   if ($email_cookie === hash('sha256', $salt)) {
-//     $_SESSION['login'] = true;
-//     $_SESSION["role"] = $role;
-
-//   }
-
-// }
-// if (isset($_SESSION['login'])) {
-//   header("Location: $role/index.php");
-//   exit;
-// }
+  $salt = "1ni92r7%4$" . $row["{$role}_email"];
+  if ($email_cookie === hash('sha256', $salt)) {
+    $_SESSION['login'] = true;
+    $_SESSION["role"] = $role;
+  }
+}
+if (isset($_SESSION['login'])) {
+  header("Location: $role/index.php");
+  exit;
+}
 
 
 ?>
@@ -61,7 +59,6 @@
         <img class="icon" src="gambar/Untitled75_20230419165549.png" alt="">
         <a class="atas" href="">Home</a>
         <a class="atas" href="">Toko</a>
-        <a class="atas" href="">Petani</a>
         <a class="atas" href="">informasi</a>
         <a class="atas" href="">Contact</a>
         <a class="atas" href="login.php">Login</a>
@@ -107,20 +104,44 @@
         </div>
       </div>
     </div>
+
+    <div class="gabung-toko">
+      <div class="img-toko">
+        <!-- <img src="gambar/gabung-toko.jpg" alt=""> -->
+      </div>
+      <div class="isi-gabung-toko">
+        <h1>Jadilah smart-seller dengan berjualan di Pasar Segari!</h1>
+          <a href="register.php">Daftar menjadi penjual sekarang!</a>
+      </div>
+    </div>
+    
+    <div class="gabung-user">
+      <div class="isi-gabung-user">
+        <h1>Bergabung di Pasar Segari untuk memudahkan kamu berbelanja kebutuhan dapur!</h1>
+          <a href="register.php">Daftar menjadi pembeli sekarang!</a>
+      </div>
+      <div class="img-user">
+        <!-- <img src="gambar/gabung-toko.jpg" alt=""> -->
+      </div>
+    </div>
+
     <div class="testimoni">
       <h1>Testimoni</h1>
       <div class="isi-test">
-        <div class="konten-sayur">
-          <h1>Sayur</h1>
-          <p>Kami menyediakan sayur segar yang dapat memenuhi kebutuhan nutrisi anda tiap hari</p>
+        <div class="testi1">
+          <img class="muka" src="gambar/lutpi.png" alt="">
+          <h1>Ahmad Lutfi</h1>
+          <p>Pasar Segari sangat memudahkan saya untuk membeli sayuran yang susah didapatkan di pasar lokal</p>
         </div>
-        <div class="konten-buah">
-          <h1>Buah</h1>
-          <p>Butuh buah yang segar dan manis? Pasar Segari adalah tempatnya</p>
+        <div class="testi2">
+          <img class="muka" src="gambar/IMG_20220327_025433_547-min.jpg" alt="">
+          <h1>Nur Avivah</h1>
+          <p>Alternatif untuk saya yang malas bepergian</p>
         </div>
-        <div class="konten-sembako">
-          <h1>Sembako</h1>
-          <p>Tersedia bahan untuk mengolah sayur dan buah-buahan secara lengkap</p>
+        <div class="testi3">
+          <img class="muka" src="gambar/fira.jpeg" alt="">
+          <h1>Magfira Khansa</h1>
+          <p>Untuk saya yang memiliki kesibukan, membeli sayur dan lainnya jadi lebih mudah</p>
         </div>
       </div>
     </div>
