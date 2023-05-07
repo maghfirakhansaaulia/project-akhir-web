@@ -73,7 +73,7 @@ if (isset($_SESSION['login'])) {
                 </p>
               </div>
               <div class="card-footer bg-white text-center mt-4">
-                <button href="#" class="btn btn-costom fw-medium w-25" name="role" value="toko">Daftar</button>
+                <button href="#" class="btn btn-costom fw-medium w-50" name="role" value="toko">Daftar</button>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ if (isset($_SESSION['login'])) {
                 </p>
               </div>
               <div class="card-footer bg-white text-center mt-4">
-                <button href="#" class="btn btn-costom fw-medium w-25" name="role" value="user">Daftar</button>
+                <button href="#" class="btn btn-costom fw-medium w-50" name="role" value="user">Daftar</button>
               </div>
             </div>
           </div>
