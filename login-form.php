@@ -4,10 +4,10 @@ require 'functions.php';
 
 $role = '';
 
-if (isset($_COOKIE['id_usr']) && isset($_COOKIE['email_usr'])) {
-  $role = $_COOKIE['role_usr'];
-  $id_cookie = $_COOKIE['id_usr'];
-  $email_cookie = $_COOKIE['email_usr'];
+if (isset($_COOKIE['idusr']) && isset($_COOKIE['emailusr'])) {
+  $role = $_COOKIE['roleusr'];
+  $id_cookie = $_COOKIE['idusr'];
+  $email_cookie = $_COOKIE['emailusr'];
 
   $result = mysqli_query($conn, "SELECT {$role}_email FROM {$role} WHERE {$role}_id = {$id_cookie}");
   $row = mysqli_fetch_assoc($result);
@@ -16,6 +16,8 @@ if (isset($_COOKIE['id_usr']) && isset($_COOKIE['email_usr'])) {
   if ($email_cookie == hash('sha256', $salt)) {
     $_SESSION['login'] = true;
     $_SESSION["role"] = $role;
+    $_SESSION["id"] = $id_cookie;
+
   }
 
 }
@@ -51,6 +53,7 @@ if (isset($_POST["login"])) {
       //session
       $_SESSION["login"] = true;
       $_SESSION["role"] = $role;
+      $_SESSION["id"] = $row["{$role}_id"];
       //cek ingat aku
       if (isset($_POST["rememberme"])) {
         //buat cookie

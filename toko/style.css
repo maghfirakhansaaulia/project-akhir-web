@@ -175,9 +175,17 @@ nav{
 
 .searching{
   padding-top: 5%;
-  display: flex ;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .filtering{
+  text-align: right;
+}
+
+#filter-barang{
+  display: flex;
+  justify-content: right;
+  align-items: end;
   text-align: right;
 }
