@@ -1,15 +1,13 @@
 <?php
-// phpinfo();
-// echo 'ini= "', get_cfg_var('cfg_file_path'), '"';
 session_start();
 require 'functions.php';
 
 $role = '';
 
-if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['email_usr'])) {
-  $role = $_COOKIE['role_usr'];
-  $id_cookie = $_COOKIE['id_usr'];
-  $email_cookie = $_COOKIE['email_usr'];
+if (isset($_COOKIE['idusr']) && isset($_COOKIE['roleusr']) && isset($_COOKIE['emailusr'])) {
+  $role = $_COOKIE['roleusr'];
+  $id_cookie = $_COOKIE['idusr'];
+  $email_cookie = $_COOKIE['emailusr'];
 
   $result = mysqli_query($conn, "SELECT {$role}_email FROM {$role} WHERE {$role}_id = {$id_cookie}");
   $row = mysqli_fetch_assoc($result);
@@ -18,6 +16,8 @@ if (isset($_COOKIE['id_usr']) && isset($_COOKIE['role_usr']) && isset($_COOKIE['
   if ($email_cookie === hash('sha256', $salt)) {
     $_SESSION['login'] = true;
     $_SESSION["role"] = $role;
+    $_SESSION["id"] = $id_cookie;
+
   }
 }
 if (isset($_SESSION['login'])) {
@@ -49,12 +49,7 @@ if (isset($_SESSION['login'])) {
 
 <body>
   <div class="index">
-    <div class="navbar-index">
-      <!-- <h1>ini navbar</h1>
-    <h1>ini navbar</h1>
-    <h1>ini navbar</h1>
-    <h1>ini navbar</h1>
-    <h1>ini navbar</h1> -->
+    <div class="navbar-index">    
       <nav style="display: flex; justify-content: space-around; align-items: center; padding-left:20%; padding-right: 20%; height: 15%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
         <img class="icon" src="gambar/Untitled75_20230419165549.png" alt="">
         <a class="atas" href="">Home</a>

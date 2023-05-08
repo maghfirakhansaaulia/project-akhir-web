@@ -16,6 +16,7 @@ if (isset($_COOKIE['idusr']) && isset($_COOKIE['roleusr']) && isset($_COOKIE['em
   if ($email_cookie === hash('sha256', $salt)) {
     $_SESSION['login'] = true;
     $_SESSION["role"] = $role;
+    $_SESSION["id"] = $id_cookie;
 
   }
 

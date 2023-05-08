@@ -1,5 +1,7 @@
 <?php
 session_start();
+require 'functions.php';
+
 
 if (!isset($_SESSION["login"])) {
   header("Location: ../index.php");
@@ -7,6 +9,25 @@ if (!isset($_SESSION["login"])) {
 } elseif ($_SESSION["role"] !== 'user') {
   header("Location: ../index.php");
   exit;
+}
+
+if (!isset($_SESSION['prdID'])) {
+  header("Location: index.php");
+  exit;
+}
+
+$prdID = $_SESSION['prdID'];
+
+$prdd = query("SELECT produk.produk_name, produk.produk_var1pc, produk.produk_var2pc, produk.produk_var1, produk.produk_var2, produk.gambar_id,produk.produk_description, toko.toko_id, toko.toko_shopname, kat_produk.katP_name 
+        from produk join kat_produk on produk.katP_id = kat_produk.katP_id left join toko on produk.toko_id = toko.toko_id WHERE produk.produk_id = {$prdID}");
+
+$aktif = 1;
+
+if (isset($_POST['vart2'])) {
+  $aktif = 2;
+}
+if (isset($_POST['vart1'])) {
+  $aktif = 1;
 }
 
 
@@ -31,7 +52,7 @@ if (!isset($_SESSION["login"])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"d
+      rel="stylesheet"
     />
     <script
       src="https://kit.fontawesome.com/bd49e73b8b.js"
@@ -41,7 +62,7 @@ if (!isset($_SESSION["login"])) {
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body class="bg-white">
+  <body class="bg-white" id="bd">
     <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm z-3">
       <div class="container">
         <div class="py-2">
@@ -153,32 +174,39 @@ if (!isset($_SESSION["login"])) {
     </nav>
     <div class="container-floid bg-light">
       <div class="container">
-        <div class="row gx-4 py-2 mt-5">
+        <div class="row gx-4 py-2 mt-5" id="products">
           <div class="col-lg-9">
             <div class="bg-white p-2 rounded-2 shadow">
               <div class="row">
-                <div class="col-lg-6">
-                  <img
-                    src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                    class="card-img-top object-fit-cover rounded-2"
-                    height="350"
-                    alt="..."
-                  />
-                </div>
-                <div class="col-lg-6">
-                  <p class="fs-4 lh-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                 
-                    <p class="fs-4 text-danger fw-bold">Rp.100.000</p>                  
-                  
-                  <hr class="border opacity-50">
-                  <p class="fw-semibold">Pilih varian</p>
-                  <!-- <form action="" method="post"> -->
-                    <button type="button"  class="btn btn-sm btn-outline-secondary active" role="button" >1kg</button>
-                    <button type="button"  class="btn btn-sm btn-outline-secondary" role="button" name="submit">500g</button>
-                  <!-- </form> -->
-                  <hr class="border opacity-50">
-                  <div class="py-4"><i class="fa-sharp fa-solid fa-shop fa-xl" style="color: #666;"></i><a class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover fw-semibold px-1 " href="">Nama Toko</a> </div>
-                </div>
+                <?php foreach ($prdd as $rowd): ?>                
+                    <div class="col-lg-6">
+                      <img
+                        src="view.php?id_gambar=<?php echo $rowd['gambar_id']; ?>"
+                        class="rounded-2 mx-auto d-block object-fit-cover"
+                        height="350px"                    
+                        alt="..."
+                        width="100%"
+                      />
+                    </div>
+                    <div class="col-lg-6">                  
+                      <p class="fs-4 lh-1"><?php echo mb_strimwidth($rowd['produk_name'], 0, 58, "...") ?></p> 
+                      <p class="fs-4 text-danger fw-bold" id="pc"></p>                                                                          
+                      <script>document.getElementById("bd").onload = function() {myVariant('var1', <?= $rowd['produk_var1pc']; ?>)};</script>
+                      <hr class="border opacity-50">
+                      <p class="fw-semibold">Pilih varian</p>
+                      <form action="" method="post">
+                        <button type="button" name="var" id="var1" onclick="myVariant('var1', <?= $rowd['produk_var1pc']; ?>)"
+                          class="btn btn-sm btn-outline-secondary active" role="button"><?= $rowd['produk_var1']; ?></button>
+                        <button type='button' name="var" id="var2" onclick="myVariant('var2', <?= $rowd['produk_var2pc']; ?>)"
+                          class='btn btn-sm btn-outline-secondary'role='button'><?= $rowd['produk_var2']; ?></button>
+                      </form>
+                      <hr class="border opacity-50">
+                      <div class="py-4">
+                        <i class="fa-sharp fa-solid fa-shop fa-xl" style="color: #666;"></i><a class="link-dark link-offset-1-hover 
+                      link-underline-opacity-0 link-underline-opacity-100-hover fw-semibold px-1 " href="setID.php?key=<?= $rowd['toko_id']; ?>&goto=store"><?= $rowd['toko_shopname']; ?></a>
+                      </div>
+                    </div>
+                <?php endforeach; ?>                             
               </div>
             </div>
             <div class="bg-white p-2 rounded-2 shadow mt-3">
@@ -188,9 +216,9 @@ if (!isset($_SESSION["login"])) {
                 </div>
                 
                 <div class="border-start col-lg-7">   
-                  <p class="fs-5 fw-semibold pb-2">Kategori - <a class="link-dark" href="">Sayur</a></p>               
+                  <p class="fs-5 fw-semibold pb-2">Kategori - <a class="link-dark text-capitalize" href=""><?= $rowd['katP_name']; ?></a></p>               
                   <p class="fs-5 fw-semibold">Deskripsi</p>
-                  <p class="lh-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit et mi vel faucibus. Praesent interdum pretium felis nec eleifend. Vestibulum tristique magna eget placerat tincidunt. Nam commodo ex non lacus pharetra dictum. Integer lacinia blandit mi vel posuere. In elementum massa eu nulla consectetur suscipit. Nullam quis iaculis mauris. Vestibulum commodo nulla et elit volutpat, ut commodo augue placerat.</p>
+                  <div class="lh-1"><?= $rowd['produk_description']; ?></div>                  
                 </div>
               </div>
             </div>
@@ -207,7 +235,9 @@ if (!isset($_SESSION["login"])) {
           </div>
         </div>
       </div>
-    </div>
+    </div>        
+    <script src="js/variant.js"></script>    
+    <script src="js/setid.js"></script>    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
