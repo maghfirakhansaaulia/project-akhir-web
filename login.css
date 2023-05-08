@@ -366,12 +366,12 @@ isi-gabung-user {
 
 .isi-gabung-toko a, .isi-gabung-user a{
   text-decoration: none;
-  background-color: #b0e6aa71;
+  background-color: #ffffff00;
   padding: 10px 15px 10px 15px;
   border-radius: 20px;
   font-weight: bold;
-  color: rgb(66, 66, 66);
   border-style: solid;
+  color: #92ba92;
   border-color: #92ba92;
   font-size: 18px;
   cursor: pointer;
