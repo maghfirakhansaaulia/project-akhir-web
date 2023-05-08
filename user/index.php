@@ -9,7 +9,6 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,16 +65,17 @@ if (!isset($_SESSION["login"])) {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="py-2 px-3 w-75">
-            <form class="d-flex">
+            <form method="post">
               <div class="input-group">
                 <input
                   type="text"
                   class="form-control bg-white border border-success"
-                  placeholder="Aku mau belanja..."
-                  aria-label="Recipient's username"
-                  aria-describedby="button-addon2"
+                  placeholder="Aku mau belanja..."                 
+                  name="keyword"          
+                  autocomplete="off"
+
                 />
-                <button class="btn btn-outline-success" type="button" id="button-addon2">
+                <button class="btn btn-outline-success" type="submit" name="search">
                   <i class="bi bi-search"></i>
                 </button>
               </div>
