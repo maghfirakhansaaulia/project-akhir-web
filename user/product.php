@@ -228,7 +228,7 @@ if (isset($_POST['vart1'])) {
               <div class="bg-white rounded-2 shadow-sm">
                 <div class="p-3 d-grid gap-2">
                   <a class="btn py-2 fw-semibold btn-outline-success" href=""><i class="fa-solid fa-cart-plus fa-xl"></i> Masukkan Keranjang</a>
-                  <a class="btn py-2 fw-semibold btn-success" href="">Beli Sekarang</a>
+                  <a class="btn py-2 fw-semibold btn-success" href="transaction.php">Beli Sekarang</a>
                 </div>
               </div>
             </div>

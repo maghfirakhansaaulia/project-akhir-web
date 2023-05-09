@@ -9,6 +9,11 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
+$prdID = $_SESSION['prdID'];
+
+$prdd = query("SELECT produk.produk_name, produk.produk_var1pc, produk.produk_var2pc, produk.produk_var1, produk.produk_var2, produk.gambar_id,produk.produk_description, toko.toko_id, toko.toko_shopname, kat_produk.katP_name 
+        from produk join kat_produk on produk.katP_id = kat_produk.katP_id left join toko on produk.toko_id = toko.toko_id WHERE produk.produk_id = {$prdID}");
+
 
 ?>
 <!DOCTYPE html>
@@ -151,6 +156,7 @@ if (!isset($_SESSION["login"])) {
                 <i class="fa-sharp fa-solid fa-shop fa-2xl" style="color: #666;"></i>
               </div> 
               <div class="col-5">
+      <?php foreach ($prdd as $rowd): ?>                                                                                                                               
                 <a class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover fw-semibold px-1 " href="">Nama Toko</a>
                 <p class="text-body-secondary"><i class="fa-sharp fa-solid fa-location-dot"></i> nama jalan</p>
               </div>
@@ -186,6 +192,7 @@ if (!isset($_SESSION["login"])) {
                   <p class="fs-4">Total Pembayaran</p>                                        
                   <p class="fs-4 text-danger fw-bold">Rp.1.000.000</p>                                    
                   <a class="btn py-2 fw-semibold btn-success" href="">Beli Sekarang</a>
+      <?php endforeach; ?>                             
                 </div>
               </div>
             </div>

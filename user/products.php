@@ -21,7 +21,7 @@ if (!isset($_SESSION["login"])) {
 $prdd = query("SELECT * FROM produk");
 
 if (isset($_POST["search"])) {  
-  $prdd = cari($_POST["keyword"]);
+  $prdd = cariProduct($_POST["keyword"]);
 }
 ?>
 <!DOCTYPE html>
