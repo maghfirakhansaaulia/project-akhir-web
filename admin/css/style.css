@@ -1,0 +1,15 @@
+.top-nav {
+    background-image: url(https://diplomartbrussels.com/wp-content/uploads/2020/09/food-background-images-94-images-in-co-381169-png-images-pngio-food-background-png-1440_619.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    letter-spacing: 0.125rem;
+  }
+  .top-nav h1 {
+    padding: 3rem;
+    font-size: 5.8rem;
+    font-family: "Pacifico", cursive;
+  }
+  .top-nav h2 {
+    opacity: 0.8;
+  }
