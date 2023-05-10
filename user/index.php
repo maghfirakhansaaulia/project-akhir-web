@@ -94,19 +94,19 @@ if (!isset($_SESSION["login"])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item btn btn-light " href="products.php?c=sayur"
+                  <a class="dropdown-item btn btn-light " href="setID.php?key=sayur&goto=products"
                     ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light " href="products.php?c=buah"
+                  <a class="dropdown-item btn btn-light " href="setID.php?key=buah&goto=products"
                     ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i> Buah
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light " href="products.php?c=sembako"
+                  <a class="dropdown-item btn btn-light " href="setID.php?key=sembako&goto=products"
                     ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i> Sembako</a
                   >
                 </li>
@@ -372,7 +372,7 @@ if (!isset($_SESSION["login"])) {
                             style="width: 13rem; height: 29.6rem"
                           >
                             <div class="card-body d-flex align-content-center flex-wrap">
-                              <a href="" class="btn border border-0 stretched-link">
+                              <a href="setID.php?key=sayur&goto=products" class="btn border border-0 stretched-link">
                                 <h3>Lihat semua</h3>
                                 <i class="fa-solid fa-angles-right"></i>
                               </a>
@@ -573,7 +573,7 @@ if (!isset($_SESSION["login"])) {
                             style="width: 13rem; height: 29.6rem"
                           >
                             <div class="card-body d-flex align-content-center flex-wrap">
-                              <a href="" class="btn border border-0 stretched-link">
+                              <a href="setID.php?key=buah&goto=products" class="btn border border-0 stretched-link">
                                 <h3>Lihat semua</h3>
                                 <i class="fa-solid fa-angles-right"></i>
                               </a>
@@ -774,7 +774,7 @@ if (!isset($_SESSION["login"])) {
                             style="width: 13rem; height: 29.6rem"
                           >
                             <div class="card-body d-flex align-content-center flex-wrap">
-                              <a href="" class="btn border border-0 stretched-link">
+                              <a href="setID.php?key=sembako&goto=products" class="btn border border-0 stretched-link">
                                 <h3>Lihat semua</h3>
                                 <i class="fa-solid fa-angles-right"></i>
                               </a>
@@ -1098,7 +1098,7 @@ if (!isset($_SESSION["login"])) {
             <div class="card hover-effect h-100 w-100">              
               <div class="card-body d-flex align-content-center flex-wrap">
                 <a
-                  href=""
+                  href="products.php"
                   class="btn border border-0 stretched-link"
                 >
                   <h3>Lihat semua</h3>

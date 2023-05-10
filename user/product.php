@@ -18,8 +18,7 @@ if (!isset($_SESSION['prdID'])) {
 
 $prdID = $_SESSION['prdID'];
 
-$prdd = query("SELECT produk.produk_name, produk.produk_var1pc, produk.produk_var2pc, produk.produk_var1, produk.produk_var2, produk.gambar_id,produk.produk_description, toko.toko_id, toko.toko_shopname, kat_produk.katP_name 
-        from produk join kat_produk on produk.katP_id = kat_produk.katP_id left join toko on produk.toko_id = toko.toko_id WHERE produk.produk_id = {$prdID}");
+$prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_produk.katP_id left join toko on produk.toko_id = toko.toko_id WHERE produk.produk_id = {$prdID}");
 
 $aktif = 1;
 
@@ -58,7 +57,10 @@ if (isset($_POST['vart1'])) {
       src="https://kit.fontawesome.com/bd49e73b8b.js"
       crossorigin="anonymous"
     ></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -157,8 +159,7 @@ if (isset($_POST['vart1'])) {
                 <li>
                   <a class="dropdown-item py-2 btn btn-light" href="logout.php"
                     ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori
-                    Transaksi</a
-                  >
+                    Transaksi</a>
                 </li>
                 <li>
                   <a class="dropdown-item py-2 btn btn-light" href="logout.php"
@@ -178,6 +179,7 @@ if (isset($_POST['vart1'])) {
           <div class="col-lg-9">
             <div class="bg-white p-2 rounded-2 shadow">
               <div class="row">
+                <p hidden id="txtHint"></p>
                 <?php foreach ($prdd as $rowd): ?>                
                     <div class="col-lg-6">
                       <img
@@ -188,18 +190,13 @@ if (isset($_POST['vart1'])) {
                         width="100%"
                       />
                     </div>
-                    <div class="col-lg-6">                  
+                    <div class="col-lg-6">                            
                       <p class="fs-4 lh-1"><?php echo mb_strimwidth($rowd['produk_name'], 0, 58, "...") ?></p> 
                       <p class="fs-4 text-danger fw-bold" id="pc"></p>                                                                          
                       <script>document.getElementById("bd").onload = function() {myVariant('var1', <?= $rowd['produk_var1pc']; ?>)};</script>
                       <hr class="border opacity-50">
-                      <p class="fw-semibold">Pilih varian</p>
-                      <form action="" method="post">
-                        <button type="button" name="var" id="var1" onclick="myVariant('var1', <?= $rowd['produk_var1pc']; ?>)"
-                          class="btn btn-sm btn-outline-secondary active" role="button"><?= $rowd['produk_var1']; ?></button>
-                        <button type='button' name="var" id="var2" onclick="myVariant('var2', <?= $rowd['produk_var2pc']; ?>)"
-                          class='btn btn-sm btn-outline-secondary'role='button'><?= $rowd['produk_var2']; ?></button>
-                      </form>
+                      <p class="fw-semibold">Varian</p>                      
+                      <button type="button" name="var" class="btn btn-sm btn-secondary active" disabled><?= $rowd['produk_var1']; ?></button>                                             
                       <hr class="border opacity-50">
                       <div class="py-4">
                         <i class="fa-sharp fa-solid fa-shop fa-xl" style="color: #666;"></i><a class="link-dark link-offset-1-hover 
@@ -216,7 +213,7 @@ if (isset($_POST['vart1'])) {
                 </div>
                 
                 <div class="border-start col-lg-7">   
-                  <p class="fs-5 fw-semibold pb-2">Kategori - <a class="link-dark text-capitalize" href=""><?= $rowd['katP_name']; ?></a></p>               
+                  <p class="fs-5 fw-semibold pb-2">Kategori - <a class="link-dark text-capitalize" href="setID.php?key=sayur&goto=products"><?= $rowd['katP_name']; ?></a></p>               
                   <p class="fs-5 fw-semibold">Deskripsi</p>
                   <div class="lh-1"><?= $rowd['produk_description']; ?></div>                  
                 </div>
@@ -227,7 +224,7 @@ if (isset($_POST['vart1'])) {
             <div class="sticky-top z-2" style="top:12%">
               <div class="bg-white rounded-2 shadow-sm">
                 <div class="p-3 d-grid gap-2">
-                  <a class="btn py-2 fw-semibold btn-outline-success" href=""><i class="fa-solid fa-cart-plus fa-xl"></i> Masukkan Keranjang</a>
+                  <button class="btn py-2 fw-semibold btn-outline-success" id="keranjang" type="button" onclick="simpanSesi(<?php echo $prdID; ?>)"><i class="fa-solid fa-cart-plus fa-xl"></i> Masukkan Keranjang</button>
                   <a class="btn py-2 fw-semibold btn-success" href="transaction.php">Beli Sekarang</a>
                 </div>
               </div>
@@ -235,9 +232,34 @@ if (isset($_POST['vart1'])) {
           </div>
         </div>
       </div>
-    </div>        
-    <script src="js/variant.js"></script>    
-    <script src="js/setid.js"></script>    
+    </div> 
+    <script>
+      
+      function konfirAlert() {
+        Swal.fire({
+          title: "Tersimpan!",
+          text: "Produk tersimpan dikeranjang",
+          icon: "success",
+          confirmButtonText: "OK",
+        }).then((result) => {
+          window.location.href = "setID.php?key=&goto=products";
+        });
+      }
+
+      function simpanSesi(id){
+        if (sessionStorage.getItem("item") !== null) {
+          let ar = sessionStorage.getItem("item");
+          let idPrd = JSON.parse(ar)
+          idPrd.push(id);          
+          sessionStorage.setItem("item",JSON.stringify(idPrd));
+        } else {
+          let ar = [id];
+          sessionStorage.setItem("item",JSON.stringify(ar));
+        }
+        konfirAlert();
+      }
+      </script> 
+    <script src="js/cart.js"></script>       
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

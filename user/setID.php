@@ -25,4 +25,9 @@ if ($href == 'store') {
     exit;
 }
 
+if ($href == 'products') {
+    $_SESSION["key"] = $id;
+    header("Location: products.php");
+    exit;
+}
 ?>
