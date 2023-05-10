@@ -1,17 +1,16 @@
-<?php
+<?php 
 session_start();
+
 require 'functions.php';
 
-// https://www.youtube.com/watch?v=-TtwaG60VPk&t=545s
-
-if (isset($_POST['submit'])) {
-  tambah($_FILES['prd_image'], $_POST);
+if (isset($_POST['submit'])){
+  ubah($_FILES['prd_image'], $_POST);
 }
-
 $cat = query("SELECT * FROM kat_produk");
 
 
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -22,15 +21,12 @@ $cat = query("SELECT * FROM kat_produk");
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,700,0,0" />
-  <title>input data toko</title>
+  <title>update data toko</title>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg sticky-top shadow-sm" style="background-color: #b0e6aa;">
-    <p><span class="material-symbols-outlined">
-        arrow_back_ios
-      </span></p>
-    <a style="margin: 1% 0 1% 0;" class="kembali-add" href="index.php">Kembali</a>
+    <a style="margin: 1% 0 1% 2%;" class="kembali-add" href="index.php">< Kembali</a>
   </nav>
 
   <form method="post" class="p-5" enctype="multipart/form-data">

@@ -48,4 +48,34 @@ function tambah($gambar,$data){
 
 }
 
-?>
+function ubah($gambar, $data){
+  if(isset($_GET['updateid'])){
+    $id = $_GET['updateid'];
+    
+    global $conn;
+      $nama = $_POST['prd_name'];
+      $varian1 = $data['prd_v1'];
+      $kategori_prd = $data["prd_kat"];
+      $varian2 = htmlspecialchars($data["prd_v2"]);
+      $varian1pc = htmlspecialchars($data["prd_v1pc"]);
+      $varian2pc = htmlspecialchars($data["prd_v2pc"]); 
+      $deskrip = $data['prd_desc'];   
+      $file_sizegambar = $gambar['size'];
+      $file_typegambar = $gambar['type'];
+    }
+    
+    if ($file_sizegambar < 2048000 and ($file_typegambar =='image/jpeg' or $file_typegambar == 'image/png'))
+    {
+        $image   = addslashes(file_get_contents($gambar['tmp_name']));        
+        mysqli_query($conn, "UPDATE produk SET produk_name = '$nama', katP_id= $kategori_prd,  produk_var1 = '$varian1', produk_var2 = '$varian2', produk_var1pc = '$varian1pc', produk_var2pc = '$varian2pc', produk_description = '$deskrip' WHERE produk.produk_id=$id");
+        
+        mysqli_query($conn,"insert into gambar (gambar_blb,gambar_type) values ('$image','$file_typegambar')");
+        
+        $idGambar = findID("gambar");
+        mysqli_query($conn,"UPDATE produk SET gambar_id = $idGambar WHERE produk_id = $id");
+        
+        header("location:index.php");
+    }
+  
+  
+}

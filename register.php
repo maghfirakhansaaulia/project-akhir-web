@@ -97,12 +97,12 @@ if (isset($_SESSION['login'])) {
         </div>
       </form>
       <div class="text-center" id="scrollspy">
-        <a class="btn scrollspyBTN my-4" href="#scrollspyLogin">Sudah punya akun</a>
+        <!-- <a class="btn scrollspyBTN my-4" href="#scrollspyLogin">Sudah punya akun</a> -->
       </div>
     </div>
     <div data-bs-spy="scroll" data-bs-target="#scrollspy" class="second-wrapper container text-center">
-      <p class="fs-3 fw-semibold mb-4" id="scrollspyLogin">Masuk Akun PasarSegari</p>
-      <a class="btn btn-lg btn-costom rounded-1" href="login.php">Masuk Akun</a>
+      <p class="fs-3 fw-semibold mb-4" id="scrollspyLogin">Sudah punya akun? </p>
+      <a class="btn btn-lg btn-costom rounded-1" href="login.php">Login akun</a>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
