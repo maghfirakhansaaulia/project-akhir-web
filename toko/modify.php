@@ -1,7 +1,6 @@
 <?php 
 session_start();
 
-// include 'connect.php';
 require 'functions.php';
 
 if (isset($_POST['submit'])){
@@ -27,9 +26,6 @@ $cat = query("SELECT * FROM kat_produk");
 
 <body>
   <nav class="navbar navbar-expand-lg sticky-top shadow-sm" style="background-color: #b0e6aa;">
-    <!-- <p><span class="material-symbols-outlined">
-        arrow_back_ios
-      </span></p> -->
     <a style="margin: 1% 0 1% 2%;" class="kembali-add" href="index.php">< Kembali</a>
   </nav>
 

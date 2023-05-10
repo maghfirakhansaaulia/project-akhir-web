@@ -66,16 +66,12 @@ function ubah($gambar, $data){
     
     if ($file_sizegambar < 2048000 and ($file_typegambar =='image/jpeg' or $file_typegambar == 'image/png'))
     {
-      // echo $id, $nama, $varian1, $varian1pc, $deskrip;
         $image   = addslashes(file_get_contents($gambar['tmp_name']));        
         mysqli_query($conn, "UPDATE produk SET produk_name = '$nama', katP_id= $kategori_prd,  produk_var1 = '$varian1', produk_var2 = '$varian2', produk_var1pc = '$varian1pc', produk_var2pc = '$varian2pc', produk_description = '$deskrip' WHERE produk.produk_id=$id");
         
         mysqli_query($conn,"insert into gambar (gambar_blb,gambar_type) values ('$image','$file_typegambar')");
         
         $idGambar = findID("gambar");
-        // $idProduk = findID("produk");
-         
-        // mysqli_query($conn, "UPDATE produk SET produk_name = $nama, produk_var1 = $varian1, produk_var2 = $varian2, produk_var1pc = $varian1pc, produk_var2pc = $varian2pc, produk_description = $deskrip WHERE produk.produk_id=$id");
         mysqli_query($conn,"UPDATE produk SET gambar_id = $idGambar WHERE produk_id = $id");
         
         header("location:index.php");

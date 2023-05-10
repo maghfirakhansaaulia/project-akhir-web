@@ -50,36 +50,15 @@ $produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_pr
         <div class="py-2 px-3 w-75">
           <form class="d-flex">
             <div class="input-group">
-              <!-- <input type="text" class="form-control bg-white border border-success" placeholder="Aku mau belanja..." aria-label="Recipient's username" aria-describedby="button-addon2" />
-              <button class="btn btn-outline-success" type="button" id="button-addon2">
-                <i class="bi bi-search"></i>
-              </button> -->
             </div>
           </form>
         </div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown me-1">
-            <!-- <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Kategori
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item btn btn-light " href="products.php?c=sayur"><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur
-                  Segar</a>
-              </li>
-              <li>
-                <a class="dropdown-item btn btn-light " href="products.php?c=buah"><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i> Buah
-                  Segar</a>
-              </li>
-              <li>
-                <a class="dropdown-item btn btn-light " href="products.php?c=sembako"><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i> Sembako</a> -->
-              </li>
-            </ul>
           </li>
         </ul>
         <div class="py-2 px-4 ms-auto">
-          <p><?php ?></p>
-          </div>
+        </div>
         <div class="vr"></div>
         <div class="py-2 px-3 d-flex ">
           <div class="dropdown">
@@ -99,7 +78,7 @@ $produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_pr
 
 
   <div id="kont" class="container">
-    <a class="btn btn-primary" id = 'tombol-tambah' href="add.php">Tambah</a>
+    <a class="btn btn-primary" id='tombol-tambah' href="add.php">Tambah</a>
     <table class="table pt-4 table-bordered table-striped">
       <thead>
         <tr>
@@ -114,34 +93,33 @@ $produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_pr
         </tr>
       </thead>
       <tbody class="table-group-divider">
-        <?php $i = 1; 
-        ;
+        <?php $i = 1;;
         ?>
         <?php foreach ($produk as $row) : ?>
 
           <tr>
-            <th scope="row"><?= $i; 
-            $id = $row['produk_id']; ?></th>
-            <td><img src="view.php?id_gambar=<?php echo $row['gambar_id']; ?>" width="100"/></td>
+            <th scope="row"><?= $i;
+                            $id = $row['produk_id']; ?></th>
+            <td><img src="view.php?id_gambar=<?php echo $row['gambar_id']; ?>" width="100" /></td>
             <td><?= $row['produk_name'];
-            ?></td>
+                ?></td>
             <td><?= $row['produk_description'] ?></td>
-            <td><?= $row['produk_var1']. ' , ' . $row['produk_var2'] ?></td>
-            <td><?= 'Rp', $row['produk_var1pc']. ' , ' . 'Rp',$row['produk_var2pc'] ?></td>
+            <td><?= $row['produk_var1'] . ' , ' . $row['produk_var2'] ?></td>
+            <td><?= 'Rp', $row['produk_var1pc'] . ' , ' . 'Rp', $row['produk_var2pc'] ?></td>
             <td><?= $row['katP_name'] ?></td>
             <td>
               <button class="btn btn-success">
-                <a style="text-decoration: none; color: white;" href='modify.php?updateid=<?=$id?>'>ubah</a>
+                <a style="text-decoration: none; color: white;" href='modify.php?updateid=<?= $id ?>'>ubah</a>
               </button>
               <button class="btn btn-danger">
-                <a style="text-decoration: none; color: white;" href="delete.php?deleteid=<?=$id?>">hapus</a>
+                <a style="text-decoration: none; color: white;" href="delete.php?deleteid=<?= $id ?>">hapus</a>
               </button>
-            
+
             </td>
           </tr>
 
-          <?php $i++; 
-          
+          <?php $i++;
+
           ?>
         <?php endforeach; ?>
       </tbody>
@@ -150,7 +128,9 @@ $produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_pr
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  <script>let table = new DataTable('.table');</script>
+  <script>
+    let table = new DataTable('.table');
+  </script>
 </body>
 
 </html>
