@@ -152,34 +152,7 @@ if (!isset($_SESSION["login"])) {
                         Pilih Semua
                     </label>
                 </div>
-            </div>
-            <div class="bg-white p-3 rounded-2 shadow mt-3"> 
-                <div class="row">
-                    <div class="col-lg-1 d-flex align-content-center flex-wrap">
-                        <div class="form-check ">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">                            
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                    <img
-                        src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                        class="card-img-top object-fit-cover rounded-2"
-                        height="100"                        
-                        alt="..."
-                    />
-                    </div>
-                    <div class="col-lg-5">
-                    <p class="fs-4 lh-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="form-floating">
-                        <input type="number" id="typeNumber" class="form-control form-control-sm" min="1" max="10" />
-                        <label class="form-label" for="typeNumber">Jumlah</label>
-                    </div>
-                        <p class="fs-4 text-danger fw-bold text-end">Rp.100.000</p>                  
-                    </div>                  
-                </div>    
-            </div>
+            </div>            
             <div class="bg-white p-3 rounded-2 shadow mt-3"> 
                 <div class="row">
                     <div class="col-lg-1 d-flex align-content-center flex-wrap">
