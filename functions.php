@@ -38,7 +38,7 @@ function registrasi($data, $role)
     if ($role === "toko") {
         mysqli_query($conn, "INSERT INTO $role(toko_name, toko_phone, toko_shopname, toko_email, toko_address, toko_password) VALUES('$name', '$phone', ' $shop_name', '$email', '$address', '$password')");
     } else {
-        mysqli_query($conn, "INSERT INTO $role(toko_name, toko_phone, toko_shopname, toko_email, toko_address, toko_password) VALUES('$name', '$phone', ' $shop_name', '$email', '$address', '$password')");
+        mysqli_query($conn, "INSERT INTO $role(user_name, user_phone, user_email, user_address, user_password) VALUES('$name', '$phone', '$email', '$address', '$password')");
     }
 
 

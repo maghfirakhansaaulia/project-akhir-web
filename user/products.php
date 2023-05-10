@@ -10,19 +10,24 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
-// $arrCat = array("sayur", "buah", "sembako");
-
-// $category = $_GET['c'];
-
-// if(!in_array($category,$arrCat)){
-//   header("Location: index.php");
-// }
-
-$prdd = query("SELECT * FROM produk");
-
-if (isset($_POST["search"])) {  
-  $prdd = cariProduct($_POST["keyword"]);
+if(!isset($_SESSION['key'])){
+  $key = 'semua';
+  $prdd = query("SELECT * FROM produk WHERE produk_status = 'aktif'");
+  $filter = 'suitable';
 }
+
+if(isset($_SESSION['key'])){
+  $key = $_SESSION['key'];
+  $prdd = cariProduct($key,'suitable');
+}
+
+if (isset($_POST["search"])) { 
+  $key = $_POST["keyword"];
+  $filter = $_POST["filter"];
+  $prdd = cariProduct($key,$filter);
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,21 +73,7 @@ if (isset($_POST["search"])) {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="py-2 px-3 w-75">
-            <form method="post">
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control bg-white border border-success"
-                  placeholder="Aku mau belanja..."                                   
-                  name="keyword"
-                  autocomplete="off"
-                />
-                <button class="btn btn-outline-success" type="submit" name="search" id="searchBTN">
-                  <i class="bi bi-search"></i>
-                </button>
-              </div>
-            </form>
+          <div class="py-2 px-3 w-75">           
           </div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown me-1">
@@ -97,18 +88,18 @@ if (isset($_POST["search"])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item btn btn-light" href="products.php?c=sayur"
+                  <a class="dropdown-item btn btn-light" href="setID.php?key=sayur&goto=products"
                     ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="products.php?c=buah"
+                  <a class="dropdown-item btn btn-light" href="setID.php?key=buah&goto=products"
                     ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i> Buah
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="products.php?c=sembako"
+                  <a class="dropdown-item btn btn-light" href="setID.php?key=sembako&goto=products"
                     ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i> Sembako</a
                   >
                 </li>
@@ -163,67 +154,88 @@ if (isset($_POST["search"])) {
         </div>
       </div>
       <div class="row gx-4 py-2 px-5 bg-light ">
-        <div class="col-lg-2 col-md-3">
+        <div class="col-lg-3 col-md-3">
           <div class="sticky-top z-2" style="top:12%">
             <div class="bg-white rounded-2 shadow-sm">
               <div class="p-3">
                 <p class="fs-4 fw-semibold">Filter</p>
                 <hr class="border border-secondary border-1" />
-                <p class="fs-5 fw-semibold">Harga</p>
-
-                <form action="" method="get">
-                  <select class="form-select border-success">
+                <form method="post">
+                  
+                  <label for="keyword" class="form-label mb-0  fs-5 fw-semibold">Pencarian</label>
+                  <input
+                  type="text"
+                  class="form-control bg-white border border-success"
+                  placeholder="Aku mau belanja..."                                   
+                  name="keyword"
+                  id="keyword"                  
+                  autocomplete="off"
+                  />
+                  <label for="filter" class="form-label mb-0 mt-2 fs-5 fw-semibold">Harga</label>
+                  <!-- <p class="fs-5 fw-semibold mb-0 mt-2">Harga</p>                -->
+                  <select class="form-select border-success" name='filter' id="filter">
                     <option value="suitable">Paling Sesuai</option>
-                    <option value="lowest">Terendah</option>
-                    <option value="highest">Tertinggi</option>
+                    <option value="ASC">Terendah</option>
+                    <option value="DESC">Tertinggi</option>
                   </select>
+                  <div class="d-md-flex justify-content-md-end">
+                    <button class="btn btn-success w-50 mt-3 " type="submit" name="search" id="searchBTN" >
+                      <i class="bi bi-search"></i> Cari
+                    </button>
+                  </div>                
                 </form>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-10 col-md-9">
+        <div class="col-lg-9 col-md-9">
           <div class="bg-white shadow-sm rounded-2 mb-3">
-            <p class="fs-4 p-2">Hasil Pencarian</p>
+            <p class="fs-4 p-2 text-capitalize">Hasil Pencarian <?php echo $key ?></p>
           </div>
           <div class="bg-white shadow-sm rounded-2">
             <div id="products" class="p-2">
-              <div class="row row-cols-md-5 g-4 mb-3">                 
-                <?php foreach ($prdd as $rowd): ?>                                                                                                                               
-                    <div class="col">
-                      <div class="card hover-effect h-100 w-100">
-                        <img
-                          src="view.php?id_gambar=<?php echo $rowd['gambar_id']; ?>"
-                          class="card-img-top"
-                          height="200"                      
-                          width="100"                      
-                        />
-                        <div class="card-body">
-                          <!-- sampai sini -->
-                          <a                                                                        
-                            class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                            href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product">
-                            <p class="card-text">
-                              <?php echo mb_strimwidth($rowd['produk_name'], 0, 58, "...") ?>
-                            </p>                        
-                          </a>
-                          <p class="card-text text-secondary">
-                            <?php echo mb_strimwidth("{$rowd['produk_var1']} , {$rowd['produk_var2']}", 0, 23, "...") ?>
-                          </p>
-                        </div>
-                        <div class="card-footer bg-white border border-0">
-                          <p class="fw-semibold fs-4">
-                            <?php echo "Rp" . number_format($rowd['produk_var1pc'], 0, "", "."); ?>
-                          </p>
-                        </div>
-                        <div class="card-footer bg-white border text-center border-0">
-                          <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                            >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>             
-                <?php endforeach; ?>                             
+              <div class="row row-cols-md-4 g-4 mb-3">
+                <?php if($prdd != 'kosong'){foreach ($prdd as $rowd): ?>                                                                                                                               
+                <div class="col">
+                  <div class="card hover-effect h-100 w-100">
+                    <img
+                      src="view.php?id_gambar=<?php echo $rowd['gambar_id']; ?>"
+                      class="card-img-top"
+                      height="200"                      
+                      width="100"                      
+                    />
+                    <div class="card-body">
+                      <!-- sampai sini -->
+                      <a                                                                        
+                        class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                        href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product">
+                        <p class="card-text">
+                          <?php echo mb_strimwidth($rowd['produk_name'], 0, 58, "...") ?>
+                        </p>                        
+                      </a>
+                      <p class="card-text text-secondary">
+                        <?php echo mb_strimwidth("{$rowd['produk_var1']}", 0, 23, "...") ?>
+                      </p>
+                    </div>
+                    <div class="card-footer bg-white border border-0">
+                      <p class="fw-semibold fs-4">
+                        <?php echo "Rp" . number_format($rowd['produk_var1pc'], 0, "", "."); ?>
+                      </p>
+                    </div>
+                    <div class="card-footer bg-white border text-center border-0">
+                      <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
+                        >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>             
+                <?php endforeach; } else{?>
+                  <div class="col mb-0">
+                    <div class="alert alert-danger" role="alert">
+                      <i class="fa-solid fa-triangle-exclamation"></i> Tidak Ditemukan
+                    </div>
+                  </div>
+                <?php }?>
               </div>
             </div>
           </div>
@@ -232,7 +244,7 @@ if (isset($_POST["search"])) {
       <div class="fixed-bottom d-md-flex justify-content-md-end py-2 px-1">
         <a class="btn btn-outline-success border-2 scrollspyBTN me-md-2" href="#scrollspyAtas"><i class="fa-solid fa-angles-up"></i></a>
       </div>
-    </div>   
+    </div>  
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
