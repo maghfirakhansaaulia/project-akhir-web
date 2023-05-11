@@ -162,10 +162,8 @@ $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = prod
   </nav>
   <div class="container">
     <div class="bg-white shadow-sm rounded-2 mt-3">
-    <?php $i = 1; ?>
-    <?php if($prdd != 'kosong'){foreach ($prdd as $row): ?>
-      <table class="table table-hover table-striped table-sm align-middle"">
-        <thead>
+      <table class="table table-hover table-sm align-middle">
+        <thead class="table-success">
           <tr>
             <th scope="col">#</th>
             <th colspan="2" scope="col">Produk</th>
@@ -174,6 +172,8 @@ $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = prod
           </tr>
         </thead>
         <tbody class="table-group-divider">
+          <?php $i = 1; ?>
+          <?php if($prdd != 'kosong'){foreach ($prdd as $row): ?>
           <tr>
             <th scope="row"><?= $i; ?></th>
             <td><img src="view.php?id_gambar=<?php echo $row['gambar_id']; ?>" width="100"/></td>
@@ -182,15 +182,15 @@ $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = prod
             <td><?= $row['transaksi_total']; ?></td>              
           </tr>
         </tbody>
-      </table>
-      <?php $i++; ?>
-      <?php endforeach; } else{?>
-        <div class="col mb-0">
-          <div class="alert alert-danger" role="alert">
-            <i class="fa-solid fa-triangle-exclamation"></i> Tidak Ditemukan
+        <?php $i++; ?>
+        <?php endforeach; } else{?>
+          <div class="col mb-0">
+            <div class="alert alert-dark" role="alert">
+              <i class="fa-solid fa-money-bill-wave"></i> Anda Belum Melakukan Transaksi
+            </div>
           </div>
-        </div>
-        <?php }?>
+          <?php }?>
+        </table>
       </div>
   </div>
   <script

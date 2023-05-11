@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require 'functions.php';
+
 if (!isset($_SESSION["login"])) {
   header("Location: ../index.php");
   exit;
@@ -8,6 +10,11 @@ if (!isset($_SESSION["login"])) {
   header("Location: ../index.php");
   exit;
 }
+$prdd = query("SELECT * FROM produk WHERE produk_status = 'aktif' LIMIT 9");
+
+$sayur = query("SELECT * FROM produk WHERE produk_status = 'aktif' AND katP_id = 1 LIMIT 4");
+$buah = query("SELECT * FROM produk WHERE produk_status = 'aktif'  AND katP_id = 2 LIMIT 4");
+$sembako = query("SELECT * FROM produk WHERE produk_status = 'aktif'  AND katP_id = 3 LIMIT 4");
 
 ?>
 <!DOCTYPE html>
@@ -138,7 +145,7 @@ if (!isset($_SESSION["login"])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item py-2 btn btn-light" href="logout.php"
+                  <a class="dropdown-item py-2 btn btn-light" href="history.php"
                     ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori Transaksi</a
                   >
                 </li>
@@ -201,34 +208,36 @@ if (!isset($_SESSION["login"])) {
                 <table class="table-borderless">
                   <tbody>
                     <tr>
+                      <?php if($sayur != 'kosong'){foreach ($sayur as $rowd): ?>
                       <td>
                         <div class="p-2">
                           <div
+                          
                             class="card hover-effect"
                             style="width: 13rem; height: 29.6rem"
                           >
                             <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
+                              src="view.php?id_gambar=<?php echo $rowd['gambar_id']; ?>"
                               class="card-img-top object-fit-cover"
                               height="180"
                               alt="..."
                             />
                             <div class="card-body">
                               <a
-                                href=""
+                                href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product"
                                 class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
                               >
                                 <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                                  <?php echo mb_strimwidth($rowd['produk_name'], 0, 58, "...") ?>
                                 </p>
                               </a>
                               <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
+                                <?php echo mb_strimwidth("{$rowd['produk_var1']},{$rowd['produk_var2']}", 0, 23, "...") ?>
                               </p>
                             </div>
                             <div class="card-footer bg-white border border-0">
                               <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                                <?php echo "Rp" . number_format($rowd['produk_var1pc'], 0, "", "."); ?>
                               </p>
                             </div>
                             <div class="card-footer bg-white border text-center border-0">
@@ -242,130 +251,24 @@ if (!isset($_SESSION["login"])) {
                           </div>
                         </div>
                       </td>
-                      <td>
+                      <?php endforeach; } else{?>
+                        <td>                                                                
                         <div class="p-2">
                           <div
-                            class="card hover-effect"
+                            class="card  text-center"
                             style="width: 13rem; height: 29.6rem"
                           >
-                            <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                              class="card-img-top object-fit-cover"
-                              height="180"
-                              alt="..."
-                            />
-                            <div class="card-body">
-                              <a
-                                href=""
-                                class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                              >
-                                <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                                </p>
-                              </a>
-                              <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border border-0">
-                              <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border text-center border-0">
-                              <a
-                                href="#"
-                                class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
+                            <div class="card-body d-flex align-content-center flex-wrap">
+                              <a href="" class="btn border border-0 stretched-link">
+                                  <h3>Produk Kosong</h3>
+                                <i class="fa-solid fa-angles-right"></i>
+                              </a>                               
                             </div>
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <div class="p-2">
-                          <div
-                            class="card hover-effect"
-                            style="width: 13rem; height: 29.6rem"
-                          >
-                            <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                              class="card-img-top object-fit-cover"
-                              height="180"
-                              alt="..."
-                            />
-                            <div class="card-body">
-                              <a
-                                href=""
-                                class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                              >
-                                <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                                </p>
-                              </a>
-                              <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border border-0">
-                              <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border text-center border-0">
-                              <a
-                                href="#"
-                                class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="p-2">
-                          <div
-                            class="card hover-effect"
-                            style="width: 13rem; height: 29.6rem"
-                          >
-                            <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                              class="card-img-top object-fit-cover"
-                              height="180"
-                              alt="..."
-                            />
-                            <div class="card-body">
-                              <a
-                                href=""
-                                class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                              >
-                                <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                                </p>
-                              </a>
-                              <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border border-0">
-                              <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border text-center border-0">
-                              <a
-                                href="#"
-                                class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
+                      <?php }?>
+                      <td>                                                                
                         <div class="p-2">
                           <div
                             class="card hover-effect text-center"
@@ -402,34 +305,36 @@ if (!isset($_SESSION["login"])) {
                 <table class="table-borderless">
                   <tbody>
                     <tr>
+                    <?php if($buah != 'kosong'){foreach ($buah as $rowd): ?>
                       <td>
                         <div class="p-2">
                           <div
+                          
                             class="card hover-effect"
                             style="width: 13rem; height: 29.6rem"
                           >
                             <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
+                              src="view.php?id_gambar=<?php echo $rowd['gambar_id']; ?>"
                               class="card-img-top object-fit-cover"
                               height="180"
                               alt="..."
                             />
                             <div class="card-body">
                               <a
-                                href=""
+                                href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product"
                                 class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
                               >
                                 <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                                  <?php echo mb_strimwidth($rowd['produk_name'], 0, 58, "...") ?>
                                 </p>
                               </a>
                               <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
+                                <?php echo mb_strimwidth("{$rowd['produk_var1']},{$rowd['produk_var2']}", 0, 23, "...") ?>
                               </p>
                             </div>
                             <div class="card-footer bg-white border border-0">
                               <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                                <?php echo "Rp" . number_format($rowd['produk_var1pc'], 0, "", "."); ?>
                               </p>
                             </div>
                             <div class="card-footer bg-white border text-center border-0">
@@ -443,129 +348,23 @@ if (!isset($_SESSION["login"])) {
                           </div>
                         </div>
                       </td>
-                      <td>
+                      <?php endforeach; } else{?>
+                        <td>                                                                
                         <div class="p-2">
                           <div
-                            class="card hover-effect"
+                            class="card  text-center"
                             style="width: 13rem; height: 29.6rem"
                           >
-                            <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                              class="card-img-top object-fit-cover"
-                              height="180"
-                              alt="..."
-                            />
-                            <div class="card-body">
-                              <a
-                                href=""
-                                class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                              >
-                                <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                                </p>
-                              </a>
-                              <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border border-0">
-                              <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border text-center border-0">
-                              <a
-                                href="#"
-                                class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
+                            <div class="card-body d-flex align-content-center flex-wrap">
+                              <a href="" class="btn border border-0 stretched-link">
+                                  <h3>Produk Kosong</h3>
+                                <i class="fa-solid fa-angles-right"></i>
+                              </a>                               
                             </div>
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <div class="p-2">
-                          <div
-                            class="card hover-effect"
-                            style="width: 13rem; height: 29.6rem"
-                          >
-                            <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                              class="card-img-top object-fit-cover"
-                              height="180"
-                              alt="..."
-                            />
-                            <div class="card-body">
-                              <a
-                                href=""
-                                class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                              >
-                                <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                                </p>
-                              </a>
-                              <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border border-0">
-                              <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border text-center border-0">
-                              <a
-                                href="#"
-                                class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="p-2">
-                          <div
-                            class="card hover-effect"
-                            style="width: 13rem; height: 29.6rem"
-                          >
-                            <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                              class="card-img-top object-fit-cover"
-                              height="180"
-                              alt="..."
-                            />
-                            <div class="card-body">
-                              <a
-                                href=""
-                                class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                              >
-                                <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                                </p>
-                              </a>
-                              <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border border-0">
-                              <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border text-center border-0">
-                              <a
-                                href="#"
-                                class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
+                      <?php }?>                                                                                        
                       <td>
                         <div class="p-2">
                           <div
@@ -603,34 +402,36 @@ if (!isset($_SESSION["login"])) {
                 <table class="table-borderless">
                   <tbody>
                     <tr>
+                    <?php if($sembako != 'kosong'){foreach ($sembako as $rowd): ?>
                       <td>
                         <div class="p-2">
                           <div
+                          
                             class="card hover-effect"
                             style="width: 13rem; height: 29.6rem"
                           >
                             <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
+                              src="view.php?id_gambar=<?php echo $rowd['gambar_id']; ?>"
                               class="card-img-top object-fit-cover"
                               height="180"
                               alt="..."
                             />
                             <div class="card-body">
                               <a
-                                href=""
+                                href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product"
                                 class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
                               >
                                 <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                                  <?php echo mb_strimwidth($rowd['produk_name'], 0, 58, "...") ?>
                                 </p>
                               </a>
                               <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
+                                <?php echo mb_strimwidth("{$rowd['produk_var1']},{$rowd['produk_var2']}", 0, 23, "...") ?>
                               </p>
                             </div>
                             <div class="card-footer bg-white border border-0">
                               <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                                <?php echo "Rp" . number_format($rowd['produk_var1pc'], 0, "", "."); ?>
                               </p>
                             </div>
                             <div class="card-footer bg-white border text-center border-0">
@@ -644,129 +445,23 @@ if (!isset($_SESSION["login"])) {
                           </div>
                         </div>
                       </td>
-                      <td>
+                      <?php endforeach; } else{?>
+                        <td>                                                                
                         <div class="p-2">
                           <div
-                            class="card hover-effect"
+                            class="card  text-center"
                             style="width: 13rem; height: 29.6rem"
                           >
-                            <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                              class="card-img-top object-fit-cover"
-                              height="180"
-                              alt="..."
-                            />
-                            <div class="card-body">
-                              <a
-                                href=""
-                                class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                              >
-                                <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                                </p>
-                              </a>
-                              <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border border-0">
-                              <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border text-center border-0">
-                              <a
-                                href="#"
-                                class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
+                            <div class="card-body d-flex align-content-center flex-wrap">
+                              <a href="" class="btn border border-0 stretched-link">
+                                  <h3>Produk Kosong</h3>
+                                <i class="fa-solid fa-angles-right"></i>
+                              </a>                               
                             </div>
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <div class="p-2">
-                          <div
-                            class="card hover-effect"
-                            style="width: 13rem; height: 29.6rem"
-                          >
-                            <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                              class="card-img-top object-fit-cover"
-                              height="180"
-                              alt="..."
-                            />
-                            <div class="card-body">
-                              <a
-                                href=""
-                                class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                              >
-                                <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                                </p>
-                              </a>
-                              <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border border-0">
-                              <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border text-center border-0">
-                              <a
-                                href="#"
-                                class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="p-2">
-                          <div
-                            class="card hover-effect"
-                            style="width: 13rem; height: 29.6rem"
-                          >
-                            <img
-                              src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                              class="card-img-top object-fit-cover"
-                              height="180"
-                              alt="..."
-                            />
-                            <div class="card-body">
-                              <a
-                                href=""
-                                class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                              >
-                                <p class="card-text">
-                                  <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                                </p>
-                              </a>
-                              <p class="card-text text-secondary">
-                                <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border border-0">
-                              <p class="fw-semibold fs-4">
-                                <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                              </p>
-                            </div>
-                            <div class="card-footer bg-white border text-center border-0">
-                              <a
-                                href="#"
-                                class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
+                      <?php }?>                                                                                        
                       <td>
                         <div class="p-2">
                           <div
@@ -794,30 +489,31 @@ if (!isset($_SESSION["login"])) {
       <div class="mt-4 text-dark rounded container">
         <h1>Rekomendasi Hari Ini</h1>
         <div class="row row-cols-md-5 g-4 mb-3">
+        <?php if($prdd != 'kosong'){foreach ($prdd as $rowd): ?> 
           <div class="col">
             <div class="card hover-effect h-100 w-100">
               <img
-                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
+                src="view.php?id_gambar=<?php echo $rowd['gambar_id']; ?>"
                 class="card-img-top object-fit-cover"
                 height="180"
                 alt="..."
               />
               <div class="card-body">
                 <a
-                  href=""
+                  href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product"
                   class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
                 >
                   <p class="card-text">
-                    <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
+                    <?php echo mb_strimwidth($rowd['produk_name'], 0, 58, "...") ?>
                   </p>
                 </a>
                 <p class="card-text text-secondary">
-                  <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
+                  <?php echo mb_strimwidth("{$rowd['produk_var1']},{$rowd['produk_var2']}", 0, 23, "...") ?>
                 </p>
               </div>
               <div class="card-footer bg-white border border-0">
                 <p class="fw-semibold fs-4">
-                  <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
+                  <?php echo "Rp" . number_format($rowd['produk_var1pc'], 0, "", "."); ?>
                 </p>
               </div>
               <div class="card-footer bg-white border text-center border-0">
@@ -826,274 +522,19 @@ if (!isset($_SESSION["login"])) {
                 ></a>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card hover-effect h-100 w-100">
-              <img
-                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                class="card-img-top object-fit-cover"
-                height="180"
-                alt="..."
-              />
-              <div class="card-body">
-                <a
-                  href=""
-                  class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                >
-                  <p class="card-text">
-                    <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                  </p>
-                </a>
-                <p class="card-text text-secondary">
-                  <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border border-0">
-                <p class="fw-semibold fs-4">
-                  <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border text-center border-0">
-                <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                  >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                ></a>
+          </div>                   
+          <?php endforeach; } else{?>
+            <div class="col">
+              <div class="card hover-effect h-100  w-100">                
+                <div class="card-body ">                 
+                  <p class="card-text fs-1 text-center fwsemibold">
+                    Sedang Kosong
+                  </p>                  
+                  
+                </div>                                
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card hover-effect h-100 w-100">
-              <img
-                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                class="card-img-top object-fit-cover"
-                height="180"
-                alt="..."
-              />
-              <div class="card-body">
-                <a
-                  href=""
-                  class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                >
-                  <p class="card-text">
-                    <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                  </p>
-                </a>
-                <p class="card-text text-secondary">
-                  <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border border-0">
-                <p class="fw-semibold fs-4">
-                  <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border text-center border-0">
-                <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                  >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card hover-effect h-100 w-100">
-              <img
-                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                class="card-img-top object-fit-cover"
-                height="180"
-                alt="..."
-              />
-              <div class="card-body">
-                <a
-                  href=""
-                  class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                >
-                  <p class="card-text">
-                    <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                  </p>
-                </a>
-                <p class="card-text text-secondary">
-                  <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border border-0">
-                <p class="fw-semibold fs-4">
-                  <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border text-center border-0">
-                <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                  >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card hover-effect h-100 w-100">
-              <img
-                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                class="card-img-top object-fit-cover"
-                height="180"
-                alt="..."
-              />
-              <div class="card-body">
-                <a
-                  href=""
-                  class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                >
-                  <p class="card-text">
-                    <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                  </p>
-                </a>
-                <p class="card-text text-secondary">
-                  <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border border-0">
-                <p class="fw-semibold fs-4">
-                  <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border text-center border-0">
-                <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                  >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card hover-effect h-100 w-100">
-              <img
-                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                class="card-img-top object-fit-cover"
-                height="180"
-                alt="..."
-              />
-              <div class="card-body">
-                <a
-                  href=""
-                  class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                >
-                  <p class="card-text">
-                    <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                  </p>
-                </a>
-                <p class="card-text text-secondary">
-                  <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border border-0">
-                <p class="fw-semibold fs-4">
-                  <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border text-center border-0">
-                <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                  >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card hover-effect h-100 w-100">
-              <img
-                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                class="card-img-top object-fit-cover"
-                height="180"
-                alt="..."
-              />
-              <div class="card-body">
-                <a
-                  href=""
-                  class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                >
-                  <p class="card-text">
-                    <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                  </p>
-                </a>
-                <p class="card-text text-secondary">
-                  <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border border-0">
-                <p class="fw-semibold fs-4">
-                  <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border text-center border-0">
-                <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                  >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card hover-effect h-100 w-100">
-              <img
-                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                class="card-img-top object-fit-cover"
-                height="180"
-                alt="..."
-              />
-              <div class="card-body">
-                <a
-                  href=""
-                  class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                >
-                  <p class="card-text">
-                    <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                  </p>
-                </a>
-                <p class="card-text text-secondary">
-                  <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border border-0">
-                <p class="fw-semibold fs-4">
-                  <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border text-center border-0">
-                <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                  >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card hover-effect h-100 w-100">
-              <img
-                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/raw-potatoes-potato-1296x728-header.jpg?w=1155&h=1528"
-                class="card-img-top object-fit-cover"
-                height="180"
-                alt="..."
-              />
-              <div class="card-body">
-                <a
-                  href=""
-                  class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                >
-                  <p class="card-text">
-                    <?php echo mb_strimwidth("Some quick example text to build on the card title and make up the bulk of the card's content.", 0, 58, "...") ?>
-                  </p>
-                </a>
-                <p class="card-text text-secondary">
-                  <?php echo mb_strimwidth("100g, 500g, 1kg", 0, 23, "...") ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border border-0">
-                <p class="fw-semibold fs-4">
-                  <?php echo "Rp" . number_format("1000000", 0, "", "."); ?>
-                </p>
-              </div>
-              <div class="card-footer bg-white border text-center border-0">
-                <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                  >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                ></a>
-              </div>
-            </div>
-          </div>
+          <?php }?>                                                      
           <div class="col">
             <div class="card hover-effect h-100 w-100">              
               <div class="card-body d-flex align-content-center flex-wrap">
