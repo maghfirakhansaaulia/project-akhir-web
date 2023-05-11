@@ -1,7 +1,7 @@
 <?php
 session_start();
-
 require 'functions.php';
+
 
 if (!isset($_SESSION["login"])) {
   header("Location: ../index.php");
@@ -11,12 +11,23 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
-$storeID = $_SESSION['storeID'];
+if (!isset($_SESSION['prdID'])) {
+  header("Location: index.php");
+  exit;
+}
 
-$prdd = query("SELECT * FROM produk JOIN kat_produk ON produk.katP_id = kat_produk.katP_id 
-        LEFT JOIN toko ON produk.toko_id = toko.toko_id WHERE toko.toko_id = {$storeID}");
+$prdID = $_SESSION['prdID'];
 
-$shp = query("SELECT * FROM toko WHERE toko_id = {$storeID}");
+$prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_produk.katP_id left join toko on produk.toko_id = toko.toko_id WHERE produk.produk_id = {$prdID}");
+
+$aktif = 1;
+
+if (isset($_POST['vart2'])) {
+  $aktif = 2;
+}
+if (isset($_POST['vart1'])) {
+  $aktif = 1;
+}
 
 
 ?>
@@ -38,14 +49,23 @@ $shp = query("SELECT * FROM toko WHERE toko_id = {$storeID}");
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/bd49e73b8b.js" crossorigin="anonymous"></script>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bd49e73b8b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body class="bg-white">
-    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
+  <body class="bg-white" id="bd">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm z-3">
       <div class="container">
         <div class="py-2">
           <a class="navbar-brand fw-light fs-4" href="index.php"
@@ -93,19 +113,21 @@ $shp = query("SELECT * FROM toko WHERE toko_id = {$storeID}");
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item btn btn-light" href="#"
-                    ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur Segar</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item btn btn-light" href="#"
-                    ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i> Buah
+                  <a class="dropdown-item btn btn-light" href="category.php?c=sayur"
+                    ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="#"
-                    ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i> Sembako</a
+                  <a class="dropdown-item btn btn-light" href="category.php?c=buah"
+                    ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i>
+                    Buah Segar</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item btn btn-light" href="category.php?c=sembako"
+                    ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i>
+                    Sembako</a
                   >
                 </li>
               </ul>
@@ -136,12 +158,13 @@ $shp = query("SELECT * FROM toko WHERE toko_id = {$storeID}");
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                   <a class="dropdown-item py-2 btn btn-light" href="logout.php"
-                    ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori Transaksi</a
-                  >
+                    ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori
+                    Transaksi</a>
                 </li>
                 <li>
                   <a class="dropdown-item py-2 btn btn-light" href="logout.php"
-                    ><i class="fa-sharp fa-solid fa-right-from-bracket fa-lg"></i> Logout</a
+                    ><i class="fa-sharp fa-solid fa-right-from-bracket fa-lg"></i>
+                    Logout</a
                   >
                 </li>
               </ul>
@@ -150,64 +173,9 @@ $shp = query("SELECT * FROM toko WHERE toko_id = {$storeID}");
         </div>
       </div>
     </nav>
-    <div class="container-fluid">
-      <div class="container mt-3">
-        <div class="bg-white p-2 rounded-2 shadow-sm mb-3"> 
-          <div class="row justify-content-start">   
-            <div class="col-1 ">
-              <i class="fa-sharp fa-solid fa-shop fa-2xl ms-4 mt-4" style="color: #666;"></i>
-            </div> 
-            <div class="col-5">              
-        <?php foreach ($shp as $rows): ?>                                                                                                                               
-              <p class="fw-semibold px-1 mb-0" href=""><?= $rows['toko_shopname'];?></p>
-              <p class="text-body-secondary mb-0"><i class="fa-sharp fa-solid fa-location-dot"></i> <?= $rows['toko_address'];?></p>
-              <p class="text-body-secondary"><i class="fa-solid fa-phone fa-sm"></i> <?= $rows['toko_phone'];?></p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-2 rounded-2 shadow-sm">           
-        <?php endforeach; ?>                                       
-          <hr class="border opacity-50">
-          <div class="row row-cols-md-5 g-4 mb-3">
-        <?php foreach ($prdd as $rowd): ?>                                                                                                                               
-            <div class="col">
-              <div class="card hover-effect h-100 w-100">
-                <img
-                  src="view.php?id_gambar=<?php echo $rowd['gambar_id']; ?>"
-                  class="card-img-top"
-                  height="200"                      
-                  width="100"                      
-                />
-                <div class="card-body">
-                  <!-- sampai sini -->
-                  <a                                                                        
-                    class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-                    href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product">
-                    <p class="card-text">
-                      <?php echo mb_strimwidth($rowd['produk_name'], 0, 58, "...") ?>
-                    </p>                        
-                  </a>
-                  <p class="card-text text-secondary">
-                    <?php echo mb_strimwidth("{$rowd['produk_var1']} , {$rowd['produk_var2']}", 0, 23, "...") ?>
-                  </p>
-                </div>
-                <div class="card-footer bg-white border border-0">
-                  <p class="fw-semibold fs-4">
-                    <?php echo "Rp" . number_format($rowd['produk_var1pc'], 0, "", "."); ?>
-                  </p>
-                </div>
-                <div class="card-footer bg-white border text-center border-0">
-                  <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                    >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                  ></a>
-                </div>
-              </div>
-            </div>             
-          <?php endforeach; ?>                             
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="container-floid bg-light">
+
+    </div>   
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
