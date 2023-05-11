@@ -178,8 +178,7 @@ $shp = query("SELECT * FROM toko WHERE toko_id = {$storeID}");
                   height="200"                      
                   width="100"                      
                 />
-                <div class="card-body">
-                  <!-- sampai sini -->
+                <div class="card-body">              
                   <a                                                                        
                     class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
                     href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product">

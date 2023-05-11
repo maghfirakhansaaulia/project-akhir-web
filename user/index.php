@@ -16,6 +16,10 @@ $sayur = query("SELECT * FROM produk WHERE produk_status = 'aktif' AND katP_id =
 $buah = query("SELECT * FROM produk WHERE produk_status = 'aktif'  AND katP_id = 2 LIMIT 4");
 $sembako = query("SELECT * FROM produk WHERE produk_status = 'aktif'  AND katP_id = 3 LIMIT 4");
 
+if (isset($_POST["search"])) { 
+  $key = $_POST["keyword"];
+  header("Location: setID.php?key=$key&goto=products");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

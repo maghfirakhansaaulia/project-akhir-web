@@ -30,4 +30,10 @@ if ($href == 'products') {
     header("Location: products.php");
     exit;
 }
+
+if ($href == 'transaction') {
+    $_SESSION["var"] = $id;
+    header("Location: transaction.php");
+    exit;
+}
 ?>
