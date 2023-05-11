@@ -152,7 +152,7 @@ $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_prod
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                <a class="dropdown-item py-2 btn btn-light" href="logout.php"
+                <a class="dropdown-item py-2 btn btn-light" href="history.php"
                 ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori Transaksi</a
                 >
               </li>

@@ -113,19 +113,19 @@ if (isset($_POST['vart1'])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item btn btn-light" href="category.php?c=sayur"
+                  <a class="dropdown-item btn btn-light" href="setID.php?key=sayur&goto=products"
                     ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="category.php?c=buah"
+                  <a class="dropdown-item btn btn-light" href="setID.php?key=buah&goto=products"
                     ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i>
                     Buah Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="category.php?c=sembako"
+                  <a class="dropdown-item btn btn-light" href="setID.php?key=sembako&goto=products"
                     ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i>
                     Sembako</a
                   >
@@ -157,7 +157,7 @@ if (isset($_POST['vart1'])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item py-2 btn btn-light" href="logout.php"
+                  <a class="dropdown-item py-2 btn btn-light" href="history.php"
                     ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori
                     Transaksi</a>
                 </li>
@@ -178,8 +178,7 @@ if (isset($_POST['vart1'])) {
         <div class="row gx-4 py-2 mt-5" id="products">
           <div class="col-lg-9">
             <div class="bg-white p-2 rounded-2 shadow">
-              <div class="row">
-                <p hidden id="txtHint"></p>
+              <div class="row">                
                 <?php foreach ($prdd as $rowd): ?>                
                     <div class="col-lg-6">
                       <img
@@ -196,7 +195,8 @@ if (isset($_POST['vart1'])) {
                       <script>document.getElementById("bd").onload = function() {myVariant('var1', <?= $rowd['produk_var1pc']; ?>)};</script>
                       <hr class="border opacity-50">
                       <p class="fw-semibold">Varian</p>                      
-                      <button type="button" name="var" class="btn btn-sm btn-secondary active" disabled><?= $rowd['produk_var1']; ?></button>                                             
+                      <button type="button" name="var" id="var1" class="btn btn-sm btn-outline-secondary" onclick="myVariant('var1', <?= $rowd['produk_var1pc']; ?>)"><?= $rowd['produk_var1']; ?></button>                                             
+                      <button type="button" name="var" id="var2" class="btn btn-sm btn-outline-secondary" onclick="myVariant('var2', <?= $rowd['produk_var2pc']; ?>) "><?= $rowd['produk_var2']; ?></button>                                             
                       <hr class="border opacity-50">
                       <div class="py-4">
                         <i class="fa-sharp fa-solid fa-shop fa-xl" style="color: #666;"></i><a class="link-dark link-offset-1-hover 
@@ -225,7 +225,7 @@ if (isset($_POST['vart1'])) {
               <div class="bg-white rounded-2 shadow-sm">
                 <div class="p-3 d-grid gap-2">
                   <button class="btn py-2 fw-semibold btn-outline-success" id="keranjang" type="button" onclick="simpanSesi(<?php echo $prdID; ?>)"><i class="fa-solid fa-cart-plus fa-xl"></i> Masukkan Keranjang</button>
-                  <a class="btn py-2 fw-semibold btn-success" href="transaction.php">Beli Sekarang</a>
+                  <button class="btn py-2 fw-semibold btn-success" type="button" onclick="transction()">Beli Sekarang</a>
                 </div>
               </div>
             </div>
@@ -245,8 +245,8 @@ if (isset($_POST['vart1'])) {
           window.location.href = "setID.php?key=&goto=products";
         });
       }
-
-      function simpanSesi(id){
+        // sementara masih simpan di sessionStorage
+      function simpanSesi(id){ 
         if (sessionStorage.getItem("item") !== null) {
           let ar = sessionStorage.getItem("item");
           let idPrd = JSON.parse(ar)
@@ -258,8 +258,8 @@ if (isset($_POST['vart1'])) {
         }
         konfirAlert();
       }
-      </script> 
-    <script src="js/cart.js"></script>       
+      </script>           
+    <script src="js/variant.js"></script>       
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

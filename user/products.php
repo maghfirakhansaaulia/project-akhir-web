@@ -130,7 +130,7 @@ if (isset($_POST["search"])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item py-2 btn btn-light" href="logout.php"
+                  <a class="dropdown-item py-2 btn btn-light" href="history.php"
                     ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori Transaksi</a
                   >
                 </li>
