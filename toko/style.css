@@ -212,7 +212,7 @@ nav p{
 }
 
 #deskripsi-tambah{
-  margin: 1% 0 0 0;
+  margin: 2% 0 1% 0;
   color: #3e543c;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -246,6 +246,10 @@ form input[type=submit]{
   text-align: center;
   justify-content: center;
   
+}
+
+form input[type=submit]:hover{
+  background-color: #214e23;
 }
 
 #kont{

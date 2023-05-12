@@ -47,4 +47,34 @@ function tambah($gambar,$data){
 }
 
 
+function ubah($gambar, $data){
+  if(isset($_GET['updateid'])){
+    $id = $_GET['updateid'];
+    
+    global $conn;
+      $title = $data['judul'];
+      $kategori_art = $data["art_kat"];
+      $date = $data['art_tanggal'];   
+      $deskrip = $data['art_desc'];   
+      $file_sizegambar = $gambar['size'];
+      $file_typegambar = $gambar['type'];
+    }
+    
+    if ($file_sizegambar < 2048000 and ($file_typegambar =='image/jpeg' or $file_typegambar == 'image/png'))
+    {
+        $image   = addslashes(file_get_contents($gambar['tmp_name']));        
+        mysqli_query($conn, "UPDATE artikel SET artikel_title = '$title', katA_id= $kategori_art,  artikel_date = '$date', artikel_content = '$deskrip' WHERE artikel.artikel_id=$id");
+        
+        mysqli_query($conn,"insert into gambar (gambar_blb,gambar_type) values ('$image','$file_typegambar')");
+        
+        $idGambar = findID("gambar");
+        mysqli_query($conn,"UPDATE artikel SET gambar_id = $idGambar WHERE artikel_id = $id");
+        
+        header("location:index.php");
+    }
+  
+  
+}
+
+
 ?>

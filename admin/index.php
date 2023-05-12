@@ -80,10 +80,10 @@ $artikel = query("SELECT * FROM artikel join kat_artikel on artikel.katA_id = ka
       <thead>
         <tr>
           <th scope="col">No</th>
+          <th scope="col">Gambar</th>
           <th scope="col">Judul</th>
           <th scope="col">Isi konten</th>
           <th scope="col">tanggal</th>
-          <th scope="col">Gambar</th>
           <th scope="col">Aksi</th>
         </tr>
       </thead>
@@ -95,16 +95,16 @@ $artikel = query("SELECT * FROM artikel join kat_artikel on artikel.katA_id = ka
           <tr>
             <th scope="row"><?= $i;
                             $id = $row['artikel_id']; ?></th>
+            <td><img src="lihat.php?id_gambar=<?php echo $row['gambar_id']; ?>" width="100" /></td>
             <td><?= $row['artikel_title'];
                 ?></td>
             <td><?= $row['artikel_content'] ?></td>
             <td><?= $row['artikel_date'] ?></td>
-            <td><img src="view.php?id_gambar=<?php echo $row['gambar_id']; ?>" width="100" /></td>
             <td>
               <button class="btn btn-success">
                 <a style="text-decoration: none; color: white;" href='modify.php?updateid=<?= $id ?>'>ubah</a>
               </button>
-              <button class="btn btn-danger">
+              <button class="btn btn-danger" style="margin-top:3%;">
                 <a style="text-decoration: none; color: white;" href="delete.php?deleteid=<?= $id ?>">hapus</a>
               </button>
 
@@ -124,7 +124,6 @@ $artikel = query("SELECT * FROM artikel join kat_artikel on artikel.katA_id = ka
   <script>
     let table = new DataTable('.table');
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

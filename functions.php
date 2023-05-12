@@ -45,4 +45,14 @@ function registrasi($data, $role)
     return mysqli_affected_rows($conn);
 }
 
+if(isset($_GET['updateid'])){
+    $id = $_GET['updateid'];
+
+    $idGambar = findID("gambar");
+
+
+
+
+}
+
 ?>
