@@ -52,10 +52,8 @@ if (isset($_SESSION['login'])) {
     <div class="navbar-index">    
       <nav style="display: flex; justify-content: space-around; align-items: center; padding-left:20%; padding-right: 20%; height: 15%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
         <img class="icon" src="gambar/Untitled75_20230419165549.png" alt="">
-        <a class="atas" href="">Home</a>
-        <a class="atas" href="">Toko</a>
-        <a class="atas" href="">informasi</a>
-        <a class="atas" href="">Contact</a>
+        <a class="atas" href="index.php">Home</a>
+        <a class="atas" href="informasi.php">informasi</a>
         <a class="atas" href="login.php">Login</a>
         <a class="atas" href="register.php">Daftar</a>
         <!-- <a href="" class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"><i class="fa-solid fa-angles-left"></i> Kembali</a> -->

@@ -398,3 +398,64 @@ isi-gabung-user {
   border-bottom-right-radius: 10px;
   background-size: cover;
 }
+
+.header-info{
+  margin: 3% 0 3% 0;
+  color: #394f36;
+  font-size: 70px;
+  font-family: pacifico;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+/* ===================================================================================================== */
+/* informasi.php */
+/* ===================================================================================================== */
+
+/* .berita{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+} */
+
+.berita{
+  display: flex;
+}
+
+.gambar-info {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  width: 300px;
+  object-fit: cover;
+  height: auto;
+  display: flex;
+}
+
+.gambar-info img{
+  width: 290px;
+  border-radius: 20px;
+}
+
+.judul-info{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.judul-info h5{
+  background-color: #f4d386;
+  font-size: 16px;
+  display: inline-block;
+  padding: 7px 17px 7px 17px;
+  border-radius: 20px;
+  color: rgb(36, 124, 25);
+  font-size: 14px;
+  box-shadow: 3px 3px #d4b773;;
+}
+
+#tanggal{
+  color: rgb(177, 177, 177);
+  font-size: 13px;
+}
+

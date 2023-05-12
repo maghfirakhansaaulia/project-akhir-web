@@ -5,7 +5,7 @@ require 'function.php';
 // https://www.youtube.com/watch?v=-TtwaG60VPk&t=545s
 
 if (isset($_POST['submit'])) {
-  tambah($_FILES['art_image'], $_POST);
+  ubah($_FILES['art_image'], $_POST);
 }
 
 $cat = query("SELECT * FROM kat_artikel");

@@ -30,7 +30,7 @@ $cat = query("SELECT * FROM kat_produk");
     <p><span class="material-symbols-outlined">
         arrow_back_ios
       </span></p>
-    <a style="margin: 1% 0 1% 0;" class="kembali-add" href="index.php">Kembali</a>
+    <a style="margin: 1% 2% 1% 4%;"class="kembali-add" href="index.php">Kembali</a>
   </nav>
 
   <form method="post" class="p-5" enctype="multipart/form-data">

@@ -53,7 +53,7 @@ function ubah($gambar, $data){
     $id = $_GET['updateid'];
     
     global $conn;
-      $nama = $_POST['prd_name'];
+      $nama = $data['prd_name'];
       $varian1 = $data['prd_v1'];
       $kategori_prd = $data["prd_kat"];
       $varian2 = htmlspecialchars($data["prd_v2"]);
