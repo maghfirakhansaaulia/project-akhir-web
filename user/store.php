@@ -18,7 +18,10 @@ $prdd = query("SELECT * FROM produk JOIN kat_produk ON produk.katP_id = kat_prod
 
 $shp = query("SELECT * FROM toko WHERE toko_id = {$storeID}");
 
-
+if (isset($_POST["search"])) { 
+  $key = $_POST["keyword"];
+  header("Location: setID.php?key=$key&goto=products");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,16 +68,15 @@ $shp = query("SELECT * FROM toko WHERE toko_id = {$storeID}");
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="py-2 px-3 w-75">
-            <form class="d-flex">
+            <form class="d-flex" method="post">
               <div class="input-group">
                 <input
                   type="text"
                   class="form-control bg-white border border-success"
                   placeholder="Aku mau belanja..."
-                  aria-label="Recipient's username"
-                  aria-describedby="button-addon2"
+                  name="keyword"
                 />
-                <button class="btn btn-outline-success" type="button" id="button-addon2">
+                <button class="btn btn-outline-success" type="submit" name="search">
                   <i class="bi bi-search"></i>
                 </button>
               </div>
@@ -110,17 +112,7 @@ $shp = query("SELECT * FROM toko WHERE toko_id = {$storeID}");
                 </li>
               </ul>
             </li>
-          </ul>
-          <div class="py-2 px-4 ms-auto">
-            <a href="" class="link-dark position-relative">
-              <i class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i>
-              <span
-                class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
-              >
-                <span class="visually-hidden">New alerts</span>
-              </span>
-            </a>
-          </div>
+          </ul>         
           <div class="vr"></div>
           <div class="py-2 px-3 d-flex">
             <div class="dropdown">

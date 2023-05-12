@@ -7,7 +7,7 @@ function count(price,value){
     return price * value;
 };
 
-function myFunction(price) {
+function myFunction(price) {    
     let x = document.getElementById("typeNumber").value;
     if(x > 10){             
         document.getElementById("jumlah").value = 10;
@@ -30,11 +30,5 @@ function note(){
     document.getElementById("hideNote").value = x;
 }
 
-function swtall(){
-    Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-      )
-}
+
 
