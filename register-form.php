@@ -27,7 +27,6 @@ if (isset($_SESSION['login'])) {
 }
 
 
-
 $role = $_GET['role'];
 
 if ($role === "toko") {
@@ -39,6 +38,38 @@ if ($role === "toko") {
   exit;
 }
 
+
+function phpalert($role)
+{
+  echo "        
+  <script>    
+  Swal.fire({
+    title: 'Berhasil Daftar!',          
+    icon: 'success',
+    timer: 1500 ,
+    showConfirmButton: false
+  }).then((result) => {
+    window.location.href = 'login.php';
+        })                              
+    </script>
+    ";
+  }
+  function err($msg){
+    echo "        
+    <script>    
+        Swal.fire({
+          title: 'Gagal Daftar!',          
+          icon: 'error',
+          text: '$msg',
+          timer: 1800 ,
+          showConfirmButton: false
+        }).then((result) => {
+          window.location.href = 'register.php';          
+        })                              
+    </script>
+    ";
+
+  }
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +85,11 @@ if ($role === "toko") {
   integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/bd49e73b8b.js" crossorigin="anonymous"></script>
   
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
+
   <link rel="stylesheet" href="login.css" />
 </head>
 
@@ -83,12 +119,7 @@ if ($role === "toko") {
       <div class="col-7 mx-auto">
         <div class="card shadow">
           <div class="card-body">
-            <form method="post">
-              <?php if (isset($msg)): ?>
-                <div class="alert alert-danger py-3" id="err" role="alert">
-                  <?php echo $msg; ?>
-                </div>
-              <?php endif; ?>
+            <form method="post">              
               <div class="row mb-3">
                 <label for="namaRegis" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-10">
@@ -134,7 +165,7 @@ if ($role === "toko") {
                 </div>
               </div>
               <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-                <input type="submit" class="btn btn-success" name="register" value="Daftar" />
+                <button type="submit" class="btn btn-success" name="register" >Daftar</button>
               </div>
             </form>
           </div>
@@ -148,11 +179,11 @@ if ($role === "toko") {
   <?php
   if (isset($_POST["register"])) {
     if (registrasi($_POST, $role) == 1) {
-      header("Location: $role/index.php");
+      phpalert($role);
     } elseif (registrasi($_POST, $role) == "email") {
-      $msg = "Email sudah terpakai!!";
+      err("Email sudah terpakai!!");      
     } elseif (registrasi($_POST, $role) == "password") {
-      $msg = "Konfirmasi password tidak sesuai!!";
+      err("Konfirmasi password tidak sesuai!!");      
     } else {
       echo mysqli_error($conn);
     }
