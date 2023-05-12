@@ -82,7 +82,7 @@ $produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_pr
     <table class="table pt-4 table-bordered table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">No</th>
           <th scope="col">Foto</th>
           <th scope="col">Produk</th>
           <th scope="col">Deskripsi Produk</th>
