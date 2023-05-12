@@ -8,6 +8,6 @@ setcookie('idusr', '', time() - 3600, '/');
 setcookie('roleusr', '', time() - 3600, '/');
 setcookie('emailusr', '', time() - 3600, '/');
 
-header("Location: ../login.php");
+header("Location: ../index.php");
 exit;
 ?>

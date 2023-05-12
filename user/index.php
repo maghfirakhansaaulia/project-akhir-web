@@ -123,17 +123,7 @@ if (isset($_POST["search"])) {
                 </li>
               </ul>
             </li>
-          </ul>
-          <div class="py-2 px-4 ms-auto">
-            <a href="" class="link-dark position-relative">
-              <i class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i>
-              <span
-                class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
-              >
-                <span class="visually-hidden">New alerts</span>
-              </span>
-            </a>
-          </div>
+          </ul>          
           <div class="vr"></div>
           <div class="py-2 px-3 d-flex ">
             <div class="dropdown">
@@ -246,11 +236,9 @@ if (isset($_POST["search"])) {
                             </div>
                             <div class="card-footer bg-white border text-center border-0">
                               <a
-                                href="#"
+                                href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product"
                                 class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
+                                >Beli Sekarang</a>
                             </div>
                           </div>
                         </div>
@@ -343,11 +331,9 @@ if (isset($_POST["search"])) {
                             </div>
                             <div class="card-footer bg-white border text-center border-0">
                               <a
-                                href="#"
+                                href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product"
                                 class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
+                                >Beli Sekarang</a>
                             </div>
                           </div>
                         </div>
@@ -440,11 +426,9 @@ if (isset($_POST["search"])) {
                             </div>
                             <div class="card-footer bg-white border text-center border-0">
                               <a
-                                href="#"
+                                href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product"
                                 class="btn btn-success fw-semibold w-100 rounded-1"
-                                >Tambah ke
-                                <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                              ></a>
+                                >Beli Sekarang</a>
                             </div>
                           </div>
                         </div>
@@ -521,9 +505,8 @@ if (isset($_POST["search"])) {
                 </p>
               </div>
               <div class="card-footer bg-white border text-center border-0">
-                <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                  >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                ></a>
+                <a href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product" class="btn btn-success fw-semibold w-100 rounded-1"
+                  >Beli Sekarang</a>
               </div>
             </div>
           </div>                   

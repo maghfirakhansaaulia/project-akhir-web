@@ -19,7 +19,8 @@ function phpalert($bny)
           title: 'Transaksi Berhasil!',
           text: 'Kamu membeli sebanyak {$bny} Item',
           icon: 'success',
-          confirmButtonText: 'Save',                    
+          timer: 2000 ,
+          confirmButtonText: 'OK',                    
         }).then((result) => {
           window.location.href = 'index.php';
         })                              
@@ -127,17 +128,7 @@ $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_prod
                   </li>
                 </ul>
             </li>
-          </ul>
-          <div class="py-2 px-4 ms-auto">
-            <a href="" class="link-dark position-relative">
-              <i class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i>
-              <span
-              class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
-              >
-              <span class="visually-hidden">New alerts</span>
-            </span>
-          </a>
-        </div>
+          </ul>          
         <div class="vr"></div>
           <div class="py-2 px-3 d-flex">
             <div class="dropdown">
@@ -178,7 +169,7 @@ $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_prod
                   </div> 
                   <div class="col-5">
                   <?php foreach ($prdd as $rows): ?>                                                                                                                               
-                      <a class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover fw-semibold px-1 " href=""><?= $rows['toko_shopname']; ?></a>
+                      <a class="link-dark link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover fw-semibold px-1 " href="setID.php?key=<?= $rows['toko_id']; ?>&goto=store"><?= $rows['toko_shopname']; ?></a>
                       <p class="text-body-secondary"><i class="fa-sharp fa-solid fa-location-dot"></i> <?= $rows['toko_address']; ?></p>
                     </div>
                   </div>
@@ -198,7 +189,7 @@ $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_prod
                     </div>
                     <div class="col-lg-5">                           
                       <div class="form-floating form-floating-sm">
-                        <input type="number" id="typeNumber" class="form-control"  min=1  max=10  value=1 onchange="myFunction(<?= $rows['produk_var1pc']; ?>)"/>
+                        <input type="number" id="typeNumber" class="form-control"  min=1  max=10  value=1 onchange="myFunction(sessionStorage.getItem('harga'))"/>
                         <label for="typeNumber">Jumlah</label>
                       </div>
                         <p id="msg"></p>                                          
@@ -228,9 +219,9 @@ $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_prod
                           <input type="hidden" id="jumlah" name="jumlah" >
                           <input type="hidden" id="hideNote" name="hideNote" >
                           <input type="hidden" id="hideTotal" name="hideTotal" >
-                          <button class="btn py-2 fw-semibold btn-success w-100" name="btnBeli" id="btnBeli">Beli Sekarang</button> 
+                          <button class="btn py-2 fs-5 fw-semibold btn-success w-100" name="btnBeli" id="btnBeli">Bayar</button> 
                       </form>
-                      <script>document.getElementById("bd").onload = function() {myFunction(<?= $rows['produk_var1pc']; ?>)};</script>                  
+                      <script>document.getElementById("bd").onload = function() {myFunction(sessionStorage.getItem('harga'))};</script>                  
                     <?php endforeach; ?>                             
                   </div>
                 </div>

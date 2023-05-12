@@ -12,6 +12,10 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
+if (isset($_POST["search"])) { 
+  $key = $_POST["keyword"];
+  header("Location: setID.php?key=$key&goto=products");
+}
 $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = produk.produk_id WHERE transaksi.user_id = {$_SESSION['id']}");
 ?>
 <!DOCTYPE html>
@@ -71,16 +75,15 @@ $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = prod
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="py-2 px-3 w-75">
-          <form class="d-flex">
+          <form class="d-flex" method="post">
             <div class="input-group">
               <input
               type="text"
               class="form-control bg-white border border-success"
               placeholder="Aku mau belanja..."
-              aria-label="Recipient's username"
-              aria-describedby="button-addon2"
+              name="keyword"          
               />
-              <button class="btn btn-outline-success" type="button" id="button-addon2">
+              <button class="btn btn-outline-success" type="submit" name="search">
                 <i class="bi bi-search"></i>
               </button>
             </div>
@@ -118,17 +121,7 @@ $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = prod
               </li>
             </ul>
           </li>
-        </ul>
-        <div class="py-2 px-4 ms-auto">
-          <a href="" class="link-dark position-relative">
-            <i class="fa-sharp fa-solid fa-cart-shopping fa-lg"></i>
-            <span
-            class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
-            >
-            <span class="visually-hidden">New alerts</span>
-          </span>
-        </a>
-      </div>
+        </ul>       
       <div class="vr"></div>
       <div class="py-2 px-3 d-flex">
         <div class="dropdown">
@@ -161,13 +154,15 @@ $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = prod
     </div>
   </nav>
   <div class="container">
-    <div class="bg-white shadow-sm rounded-2 mt-3">
+    <div class="bg-white shadow-sm rounded-2 mt-3 p-4">
       <table class="table table-hover table-sm align-middle">
         <thead class="table-success">
           <tr>
             <th scope="col">#</th>
             <th colspan="2" scope="col">Produk</th>
+            <th scope="col">Catatan</th>
             <th scope="col">Tanggal</th>
+            <th scope="col">Jumlah</th>
             <th scope="col">Total</th>
           </tr>
         </thead>
@@ -178,7 +173,9 @@ $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = prod
             <th scope="row"><?= $i; ?></th>
             <td><img src="view.php?id_gambar=<?php echo $row['gambar_id']; ?>" width="100"/></td>
             <td><?= $row['produk_name']; ?></td>
+            <td><?= $row['transaksi_note']; ?></td>
             <td><?= $row['transaksi_date']; ?></td>
+            <td><?= $row['transaksi_amount']; ?></td>
             <td><?= $row['transaksi_total']; ?></td>              
           </tr>
         </tbody>
