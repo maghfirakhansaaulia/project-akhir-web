@@ -181,11 +181,15 @@ $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = prod
         </tbody>
         <?php $i++; ?>
         <?php endforeach; } else{?>
-          <div class="col mb-0">
-            <div class="alert alert-dark" role="alert">
-              <i class="fa-solid fa-money-bill-wave"></i> Anda Belum Melakukan Transaksi
-            </div>
-          </div>
+          <tbody class="table-group-divider">    
+          <tr>           
+            <td colspan="7">
+              <div class="alert alert-warning" role="alert">
+                <i class="fa-solid fa-money-bill-wave"></i> Anda Belum Melakukan Transaksi
+              </div>
+            </td>              
+          </tr>
+        </tbody>         
           <?php }?>
         </table>
       </div>

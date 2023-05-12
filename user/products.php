@@ -204,7 +204,7 @@ if (isset($_POST["search"])) {
                         </p>                        
                       </a>
                       <p class="card-text text-secondary">
-                        <?php echo mb_strimwidth("{$rowd['produk_var1']}", 0, 23, "...") ?>
+                        <?php echo mb_strimwidth("{$rowd['produk_var1']},{$rowd['produk_var2']}", 0, 23, "...") ?>
                       </p>
                     </div>
                     <div class="card-footer bg-white border border-0">
