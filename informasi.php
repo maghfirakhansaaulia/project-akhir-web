@@ -32,8 +32,8 @@ $all_art = $conn->query($sql);
 
   <div class="index">
     <div class="navbar-index">
-      <nav style="display: flex; justify-content: space-around; align-items: center; padding-left:20%; padding-right: 20%; height: 15%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
-        <img class="icon" src="gambar/Untitled75_20230419165549.png" alt="">
+      <nav style="display: flex; justify-content: space-around; align-items: center;  padding-left:30%; padding-right:30%;  height: 14%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
+        <!-- <img class="icon" src="gambar/Untitled75_20230419165549.png" alt=""> -->
         <a class="atas" href="index.php">Home</a>
         <a class="atas" href="informasi.php">informasi</a>
         <a class="atas" href="login.php">Login</a>
