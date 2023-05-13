@@ -13,6 +13,8 @@ if (!isset($_SESSION["login"])) {
 
 $storeID = $_SESSION['storeID'];
 
+$usr = query("SELECT user_email FROM user WHERE user_id = {$_SESSION['id']}");
+
 $prdd = query("SELECT * FROM produk JOIN kat_produk ON produk.katP_id = kat_produk.katP_id 
         LEFT JOIN toko ON produk.toko_id = toko.toko_id WHERE toko.toko_id = {$storeID}");
 
@@ -95,18 +97,18 @@ if (isset($_POST["search"])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item btn btn-light" href="#"
+                  <a class="dropdown-item btn btn-light" href="setID.php?key=sayur&goto=products"
                     ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="#"
+                  <a class="dropdown-item btn btn-light" href="setID.php?key=buah&goto=products"
                     ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i> Buah
                     Segar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item btn btn-light" href="#"
+                  <a class="dropdown-item btn btn-light" href="setID.php?key=sembako&goto=products"
                     ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i> Sembako</a
                   >
                 </li>
@@ -127,7 +129,14 @@ if (isset($_POST["search"])) {
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item py-2 btn btn-light" href="logout.php"
+                  <?php foreach ($usr as $rows): ?>
+                    <a class="dropdown-item py-2 btn btn-light">
+                      <?= $rows['user_email'] ?>
+                    </a>                
+                  <?php endforeach; ?>   
+                </li>
+                <li>
+                  <a class="dropdown-item py-2 btn btn-light" href="history.php"
                     ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori Transaksi</a
                   >
                 </li>
@@ -188,9 +197,8 @@ if (isset($_POST["search"])) {
                   </p>
                 </div>
                 <div class="card-footer bg-white border text-center border-0">
-                  <a href="#" class="btn btn-success fw-semibold w-100 rounded-1"
-                    >Tambah ke <i class="fa-sharp fa-solid fa-cart-shopping"></i
-                  ></a>
+                  <a href="setID.php?key=<?= $rowd['produk_id']; ?>&goto=product" class="btn btn-success fw-semibold w-100 rounded-1"
+                    >Beli Sekarang</a>
                 </div>
               </div>
             </div>             
