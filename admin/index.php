@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 require 'function.php';
 
 if (!isset($_SESSION["login"])) {
@@ -10,8 +11,8 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
-
-$artikel = query("SELECT * FROM artikel join kat_artikel on artikel.katA_id = kat_artikel.katA_id");
+$id_masuk = $_SESSION['id'];
+$artikel = query("SELECT * FROM artikel join kat_artikel on artikel.katA_id = kat_artikel.katA_id where admin_id = $id_masuk");
 
 
 ?>
@@ -101,7 +102,7 @@ $artikel = query("SELECT * FROM artikel join kat_artikel on artikel.katA_id = ka
             <td><?= $row['artikel_content'] ?></td>
             <td><?= $row['artikel_date'] ?></td>
             <td>
-              <button class="btn btn-success">
+              <button class="btn btn-success" style="margin-bottom: 5%;">
                 <a style="text-decoration: none; color: white;" href='modify.php?updateid=<?= $id ?>'>ubah</a>
               </button>
               <button class="btn btn-danger" style="margin-top:3%;">

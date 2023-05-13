@@ -17,7 +17,6 @@ if (isset($_COOKIE['idusr']) && isset($_COOKIE['roleusr']) && isset($_COOKIE['em
     $_SESSION['login'] = true;
     $_SESSION["role"] = $role;
     $_SESSION["id"] = $id_cookie;
-
   }
 }
 if (isset($_SESSION['login'])) {
@@ -49,16 +48,18 @@ if (isset($_SESSION['login'])) {
 
 <body>
   <div class="index">
-    <div class="navbar-index">    
-      <nav style="display: flex; justify-content: space-around; align-items: center; padding-left:20%; padding-right: 20%; height: 15%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
-        <img class="icon" src="gambar/Untitled75_20230419165549.png" alt="">
+    
+    <!-- <div class="navbar-index"> -->
+      
+      <nav style="display: flex; justify-content: space-around; align-items: right; padding-left:30%; padding-right:30%;  height: 14%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
+        <!-- <img class="icon" src="gambar/Untitled75_20230419165549.png" alt=""> -->
         <a class="atas" href="index.php">Home</a>
         <a class="atas" href="informasi.php">informasi</a>
         <a class="atas" href="login.php">Login</a>
         <a class="atas" href="register.php">Daftar</a>
-        <!-- <a href="" class="link-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-underline-opacity-75-hover"><i class="fa-solid fa-angles-left"></i> Kembali</a> -->
       </nav>
-    </div>
+    <!-- </div> -->
+
 
     <div class='sayur'>
       <h1>Enak Segar Organik</h1>
@@ -104,14 +105,14 @@ if (isset($_SESSION['login'])) {
       </div>
       <div class="isi-gabung-toko">
         <h1>Jadilah smart-seller dengan berjualan di Pasar Segari!</h1>
-          <a href="register.php">Daftar menjadi penjual sekarang!</a>
+        <a href="register.php">Daftar menjadi penjual sekarang!</a>
       </div>
     </div>
-    
+
     <div class="gabung-user">
       <div class="isi-gabung-user">
         <h1>Bergabung di Pasar Segari untuk memudahkan kamu berbelanja kebutuhan dapur!</h1>
-          <a href="register.php">Daftar menjadi pembeli sekarang!</a>
+        <a href="register.php">Daftar menjadi pembeli sekarang!</a>
       </div>
       <div class="img-user">
         <!-- <img src="gambar/gabung-toko.jpg" alt=""> -->
@@ -145,6 +146,17 @@ if (isset($_SESSION['login'])) {
 
   </div>
 
+  <script>
+    $(document).ready(function() {
+      $(window).scroll(function() {
+        if ($(this).scrollTop() < $("#green").height()) {
+          $(".navbar").removeClass("bg-dark");
+        } else {
+          $(".navbar").addClass("bg-dark");
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

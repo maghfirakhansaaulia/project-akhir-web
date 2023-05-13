@@ -28,12 +28,12 @@ function tambah($gambar,$data){
   $file_size = $gambar['size'];
   $file_type = $gambar['type'];
 
-  if ($file_size < 2048000 and ($file_type =='image/jpeg' or $file_type == 'image/png'))
+  if ($file_size < 65535 and ($file_type =='image/jpeg' or $file_type == 'image/png'))
   {
       $image   = addslashes(file_get_contents($gambar['tmp_name']));        
       // mysqli_query($conn,"insert into produk (toko_id,produk_name,produk_var1,produk_var2,produk_var1pc,produk_var2pc, katP_id, produk_description) values ($toko,'$name','$v1','$v2',$v1pc,$v2pc,$kategori,'$desc')");
       mysqli_query($conn,"insert into artikel (artikel_title, artikel_content, artikel_date, katA_id, admin_id) values 
-      ('$judul','$desc', str_to_date('$tanggal', '%Y-%d-%m'), $kategori, $admin)");
+      ('$judul','$desc','$tanggal', $kategori, $admin)");
       
       mysqli_query($conn,"insert into gambar (gambar_blb,gambar_type) values ('$image','$file_type')");
       
@@ -43,6 +43,8 @@ function tambah($gambar,$data){
       mysqli_query($conn,"UPDATE artikel SET gambar_id = $idGambar WHERE artikel_id = $idArtikel");
       
       header("location:index.php");
+  } else {
+    echo "<script>alert('ukuran gambar terlalu besar! (max = 64kb)');</script>" ;
   }
 }
 
@@ -60,7 +62,7 @@ function ubah($gambar, $data){
       $file_typegambar = $gambar['type'];
     }
     
-    if ($file_sizegambar < 2048000 and ($file_typegambar =='image/jpeg' or $file_typegambar == 'image/png'))
+    if ($file_sizegambar < 65535 and ($file_typegambar =='image/jpeg' or $file_typegambar == 'image/png'))
     {
         $image   = addslashes(file_get_contents($gambar['tmp_name']));        
         mysqli_query($conn, "UPDATE artikel SET artikel_title = '$title', katA_id= $kategori_art,  artikel_date = '$date', artikel_content = '$deskrip' WHERE artikel.artikel_id=$id");
@@ -71,6 +73,8 @@ function ubah($gambar, $data){
         mysqli_query($conn,"UPDATE artikel SET gambar_id = $idGambar WHERE artikel_id = $id");
         
         header("location:index.php");
+    } else {
+      echo "<script>alert('ukuran gambar terlalu besar! (max = 64kb)');</script>" ;
     }
   
   
