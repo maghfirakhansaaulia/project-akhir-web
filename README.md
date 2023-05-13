@@ -43,8 +43,12 @@ Gambar dibawah ini merupakan tampilan dari halaman login
 Gambar dibawah ini merupakan tampilan dari login sebagai admin, dimana admin yang sudah mendaftarkan akun pada Pasar Segari dapat melakukan login dengan memasukkan Email dan Password, dan berhasil melakukan login sebagai admin.
 <img width="960" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/3ff2306c-22c7-4f98-a2f6-d986edaaee85">
 
-gambar dibawah apabila admin salah memasukkan email dan password maka akan menampilkan tulisan email dan password salah
-<img width="960" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/70481de1-f671-4801-b278-d660131668aa">
+Gambar dibawah ini merupakan tampilan saat admin memasukkan email dan password dengan benar maka akan berhasil login
+![image](https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/c1315ced-0c04-472f-aa19-bd39d1cb5f9a)
+
+gambar dibawah apabila admin salah memasukkan email dan password maka akan gagal melakukan login
+![image](https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/77048477-9105-45aa-ac1d-14f5a6c8854d)
+
 
 Gambar dibawah ini merupakan tampilan dari login sebagai pemilik toko, dimana pemilik toko yang sudah mendaftarkan akun pada Pasar Segari dapat melakukan login dengan memasukkan Email dan Password, dan berhasil melakukan login sebagai pemilik toko.
 <img width="960" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/95c4af8e-4593-4cb4-bd73-8be4dd90b096">
