@@ -47,7 +47,7 @@ function phpalert($role)
   Swal.fire({
     title: 'Berhasil Login!',          
     icon: 'success',
-    timer: 1500 ,
+    timer: 2000 ,
     showConfirmButton: false
   }).then((result) => {
     window.location.href = '$role/index.php';

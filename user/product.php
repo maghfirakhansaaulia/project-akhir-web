@@ -20,14 +20,7 @@ $prdID = $_SESSION['prdID'];
 
 $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_produk.katP_id left join toko on produk.toko_id = toko.toko_id WHERE produk.produk_id = {$prdID}");
 
-$aktif = 1;
-
-if (isset($_POST['vart2'])) {
-  $aktif = 2;
-}
-if (isset($_POST['vart1'])) {
-  $aktif = 1;
-}
+$usr = query("SELECT user_email FROM user WHERE user_id = {$_SESSION['id']}");
 
 if (isset($_POST["search"])) { 
   $key = $_POST["keyword"];
@@ -148,6 +141,13 @@ if (isset($_POST["search"])) {
                 <i class="fa-solid fa-circle-user fa-xl"></i>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <?php foreach ($usr as $rows): ?>
+                    <a class="dropdown-item py-2 btn btn-light">
+                      <?= $rows['user_email'] ?>
+                    </a>                
+                  <?php endforeach; ?>   
+                </li>
                 <li>
                   <a class="dropdown-item py-2 btn btn-light" href="history.php"
                     ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori

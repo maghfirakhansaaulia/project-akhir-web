@@ -27,7 +27,7 @@ if (isset($_POST["search"])) {
   $prdd = cariProduct($key,$filter);
 }
 
-
+$usr = query("SELECT user_email FROM user WHERE user_id = {$_SESSION['id']}");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,6 +119,13 @@ if (isset($_POST["search"])) {
                 <i class="fa-solid fa-circle-user fa-xl"></i>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <?php foreach ($usr as $rows): ?>
+                    <a class="dropdown-item py-2 btn btn-light">
+                      <?= $rows['user_email'] ?>
+                    </a>                
+                  <?php endforeach; ?>   
+                </li>
                 <li>
                   <a class="dropdown-item py-2 btn btn-light" href="history.php"
                     ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori Transaksi</a

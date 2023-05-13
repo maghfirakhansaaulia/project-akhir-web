@@ -30,8 +30,14 @@ function phpalert($bny)
 
 $prdID = $_SESSION['prdID'];
 
+$usr = query("SELECT user_email FROM user WHERE user_id = {$_SESSION['id']}");
+
 $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_produk.katP_id left join toko on produk.toko_id = toko.toko_id WHERE produk.produk_id = {$prdID}");
 
+if (isset($_POST["search"])) { 
+  $key = $_POST["keyword"];
+  header("Location: setID.php?key=$key&goto=products");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,21 +88,19 @@ $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_prod
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="py-2 px-3 w-75">
-            <form class="d-flex">
-              <div class="input-group">
-                <input
-                type="text"
-                class="form-control bg-white border border-success"
-                placeholder="Aku mau belanja..."
-                aria-label="Recipient's username"
-                aria-describedby="button-addon2"
-                />
-                <button class="btn btn-outline-success" type="button" id="button-addon2">
-                  <i class="bi bi-search"></i>
-                </button>
-              </div>
-            </form>
+          <div class="py-2 px-3 w-75">           
+            <div class="input-group">
+              <input
+              type="text"
+              class="form-control bg-white border border-success"
+              placeholder="Aku mau belanja..." 
+              name="keyword"
+              id="keyword"              
+              />
+              <button class="btn btn-outline-success" type="button" name="search" onclick="pindah()">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>            
           </div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown me-1">
@@ -111,18 +115,18 @@ $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_prod
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                <a class="dropdown-item btn btn-light" href="#"
+                <a class="dropdown-item btn btn-light" href="setID.php?key=sayur&goto=products"
                 ><i class="fa-solid fa-carrot fa-lg" style="color: #ed9121"></i> Sayur Segar</a
                 >
               </li>
               <li>
-                <a class="dropdown-item btn btn-light" href="#"
+                <a class="dropdown-item btn btn-light" href="setID.php?key=buah&goto=products"
                     ><i class="fa-solid fa-apple-whole fa-lg" style="color: #8db600"></i> Buah
                     Segar</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item btn btn-light" href="#"
+                    <a class="dropdown-item btn btn-light" href="setID.php?key=sembako&goto=products"
                     ><i class="fa-solid fa-egg fa-lg" style="color: #f4bb29"></i> Sembako</a
                     >
                   </li>
@@ -142,6 +146,13 @@ $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_prod
               <i class="fa-solid fa-circle-user fa-xl"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <?php foreach ($usr as $rows): ?>
+                  <a class="dropdown-item py-2 btn btn-light">
+                    <?= $rows['user_email'] ?>
+                  </a>                
+                <?php endforeach; ?>   
+              </li>
               <li>
                 <a class="dropdown-item py-2 btn btn-light" href="history.php"
                 ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori Transaksi</a
@@ -230,7 +241,13 @@ $prdd = query("SELECT * from produk join kat_produk on produk.katP_id = kat_prod
           </div>
         </div>
     </div>
-    <script src="js/transaction.js"></script>    
+    <script src="js/transaction.js"></script>  
+    <script>
+      function pindah(){
+        let keyword = document.getElementById("keyword").value;
+        window.location = "setID.php?key="+keyword+"&goto=products";
+      }
+    </script>  
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

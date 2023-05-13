@@ -17,6 +17,8 @@ if (isset($_POST["search"])) {
   header("Location: setID.php?key=$key&goto=products");
 }
 $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = produk.produk_id WHERE transaksi.user_id = {$_SESSION['id']}");
+
+$usr = query("SELECT user_email FROM user WHERE user_id = {$_SESSION['id']}");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -135,6 +137,13 @@ $prdd = query("SELECT * FROM transaksi JOIN produk on transaksi.produk_id = prod
               <i class="fa-solid fa-circle-user fa-xl"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <?php foreach ($usr as $rows): ?>
+                  <a class="dropdown-item py-2 btn btn-light">
+                    <?= $rows['user_email'] ?>
+                  </a>                
+                <?php endforeach; ?>   
+              </li>
               <li>
                 <a class="dropdown-item py-2 btn btn-light" href="history.php"
                 ><i class="fa-solid fa-clock-rotate-left fa-lg"></i> Histori
