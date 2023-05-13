@@ -57,6 +57,7 @@ if (isset($_POST["search"])) {
     <link rel="stylesheet" href="sweetalert2.min.css">
     <script src="sweetalert2.all.min.js"></script>
     <script src="sweetalert2.min.js"></script>
+    
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -154,7 +155,7 @@ if (isset($_POST["search"])) {
                     Transaksi</a>
                 </li>
                 <li>
-                  <a class="dropdown-item py-2 btn btn-light" href="logout.php"
+                  <a class="dropdown-item py-2 btn btn-light" onclick="logout()"
                     ><i class="fa-sharp fa-solid fa-right-from-bracket fa-lg"></i>
                     Logout</a
                   >
@@ -225,6 +226,29 @@ if (isset($_POST["search"])) {
       </div>
     </div>                
     <script src="js/variant.js"></script>       
+    <script>
+      function logout(){
+        Swal.fire({
+          title: 'Yakin Ingin Logout?',          
+          icon: 'warning',
+          showDenyButton: true,
+          confirmButtonColor: '#198754',          
+          confirmButtonText: 'Ya',
+          denyButtonText: `Tidak`,                                   
+        }).then((result) => {
+          if (result.isConfirmed) {            
+            window.location.href = 'logout.php';
+          } else if (result.isDenied) {
+            Swal.fire({
+              title:'Batal',
+              icon: 'info',
+              timer: 1000,
+              showConfirmButton: false
+            })
+          }
+        })
+      };
+    </script>       
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

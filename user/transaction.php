@@ -159,7 +159,7 @@ if (isset($_POST["search"])) {
                 >
               </li>
                 <li>
-                  <a class="dropdown-item py-2 btn btn-light" href="logout.php"
+                  <a class="dropdown-item py-2 btn btn-light" onclick="logout()"
                     ><i class="fa-sharp fa-solid fa-right-from-bracket fa-lg"></i> Logout</a
                     >
                   </li>
@@ -242,6 +242,29 @@ if (isset($_POST["search"])) {
         </div>
     </div>
     <script src="js/transaction.js"></script>  
+    <script>
+      function logout(){
+        Swal.fire({
+          title: 'Yakin Ingin Logout?',          
+          icon: 'warning',
+          showDenyButton: true,
+          confirmButtonColor: '#198754',          
+          confirmButtonText: 'Ya',
+          denyButtonText: `Tidak`,                                   
+        }).then((result) => {
+          if (result.isConfirmed) {            
+            window.location.href = 'logout.php';
+          } else if (result.isDenied) {
+            Swal.fire({
+              title:'Batal',
+              icon: 'info',
+              timer: 1000,
+              showConfirmButton: false
+            })
+          }
+        })
+      };
+    </script>  
     <script>
       function pindah(){
         let keyword = document.getElementById("keyword").value;
