@@ -43,7 +43,7 @@ $produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_pr
 
 
 
-<body style=" background-color: #fcf8f5;">
+<body>
   <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
     <div class="container">
       <div class="py-2">

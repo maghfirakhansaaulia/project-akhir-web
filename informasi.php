@@ -32,8 +32,9 @@ $all_art = $conn->query($sql);
 
   <div class="index">
     <div class="navbar-index">
-      <nav style="display: flex; justify-content: space-around; align-items: center;  padding-left:30%; padding-right:30%;  height: 14%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
+      <nav style="display: flex; justify-content: space-around; align-items: center;  padding-left:20%; padding-right:30%;  height: 12%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
         <!-- <img class="icon" src="gambar/Untitled75_20230419165549.png" alt=""> -->
+        <a class="navbar-brand fw-light fs-4" href="index.php"><i class="fa-solid fa-leaf fa-xl" style="color: #116530"></i> PasarSegari</a>
         <a class="atas" href="index.php">Home</a>
         <a class="atas" href="informasi.php">informasi</a>
         <a class="atas" href="login.php">Login</a>
@@ -42,31 +43,31 @@ $all_art = $conn->query($sql);
 
     </div>
     <h1 class="header-info">Informasi Terbaru</h1>
-        <?php
-  while($row = mysqli_fetch_assoc($all_art)){
+    <?php
+    while ($row = mysqli_fetch_assoc($all_art)) {
 
-  
-  ?>
-  
-    <div class="container " style=" background-color: #fcf8f5;">
 
-      <div class="berita">
-        <div class="gambar-info">
-          <!-- <img src="gambar/2342554562.jpg" alt=""> -->
-          <img src="view.php?id_gambar=<?php echo $row['gambar_id']; ?>" alt="">
+    ?>
+
+      <div class="container " style=" background-color: #fcf8f5;">
+
+        <div class="berita">
+          <div class="gambar-info">
+            <!-- <img src="gambar/2342554562.jpg" alt=""> -->
+            <img src="view.php?id_gambar=<?php echo $row['gambar_id']; ?>" alt="">
+          </div>
+          <div class="judul-info">
+            <h1><?php echo $row['artikel_title']; ?></h1>
+            <h5> <?php echo $row['katA_name']; ?></h5>
+            <p id="tanggal">Tanggal dibuat: <span><?php echo $row['artikel_date'] ?><span></p>
+            <p id="konten-info"><?php echo $row['artikel_content']; ?></p>
+          </div>
+
         </div>
-        <div class="judul-info">
-          <h1><?php echo $row['artikel_title']; ?></h1>
-          <h5> <?php echo $row['katA_name']; ?></h5>
-          <p id="tanggal">Tanggal dibuat: <span><?php echo $row['artikel_date'] ?><span></p>
-          <p id="konten-info"><?php echo $row['artikel_content']; ?></p>
-        </div>
-
       </div>
-    </div>
-  <?php 
-  }
-  ?>
+    <?php
+    }
+    ?>
   </div>
 
 
