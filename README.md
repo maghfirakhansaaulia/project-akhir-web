@@ -3,25 +3,13 @@
 PASAR SEGARI
 Pasar segari merupakan sebuah website pasar modern. Website Pasar segari adalah sebuah platform online yang menyediakan informasi, layanan, dan pengalaman berbelanja yang nyaman dan modern bagi pengguna. Tujuan utama dari website ini adalah untuk memudahkan pengguna dalam mencari, memilih, dan membeli berbagai produk buah, sayur, dan sembako dengan kualitas terbaik, serta memberikan kemudahan pada pengguna dalam melakukan transaksi. Selain itu dengan website ini juga memudahkan para pembisnis yang ingin mendaftarkan diri dan membuka toko mereka pada website Pasar Segari.
 
-Teknologi yang Digunakan
-Website Pasar Modern dikembangkan dengan menggunakan kombinasi teknologi berikut:
-- PHP, CSS, JavaScript untuk pengembangan antarmuka pengguna yang responsif dan menarik.
-- Bahasa pemrograman … untuk mengelola logika bisnis dan pengolahan data.
-- Database untuk menyimpan dan mengelola informasi produk, pengguna, dan transaksi.
-- Framework web seperti … untuk mempercepat pengembangan dan meningkatkan keamanan.
 
 Fitur Utama
 Home
 saat pengguna menggunakan website Pasar Segari maka akan masuk pada halaman pertama yaitu Home yang berisi tampilan dari Pasar Segari yang berisi foto buah-buahan, sayuran, dan sembako, disertai dengan testimoni dari pengguna Pasar Segari. Selain itu pengguna bisa memilih menjadi penjual atau pembeli di Pasar Segari.
 
-Toko
-pada halaman ini berisikan nama nama toko yang ada pada Pasar Segari, juga terdapat kontak yang dapat dihubungi oleh pembeli, dan berisi alamat lengkap dari toko tersebut.
-
 Informasi
 Setiap produk yang terdaftar di Website Pasar Segari dilengkapi dengan informasi detail, termasuk deskripsi, spesifikasi, gambar, dan ulasan dari pelanggan sebelumnya. Hal ini membantu pengguna untuk mendapatkan gambaran yang jelas tentang produk sebelum memutuskan untuk membelinya.
-
-Kontak
-pada halaman ini berisikan kontak Pasar Segari yang memudahkan pengguna untuk menghubungi Pasar Segari baik untuk penjual yang ingin mendaftarkan diri dan untuk pembeli yang ingin membeli produk di Pasar Segari.
 
 Login
 saat masuk pada halaman ini berisi pada tiga pilihan yaitu admin, toko, dan pengguna.
@@ -32,22 +20,28 @@ User, apabila login sebagai user, maka menjadi pembeli di Pasar Segari
 Daftar
 Pada halaman ini berisikan pendaftaran akun Pasar Segari untuk pemilik toko dan pembeli, apabila pemilik toko dan pembeli belum memiliki akun maka harus segera mendaftarkan akun untuk memberi kemudahan saat menggunakan website Pasar Segari
 
-
-Tutorial menggunakan website Pasar Segari
+**
+Tutorial menggunakan website Pasar Segari**
 gambar dibawah ini merupakan tampilan dari website Pasar Segari 
-<img width="947" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/8a40a42c-da82-44ac-8885-b2ca563c429d">
+<img width="947" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/e29c7e15-db20-4cde-a950-943c45bd7ec6">
+
+Gambar dibawah ini merupakan tampilan dari halaman informasi, dimana akan ditampilkan informasi terbaru dari artikel yang telah di upload admin, yang berisi informasi tentang sayuran, buah-buahan, sembako, ataupun produk yang sedang diskon
+<img width="947" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/6d10974f-7dbc-4d63-8174-6ca4f4a618b2">
 
 Gambar dibawah ini merupakan tampilan dari halaman login
 <img width="945" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/e29802e6-78cd-4c5b-9e26-b0d0fb2e7bbf">
 
 Gambar dibawah ini merupakan tampilan dari login sebagai admin, dimana admin yang sudah mendaftarkan akun pada Pasar Segari dapat melakukan login dengan memasukkan Email dan Password, dan berhasil melakukan login sebagai admin.
-<img width="960" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/3ff2306c-22c7-4f98-a2f6-d986edaaee85">
+<img width="955" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/85ab6902-178e-4bb5-ba8d-fae141165056">
 
 Gambar dibawah ini merupakan tampilan saat admin memasukkan email dan password dengan benar maka akan berhasil login
 ![image](https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/c1315ced-0c04-472f-aa19-bd39d1cb5f9a)
 
-gambar dibawah apabila admin salah memasukkan email dan password maka akan gagal melakukan login
+Gambar dibawah apabila admin salah memasukkan email dan password maka akan gagal melakukan login
 ![image](https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/77048477-9105-45aa-ac1d-14f5a6c8854d)
+
+Gambar dibawah merupakan tampilan saat login sebagai admin, yaitu bertuga untuk mempublikasikan artikel mengenai sayuran, buah, dan sembako
+<img width="938" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/a469311e-8327-44e9-b7b7-98a3e2dddf64">
 
 
 Gambar dibawah ini merupakan tampilan dari login sebagai pemilik toko, dimana pemilik toko yang sudah mendaftarkan akun pada Pasar Segari dapat melakukan login dengan memasukkan Email dan Password, dan berhasil melakukan login sebagai pemilik toko.
