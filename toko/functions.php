@@ -43,9 +43,9 @@ function tambah($gambar,$data){
        
       mysqli_query($conn,"UPDATE produk SET gambar_id = $idGambar WHERE produk_id = $idProduk");
       
-      header("location:index.php");
+      return mysqli_affected_rows($conn);
   } else {
-    echo "<script>alert('ukuran gambar terlalu besar! (max = 64kb)');</script>" ;
+    return 'gambar';
   }
 
 }
@@ -76,9 +76,9 @@ function ubah($gambar, $data){
         $idGambar = findID("gambar");
         mysqli_query($conn,"UPDATE produk SET gambar_id = $idGambar WHERE produk_id = $id");
         
-        header("location:index.php");
+        return mysqli_affected_rows($conn);
     } else {
-      echo "<script>alert('ukuran gambar terlalu besar! (max = 64kb)');</script>" ;
+      return 'gambar';
     }
   
   
