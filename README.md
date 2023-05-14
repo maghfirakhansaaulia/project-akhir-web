@@ -10,16 +10,17 @@ Pasar segari merupakan sebuah website pasar modern. Website Pasar segari adalah 
 saat pengguna menggunakan website Pasar Segari maka akan masuk pada halaman pertama yaitu Home yang berisi tampilan dari Pasar Segari yang berisi foto buah-buahan, sayuran, dan sembako, disertai dengan testimoni dari pengguna Pasar Segari. Selain itu pengguna bisa memilih menjadi penjual atau pembeli di Pasar Segari.
 
 # Informasi
-Setiap produk yang terdaftar di Website Pasar Segari dilengkapi dengan informasi detail, termasuk deskripsi, spesifikasi, gambar, dan ulasan dari pelanggan sebelumnya. Hal ini membantu pengguna untuk mendapatkan gambaran yang jelas tentang produk sebelum memutuskan untuk membelinya.
+pada halaman ini akan ditampilkan berbagai macam artikel menarik yang beirisikan informasi yang mengdukasi dan terpercaya kepada user dan pemilik toko.
+dukasi.
 
 # Login
 saat masuk pada halaman ini berisi pada tiga pilihan yaitu admin, toko, dan pengguna.
-admin, apabila login sebagai admin, maka akan mengelola artikel dan blog untuk memberikan informasi terpercaya pada Toko dan User
+admin, apabila login sebagai admin, maka akan mengelola artikel dan blog untuk memberikan informasi terpercaya pada Toko dan User.
 Toko, apabila login sebagai Toko, maka menjadi penjual yang mengelola toko sayur.
-User, apabila login sebagai user, maka menjadi pembeli di Pasar Segari
+User, apabila login sebagai user, maka menjadi pembeli di Pasar Segari.
 
 # Daftar
-Pada halaman ini berisikan pendaftaran akun Pasar Segari untuk pemilik toko dan pembeli, apabila pemilik toko dan pembeli belum memiliki akun maka harus segera mendaftarkan akun untuk memberi kemudahan saat menggunakan website Pasar Segari
+Pada halaman ini berisikan pendaftaran akun Pasar Segari untuk pemilik toko dan pembeli, apabila pemilik toko dan pembeli belum memiliki akun maka harus segera mendaftarkan akun untuk memberi kemudahan saat menggunakan website Pasar Segari.
 
 # Tutorial menggunakan website Pasar Segari
 
@@ -63,6 +64,12 @@ Gambar dibawah ini merupakan tampilan apabila pemilik toko ingin menambahkan pro
 # Login User
 Gambar dibawah ini merupakan tampilan dari login sebagai user, dimana user yang sudah mendaftarkan akun pada Pasar Segari dapat melakukan login dengan memasukkan Email dan Password, dan berhasil melakukan login sebagai user.
 <img width="960" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/9984b733-67c8-43c7-8d9c-2e3e2b725117">
+
+Gambar dibawah ini merupakan tampilan saat user melakukan login, maka user dapat melakukan pencarian produk yang ingin dibeli, hal ini dapat memudahkan user karena dengan mengetikan nama produk bisa langsung menampilkan produk tersebut dan dapat langsung dibeli
+<img width="947" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/28dcca4f-fc36-45ac-b186-8fa104e2c666">
+
+Gambar dibawah ini merupakan kategori produk yang ada di pasar segari yaitu sayuran, dimana Pasar Segari menjual sayuran yang fresh dan murah dan terdapat berbagai jenis sayuran.
+<img width="938" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/ae63151d-e83a-47af-9540-b7e4d4142b57">
 
 # Registrasi
 gambar dibawah ini merupakan halam daftar, dimana terdapat dua pilihan yaitu daftar sebagai toko atau sebagai user
