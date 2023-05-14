@@ -51,8 +51,10 @@ if (isset($_SESSION['login'])) {
     
     <!-- <div class="navbar-index"> -->
       
-      <nav style="display: flex; justify-content: space-around; align-items: right; padding-left:30%; padding-right:30%;  height: 14%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
+      <nav style="display: flex; justify-content: space-around; align-items: right; padding-left:20%; padding-right:30%;  height: 12%" class="navbar fixed-top border-bottom border-warning-subtle border-3">
         <!-- <img class="icon" src="gambar/Untitled75_20230419165549.png" alt=""> -->
+        <a class="navbar-brand fw-light fs-4" href="index.php"><i class="fa-solid fa-leaf fa-xl"
+            style="color: #116530"></i> PasarSegari</a>
         <a class="atas" href="index.php">Home</a>
         <a class="atas" href="informasi.php">informasi</a>
         <a class="atas" href="login.php">Login</a>
