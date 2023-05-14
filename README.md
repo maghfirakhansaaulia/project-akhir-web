@@ -1,10 +1,11 @@
-# project-akhir-web
+# A1 Kelompok 2 project-akhir-web
 
 PASAR SEGARI
 Pasar segari merupakan sebuah website pasar modern. Website Pasar segari adalah sebuah platform online yang menyediakan informasi, layanan, dan pengalaman berbelanja yang nyaman dan modern bagi pengguna. Tujuan utama dari website ini adalah untuk memudahkan pengguna dalam mencari, memilih, dan membeli berbagai produk buah, sayur, dan sembako dengan kualitas terbaik, serta memberikan kemudahan pada pengguna dalam melakukan transaksi. Selain itu dengan website ini juga memudahkan para pembisnis yang ingin mendaftarkan diri dan membuka toko mereka pada website Pasar Segari.
 
 
 Fitur Utama
+
 Home
 saat pengguna menggunakan website Pasar Segari maka akan masuk pada halaman pertama yaitu Home yang berisi tampilan dari Pasar Segari yang berisi foto buah-buahan, sayuran, dan sembako, disertai dengan testimoni dari pengguna Pasar Segari. Selain itu pengguna bisa memilih menjadi penjual atau pembeli di Pasar Segari.
 
