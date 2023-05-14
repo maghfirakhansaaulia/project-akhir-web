@@ -20,8 +20,8 @@ User, apabila login sebagai user, maka menjadi pembeli di Pasar Segari
 Daftar
 Pada halaman ini berisikan pendaftaran akun Pasar Segari untuk pemilik toko dan pembeli, apabila pemilik toko dan pembeli belum memiliki akun maka harus segera mendaftarkan akun untuk memberi kemudahan saat menggunakan website Pasar Segari
 
-**
-Tutorial menggunakan website Pasar Segari**
+Tutorial menggunakan website Pasar Segari
+
 gambar dibawah ini merupakan tampilan dari website Pasar Segari 
 <img width="947" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/e29c7e15-db20-4cde-a950-943c45bd7ec6">
 
@@ -43,9 +43,18 @@ Gambar dibawah apabila admin salah memasukkan email dan password maka akan gagal
 Gambar dibawah merupakan tampilan saat login sebagai admin, yaitu bertuga untuk mempublikasikan artikel mengenai sayuran, buah, dan sembako
 <img width="938" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/a469311e-8327-44e9-b7b7-98a3e2dddf64">
 
+Gambar dibawah ini merupakan tampilan saat admin ingin menambahkan artikel dimana admin memasukkan judul artikel, kategori, tanggal dibuat, isi konten, dan foto artikel
+<img width="944" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/4b8e428b-c3b0-4017-b280-aa45307c5341">
+
 
 Gambar dibawah ini merupakan tampilan dari login sebagai pemilik toko, dimana pemilik toko yang sudah mendaftarkan akun pada Pasar Segari dapat melakukan login dengan memasukkan Email dan Password, dan berhasil melakukan login sebagai pemilik toko.
 <img width="960" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/95c4af8e-4593-4cb4-bd73-8be4dd90b096">
+
+Gambar dibawah ini merupakan tampilan saat berhasil login sebagai pemilik toko, maka akan ditampilkan produk yang akan dijual, yang berisi : gambar produk, nama produk, deskripsi produk, varian, harga, dan kategori
+<img width="948" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/1bbcdfd1-4d48-4b2a-86d0-ec343d5ff445">
+
+Gambar dibawah ini merupakan tampilan apabila pemilik toko ingin menambahkan produk yang akan dijual
+<img width="940" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/4aa807e4-e3ce-4c2b-831b-133bba376425">
 
 Gambar dibawah ini merupakan tampilan dari login sebagai user, dimana user yang sudah mendaftarkan akun pada Pasar Segari dapat melakukan login dengan memasukkan Email dan Password, dan berhasil melakukan login sebagai user.
 <img width="960" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/9984b733-67c8-43c7-8d9c-2e3e2b725117">
