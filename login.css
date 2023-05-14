@@ -40,17 +40,31 @@ body {
     0 3px 10px 0 rgba(109, 168, 125, 0.463);
 }
 .navbar {
-  background-color: #b0e6aa;
+  background-color: #ffffff;
 }
 .ikon {
   color: #525e75;
 }
 
+nav {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    url(gambar/dulcinea-rustic-header-frame-1024x443.jpg);
+    background-size: cover;
+  /* filter: blur(2px);
+  -webkit-filter: blur(2px);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px); */
+  }
+
+
 /* ===================================================================================================== */
 /* index.php */
 /* ===================================================================================================== */
 .atas {
-  color: #394f36;
+  color: #000000;
   display: flex;
   /* color: #393939; */
   font-family: "Gill Sans";

@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 
 require 'functions.php';
 
@@ -12,8 +13,8 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
-$produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_produk.katP_id");
-
+$id_masuk = $_SESSION['id'];
+$produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_produk.katP_id where toko_id = $id_masuk");
 ?>
 
 <!doctype html>
@@ -29,12 +30,17 @@ $produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_pr
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/bd49e73b8b.js" crossorigin="anonymous"></script>
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
 
   <link rel="stylesheet" href="style.css" />
 
 </head>
+
 
 
 <body>
@@ -100,7 +106,10 @@ $produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_pr
           <tr>
             <th scope="row"><?= $i;
                             $id = $row['produk_id']; ?></th>
-            <td><img src="view.php?id_gambar=<?php echo $row['gambar_id']; ?>" width="100" /></td>
+            <td><img src="view.php?id_gambar=<?php
+                                              $gambar = $row['gambar_id'];
+                                              echo $gambar;
+                                              ?>" width="100" /></td>
             <td><?= $row['produk_name'];
                 ?></td>
             <td><?= $row['produk_description'] ?></td>
@@ -108,8 +117,8 @@ $produk = query("SELECT * FROM produk join kat_produk on produk.katP_id = kat_pr
             <td><?= 'Rp', $row['produk_var1pc'] . ' , ' . 'Rp', $row['produk_var2pc'] ?></td>
             <td><?= $row['katP_name'] ?></td>
             <td>
-              <button class="btn btn-success">
-                <a style="text-decoration: none; color: white;" href='modify.php?updateid=<?= $id ?>'>ubah</a>
+              <button class="btn btn-success" style="margin-bottom: 5%;">
+                <a style="text-decoration: none; color: white; " href='modify.php?updateid=<?= $id ?>'>ubah</a>
               </button>
               <button class="btn btn-danger">
                 <a style="text-decoration: none; color: white;" href="delete.php?deleteid=<?= $id ?>">hapus</a>

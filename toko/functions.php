@@ -31,7 +31,7 @@ function tambah($gambar,$data){
   $file_size = $gambar['size'];
   $file_type = $gambar['type'];
 
-  if ($file_size < 2048000 and ($file_type =='image/jpeg' or $file_type == 'image/png'))
+  if ($file_size < 65535 and ($file_type =='image/jpeg' or $file_type == 'image/png'))
   {
       $image   = addslashes(file_get_contents($gambar['tmp_name']));        
       mysqli_query($conn,"insert into produk (toko_id,produk_name,produk_var1,produk_var2,produk_var1pc,produk_var2pc, katP_id, produk_description)values ($toko,'$name','$v1','$v2',$v1pc,$v2pc,$kategori,'$desc')");
@@ -43,7 +43,9 @@ function tambah($gambar,$data){
        
       mysqli_query($conn,"UPDATE produk SET gambar_id = $idGambar WHERE produk_id = $idProduk");
       
-      header("location:index.php");
+      return mysqli_affected_rows($conn);
+  } else {
+    return 'gambar';
   }
 
 }
@@ -64,7 +66,7 @@ function ubah($gambar, $data){
       $file_typegambar = $gambar['type'];
     }
     
-    if ($file_sizegambar < 2048000 and ($file_typegambar =='image/jpeg' or $file_typegambar == 'image/png'))
+    if ($file_sizegambar < 65535 and ($file_typegambar =='image/jpeg' or $file_typegambar == 'image/png'))
     {
         $image   = addslashes(file_get_contents($gambar['tmp_name']));        
         mysqli_query($conn, "UPDATE produk SET produk_name = '$nama', katP_id= $kategori_prd,  produk_var1 = '$varian1', produk_var2 = '$varian2', produk_var1pc = '$varian1pc', produk_var2pc = '$varian2pc', produk_description = '$deskrip' WHERE produk.produk_id=$id");
@@ -74,7 +76,9 @@ function ubah($gambar, $data){
         $idGambar = findID("gambar");
         mysqli_query($conn,"UPDATE produk SET gambar_id = $idGambar WHERE produk_id = $id");
         
-        header("location:index.php");
+        return mysqli_affected_rows($conn);
+    } else {
+      return 'gambar';
     }
   
   
