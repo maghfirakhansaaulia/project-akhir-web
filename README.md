@@ -86,15 +86,23 @@ Gambar dibawah ini merupakan beberapa kemudahan yang bisa dilakukan user seperti
 <img width="948" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/d9a750ab-f647-4b14-85f6-a95fbd8d7953">
 
 
-Gambar dibawah ini merupakan kategori produk yang ada di pasar segari yaitu sayuran, dimana Pasar Segari menjual sayuran yang fresh dan murah selain itu juga terdapat berbagai jenis sayuran.
+Gambar dibawah ini merupakan tampilan saat user mengetikkan sayur di pencarian, maka akan menampilkan produk dari kategori sayur lengkap dengan harga nya, dan user bisa langsung membeli nya.
+<img width="941" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/cd1920f8-f214-4a54-93bd-156d78f68255">
+
+
+Gambar dibawah ini merupakan filter dari pencarian, dimana user dapat memilih harga yang paling sesuai, paling tinggi, dan paling rendah.
+<img width="213" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/9199c74e-556a-4e7a-856b-6ea3a7e91103">
+
+
+Gambar dibawah ini merupakan kategori produk yang ada di pasar segari yaitu sayuran, dimana Pasar Segari menjual sayuran yang fresh selain itu akan ditampilkan dari foto produk, harga produk, dan berat produk.
 <img width="938" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/ae63151d-e83a-47af-9540-b7e4d4142b57">
 
 
-Gambar dibawah ini merupakan kategori produk yang ada di pasar segari yaitu buah-buahan, dimana Pasar Segari menjual buah-buahan dengan kualitas terbaik dan berbagai jenis buah-buahan.
+Gambar dibawah ini merupakan kategori produk yang ada di pasar segari yaitu buah-buahan, dimana Pasar Segari menjual buah-buahan dengan kualitas terbaik, selain itu akan ditampilkan dari foto produk, harga produk, dan berat produk.
 <img width="946" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/0c5f8f75-82b0-42d6-b585-bbbeb41f7aa7">
 
 
-Gambar dibawah ini merupakan kategori produk yang ada di pasar segari yaitu sembako, dimana Pasar Segari menjual sembako yang dibutuhkan oleh pembeli dengan harga yang stabil.
+Gambar dibawah ini merupakan kategori produk yang ada di pasar segari yaitu sembako, dimana Pasar Segari menjual sembako yang dibutuhkan oleh pembeli dengan harga yang stabil, selain itu akan ditampilkan dari foto produk, harga produk, dan berat produk.
 <img width="942" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/ae871e2f-8b44-45f3-8983-b37ee4ba090b">
 
 
@@ -106,13 +114,17 @@ Gambar dibawah ini merupakan tampilan saat pembeli melakukan checkout dimana ada
 <img width="960" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/ad6c5df2-38a2-4205-addc-46895d20b541">
 
 
-Gambar dibawah ini merupakan tampilan saat user telah membayar buah yang dibeli, maka transaksi berhasil dilakukan.
+Gambar dibawah ini merupakan tampilan saat user telah membayar sayur yang dibeli, maka transaksi berhasil dilakukan.
 ![Gambar WhatsApp 2023-05-15 pukul 07 06 47](https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/b2397834-91ff-4dd2-9702-1a5d3d7b2e04)
 
 
-Gambar dibawah ini `
+Gambar dibawah ini merupakan tampilan apabila user ingin melihat histori transaksi yang telah dilakukan, maka akan ditampilkan histori dari pembelian yang akan menampilkan nama nama produk, catatan, tanggal pembelian, jumlah pembelian, dan harga.
 <img width="140" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/23ea7246-d04d-4819-98c7-91fa195d9f6d">
 <img width="960" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/71d10fee-cefe-4d54-9ebf-ba8bacb59dfd">
+
+
+Gambar dibawah ini merupakan tampilan saat user ingin logout dari halaman tersebut.
+<img width="958" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/ee615618-d04c-4568-8ebb-bcd9721945cf">
 
 
 # Registrasi
