@@ -146,6 +146,8 @@ Gambar dibawah ini merupakan tampilan pada halaman daftar dimana apabila pemilik
 <img width="945" alt="image" src="https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/544d450e-a5ca-4da6-82ef-421f9c1fb3c5">
 
 
+
+
 Database Pasar Segari 
 Gambar dibawah ini merupakan ERD dari Database Pasar Segari 
 ![Gambar WhatsApp 2023-05-07 pukul 10 17 26](https://github.com/maghfirakhansaaulia/project-akhir-web/assets/120169429/8368ab61-63d9-477d-8754-518c96caf8cd)
